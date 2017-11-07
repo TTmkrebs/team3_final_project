@@ -4,7 +4,7 @@ public class app {
 
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        t3_JFrame jF = new t3_JFrame();
     }
     
 }
