@@ -6,7 +6,7 @@ public class t3_JFrame extends JFrame
 {
     public t3_JFrame()
     {
-        super("Java: Putting It All Together");
+        super("Team 3 - Final Project");
 
         t3_JPanel jP = new t3_JPanel();
         add(jP, "Center");
