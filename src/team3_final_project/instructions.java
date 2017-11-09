@@ -11,10 +11,12 @@ public class instructions extends JPanel
     {
         super();
         setBackground(Color.lightGray);
-        setLayout(null);
+        setLayout(new BorderLayout());
+        
+        JLabel line1 = new JLabel("Testing testing",SwingConstants.CENTER);
+        add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
-        add(back);
-        back.setBounds(new Rectangle(325,700,150,25));
+        add(back,BorderLayout.PAGE_END);
     }
 }
