@@ -14,17 +14,14 @@ public class GamePanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        
-        
-        campusMap = new ImageIcon("images/campus_map_2.jpg"); 
-        
+        campusMap = new ImageIcon("images/campus_map_2.jpg");
         JLabel map = new JLabel();
         map.setIcon(campusMap);
+ 
+        back = new JButton("Main Menu");
+        add(back,BorderLayout.NORTH);
         
         JLabel line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
-        
-        back = new JButton("Main Menu");
-        add(back,BorderLayout.PAGE_END);
     }
 }

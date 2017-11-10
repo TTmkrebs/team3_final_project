@@ -18,6 +18,6 @@ public class InstructionsPanel extends JPanel
         add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
-        add(back,BorderLayout.PAGE_END);
+        add(back,BorderLayout.NORTH);
     }
 }

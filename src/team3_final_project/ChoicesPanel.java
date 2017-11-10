@@ -18,9 +18,9 @@ public class ChoicesPanel extends JPanel
         add(line1,BorderLayout.CENTER);
         
         bPlayGame = new JButton("Play Game");
-        add(bPlayGame,BorderLayout.AFTER_LAST_LINE);
+        add(bPlayGame,BorderLayout.SOUTH);
         
         back = new JButton("Main Menu");
-        add(back,BorderLayout.PAGE_END);
+        add(back,BorderLayout.NORTH);
     }
 }

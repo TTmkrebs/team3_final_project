@@ -30,6 +30,11 @@ public class Team3_JFrame extends JFrame implements ActionListener
         setVisible(true);
         setResizable(false);
         
+        instr = new InstructionsPanel();
+        choices = new ChoicesPanel();
+        game = new GamePanel();
+//        developers = newDevelopersPanel();
+        
         bInstr = main.bInstruction;
         bInstr.addActionListener(this);
         bGoToGame = main.bEnterGame;
@@ -38,13 +43,15 @@ public class Team3_JFrame extends JFrame implements ActionListener
         bDevs.addActionListener(this);
         bBeginGame = choices.bPlayGame;
         bBeginGame.addActionListener(this);
+        
+        
     }
     
     @Override
     public void actionPerformed(ActionEvent e)
     {
         Object obj = e.getSource();
-        if(obj == main.bInstruction)
+        if(obj == bInstr)
         {
             main.setVisible(false);
             instr = new InstructionsPanel();
@@ -57,7 +64,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             bBackToMain.addActionListener(this);
         }
         
-        if(obj == main.bEnterGame)
+        if(obj == bGoToGame)
         {
             main.setVisible(false);
             choices = new ChoicesPanel();
@@ -66,13 +73,16 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
+            bBeginGame = choices.bPlayGame;
+            bBeginGame.addActionListener(this);
             bBackToMain = choices.back;
             bBackToMain.addActionListener(this);
         }
         
-        if(obj == choices.bPlayGame)
+        if(obj == bBeginGame)
         {
             main.setVisible(false);
+            choices.setVisible(false);
             game = new GamePanel();
             add(game, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -85,11 +95,11 @@ public class Team3_JFrame extends JFrame implements ActionListener
         
         if(obj == bBackToMain)
         {
-            main.setVisible(true);
             instr.setVisible(false);
             game.setVisible(false);
             choices.setVisible(false);
 //            developers.setVisible(false);
+            main.setVisible(true);
 
         } 
         
