@@ -19,7 +19,7 @@ public class GamePanel extends JPanel
         JLabel map = new JLabel();
         map.setIcon(campusMap);
         
-        JLabel line1 = new JLabel("Testing testing",SwingConstants.CENTER);
+        JLabel line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
