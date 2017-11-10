@@ -2,8 +2,9 @@ package team3_final_project;
 
 import java.awt.event.*;
 import javax.swing.*;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class T3_JFrame extends JFrame implements ActionListener
+public class Team3_JFrame extends JFrame implements ActionListener
 {
     MainPanel main;
     InstructionsPanel instr;
@@ -18,14 +19,14 @@ public class T3_JFrame extends JFrame implements ActionListener
     JButton bGame;
 
     
-    public T3_JFrame()
+    public Team3_JFrame()
     {
         super("Team 3 - Penn State Adventure");
 
         main = new MainPanel();
         add(main, "Center");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 800);
+        setSize(800, 700);
         setVisible(true);
         setResizable(false);
         
@@ -49,7 +50,7 @@ public class T3_JFrame extends JFrame implements ActionListener
             instr = new InstructionsPanel();
             add(instr, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
-            setSize(800,800);
+            setSize(800,700);
             setVisible(true);
             setResizable(false);
             bBackToMain = instr.back;
@@ -62,7 +63,7 @@ public class T3_JFrame extends JFrame implements ActionListener
 //            choices = new ChoicesPanel();
 //            add(choices, "Center");
 //            setDefaultCloseOperation(EXIT_ON_CLOSE);
-//            setSize(800,800);
+//            setSize(800,700);
 //            setVisible(true);
 //            setResizable(false);
 //            bBackToMain = choices.back;
@@ -75,7 +76,7 @@ public class T3_JFrame extends JFrame implements ActionListener
             game = new GamePanel();
             add(game, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
-            setSize(800,800);
+            setSize(800,700);
             setVisible(true);
             setResizable(false);
             bBackToMain = game.back;

@@ -4,7 +4,7 @@ public class App {
 
     public static void main(String[] args)
     {
-        T3_JFrame jF = new T3_JFrame();
+        Team3_JFrame jF = new Team3_JFrame();
     }
     
 }
