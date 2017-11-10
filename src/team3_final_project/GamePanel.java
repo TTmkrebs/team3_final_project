@@ -8,6 +8,8 @@ public class GamePanel extends JPanel
 {
     JButton back;
     ImageIcon campusMap;
+    JLabel map;
+    JLabel line1;
     
     public GamePanel()
     {
@@ -16,13 +18,13 @@ public class GamePanel extends JPanel
         setLayout(new BorderLayout());
         
         campusMap = new ImageIcon("images/campus_map_2.jpg");
-        JLabel map = new JLabel();
+        map = new JLabel();
         map.setIcon(campusMap);
  
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
         
-        JLabel line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
+        line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
     }
 }      
