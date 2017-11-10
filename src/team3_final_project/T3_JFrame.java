@@ -7,10 +7,10 @@ public class T3_JFrame extends JFrame implements ActionListener
 {
     StartScreen startUp;
     InstructionsPanel instr;
-    gamePanel game;
+    GamePanel game;
             
     JButton bInstr;
-    JButton bStart;
+    JButton bStart; 
     JButton bDevs;
     JButton bMain;
 
