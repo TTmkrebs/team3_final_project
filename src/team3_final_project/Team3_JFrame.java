@@ -38,6 +38,13 @@ public class Team3_JFrame extends JFrame implements ActionListener
         bDevs.addActionListener(this);
         bBeginGame = choices.bPlayGame;
         bBeginGame.addActionListener(this);
+        
+        instr = new InstructionsPanel();
+        add(instr, "Center");
+        choices = new ChoicesPanel();
+        add(choices, "Center");
+        game = new GamePanel();
+        add(game, "Center");
     }
     
     @Override
@@ -85,11 +92,11 @@ public class Team3_JFrame extends JFrame implements ActionListener
         
         if(obj == bBackToMain)
         {
-            main.setVisible(true);
             instr.setVisible(false);
             game.setVisible(false);
             choices.setVisible(false);
 //            developers.setVisible(false);
+            main.setVisible(true);
 
         } 
         
