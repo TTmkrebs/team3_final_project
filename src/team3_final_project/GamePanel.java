@@ -25,5 +25,4 @@ public class GamePanel extends JPanel
         JLabel line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
     }
-    
-    
+}      
