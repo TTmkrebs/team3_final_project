@@ -5,33 +5,38 @@ import javax.swing.*;
 
 public class T3_JFrame extends JFrame implements ActionListener
 {
-    StartScreen startUp;
+    MainPanel main;
     InstructionsPanel instr;
+    ChoicesPanel choices;
     GamePanel game;
+//    DevelopersPanel developers;
             
     JButton bInstr;
     JButton bStart; 
     JButton bDevs;
-    JButton bMain;
+    JButton bBackToMain;
+    JButton bGame;
 
     
     public T3_JFrame()
     {
-        super("Team 3 - Final Project");
+        super("Team 3 - Penn State Adventure");
 
-        startUp = new StartScreen();
-        add(startUp, "Center");
+        main = new MainPanel();
+        add(main, "Center");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 800);
         setVisible(true);
         setResizable(false);
         
-        bInstr = startUp.bInstruction;
-        bInstr.addActionListener(this);
-        bStart = startUp.bPlay;
-        bStart.addActionListener(this);
-        bDevs = startUp.bDevs;
-        bDevs.addActionListener(this);
+        bInstr = main.bInstructions;
+            bInstr.addActionListener(this);
+        bStart = main.bEnterGame;
+            bStart.addActionListener(this);
+        bDevs = main.bDevelopers;
+            bDevs.addActionListener(this);
+        bGame = choices.bPlayGame;
+            bGame.addActionListener(this);
     }
     
     @Override
@@ -40,20 +45,50 @@ public class T3_JFrame extends JFrame implements ActionListener
         Object obj = e.getSource();
         if(obj == bInstr)
         {
-            startUp.setVisible(false);
+            main.setVisible(false);
             instr = new InstructionsPanel();
             add(instr, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setSize(800,800);
             setVisible(true);
             setResizable(false);
-            bMain = instr.back;
-            bMain.addActionListener(this);
+            bBackToMain = instr.back;
+                bBackToMain.addActionListener(this);
         }
-        if(obj == bMain)
+        
+        if(obj == bStart)
+        {
+            main.setVisible(false);
+            choices = new ChoicesPanel();
+            add(choices, "Center");
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setSize(800,800);
+            setVisible(true);
+            setResizable(false);
+            bBackToMain = choices.back;
+                bBackToMain.addActionListener(this);
+        }
+        
+        if(obj == bGame)
+        {
+            main.setVisible(false);
+            game = new GamePanel();
+            add(game, "Center");
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setSize(800,800);
+            setVisible(true);
+            setResizable(false);
+            bBackToMain = game.back;
+                bBackToMain.addActionListener(this);
+        }
+        
+        if(obj == bBackToMain)
         {
             instr.setVisible(false);
-            startUp.setVisible(true);
+//            choices.setVisible(false);
+//            game.setVisible(false);
+//            developers.setVisible(false);
+            main.setVisible(true);
         }
         
     }
