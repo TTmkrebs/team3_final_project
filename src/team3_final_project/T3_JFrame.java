@@ -3,7 +3,7 @@ package team3_final_project;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class T3_JFrame1 extends JFrame implements ActionListener
+public class T3_JFrame extends JFrame implements ActionListener
 {
     MainPanel main;
     InstructionsPanel instr;
@@ -18,7 +18,7 @@ public class T3_JFrame1 extends JFrame implements ActionListener
     JButton bGame;
 
     
-    public T3_JFrame1()
+    public T3_JFrame()
     {
         super("Team 3 - Penn State Adventure");
 
