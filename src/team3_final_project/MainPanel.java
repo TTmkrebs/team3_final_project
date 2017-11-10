@@ -24,7 +24,7 @@ public class MainPanel extends JPanel
         add(bDevs);
         bDevs.setBounds(new Rectangle(410,625,150,25));
         
-        bEnterGame = new JButton("Start Game");
+        bEnterGame = new JButton("Go to Game");
         add(bEnterGame);
         bEnterGame.setBounds(new Rectangle(240,550,320,50));        
     }
