@@ -16,7 +16,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
     JButton bGoToGame; 
     JButton bDevs;
     JButton bBackToMain;
-    JButton bGame;
+    JButton bBeginGame;
 
     
     public Team3_JFrame()
@@ -31,20 +31,20 @@ public class Team3_JFrame extends JFrame implements ActionListener
         setResizable(false);
         
         bInstr = main.bInstruction;
-            bInstr.addActionListener(this);
+        bInstr.addActionListener(this);
         bGoToGame = main.bEnterGame;
-            bGoToGame.addActionListener(this);
+        bGoToGame.addActionListener(this);
         bDevs = main.bDevs;
-            bDevs.addActionListener(this);
-//        bGame = choices.bPlayGame;
-//            bGame.addActionListener(this);
+        bDevs.addActionListener(this);
+        bBeginGame = choices.bPlayGame;
+        bBeginGame.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e)
     {
         Object obj = e.getSource();
-        if(obj == bInstr)
+        if(obj == main.bInstruction)
         {
             main.setVisible(false);
             instr = new InstructionsPanel();
@@ -54,23 +54,23 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setVisible(true);
             setResizable(false);
             bBackToMain = instr.back;
-                bBackToMain.addActionListener(this);
+            bBackToMain.addActionListener(this);
         }
         
-//        if(obj == bGoToGame)
-//        {
-//            main.setVisible(false);
-//            choices = new ChoicesPanel();
-//            add(choices, "Center");
-//            setDefaultCloseOperation(EXIT_ON_CLOSE);
-//            setSize(800,700);
-//            setVisible(true);
-//            setResizable(false);
-//            bBackToMain = choices.back;
-//                bBackToMain.addActionListener(this);
-//        }
+        if(obj == main.bEnterGame)
+        {
+            main.setVisible(false);
+            choices = new ChoicesPanel();
+            add(choices, "Center");
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setSize(800,700);
+            setVisible(true);
+            setResizable(false);
+            bBackToMain = choices.back;
+            bBackToMain.addActionListener(this);
+        }
         
-        if(obj == bGame)
+        if(obj == choices.bPlayGame)
         {
             main.setVisible(false);
             game = new GamePanel();
@@ -80,17 +80,18 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setVisible(true);
             setResizable(false);
             bBackToMain = game.back;
-                bBackToMain.addActionListener(this);
+            bBackToMain.addActionListener(this);
         }
         
         if(obj == bBackToMain)
         {
-            instr.setVisible(false);
-//            choices.setVisible(false);
-//            game.setVisible(false);
-//            developers.setVisible(false);
             main.setVisible(true);
-        }
+            instr.setVisible(false);
+            game.setVisible(false);
+            choices.setVisible(false);
+//            developers.setVisible(false);
+
+        } 
         
     }
 }
