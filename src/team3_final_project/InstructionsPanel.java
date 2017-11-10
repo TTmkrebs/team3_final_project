@@ -3,11 +3,11 @@ package team3_final_project;
 import java.awt.*;
 import javax.swing.*;
 
-public class game extends JPanel
+public class InstructionsPanel extends JPanel
 {
     JButton back;
     
-    public game()
+    public InstructionsPanel()
     {
         super();
         setBackground(Color.lightGray);

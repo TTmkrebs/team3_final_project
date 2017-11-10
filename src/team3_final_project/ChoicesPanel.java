@@ -9,6 +9,6 @@ package team3_final_project;
  *
  * @author MKrebs
  */
-public class choices {
+public class ChoicesPanel {
     
 }

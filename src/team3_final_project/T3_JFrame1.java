@@ -3,7 +3,7 @@ package team3_final_project;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class T3_JFrame extends JFrame implements ActionListener
+public class T3_JFrame1 extends JFrame implements ActionListener
 {
     MainPanel main;
     InstructionsPanel instr;
@@ -18,7 +18,7 @@ public class T3_JFrame extends JFrame implements ActionListener
     JButton bGame;
 
     
-    public T3_JFrame()
+    public T3_JFrame1()
     {
         super("Team 3 - Penn State Adventure");
 
@@ -29,14 +29,14 @@ public class T3_JFrame extends JFrame implements ActionListener
         setVisible(true);
         setResizable(false);
         
-        bInstr = main.bInstructions;
+        bInstr = main.bInstruction;
             bInstr.addActionListener(this);
         bStart = main.bEnterGame;
             bStart.addActionListener(this);
-        bDevs = main.bDevelopers;
+        bDevs = main.bDevs;
             bDevs.addActionListener(this);
-        bGame = choices.bPlayGame;
-            bGame.addActionListener(this);
+//        bGame = choices.bPlayGame;
+//            bGame.addActionListener(this);
     }
     
     @Override
@@ -56,18 +56,18 @@ public class T3_JFrame extends JFrame implements ActionListener
                 bBackToMain.addActionListener(this);
         }
         
-        if(obj == bStart)
-        {
-            main.setVisible(false);
-            choices = new ChoicesPanel();
-            add(choices, "Center");
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
-            setSize(800,800);
-            setVisible(true);
-            setResizable(false);
-            bBackToMain = choices.back;
-                bBackToMain.addActionListener(this);
-        }
+//        if(obj == bStart)
+//        {
+//            main.setVisible(false);
+//            choices = new ChoicesPanel();
+//            add(choices, "Center");
+//            setDefaultCloseOperation(EXIT_ON_CLOSE);
+//            setSize(800,800);
+//            setVisible(true);
+//            setResizable(false);
+//            bBackToMain = choices.back;
+//                bBackToMain.addActionListener(this);
+//        }
         
         if(obj == bGame)
         {

@@ -4,13 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class startScreen extends JPanel
+public class MainPanel extends JPanel
 {
     JButton bInstruction;
     JButton bDevs;
-    JButton bPlay;
+    JButton bEnterGame;
     
-    public startScreen()
+    public MainPanel()
     {
         super();
         setBackground(Color.gray);
@@ -24,8 +24,8 @@ public class startScreen extends JPanel
         add(bDevs);
         bDevs.setBounds(new Rectangle(410,625,150,25));
         
-        bPlay = new JButton("Start Game");
-        add(bPlay);
-        bPlay.setBounds(new Rectangle(240,550,320,50));        
+        bEnterGame = new JButton("Start Game");
+        add(bEnterGame);
+        bEnterGame.setBounds(new Rectangle(240,550,320,50));        
     }
 }

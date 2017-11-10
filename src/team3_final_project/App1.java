@@ -1,10 +1,10 @@
 package team3_final_project;
 
-public class app {
+public class App1 {
 
     public static void main(String[] args)
     {
-        t3_JFrame jF = new t3_JFrame();
+        T3_JFrame1 jF = new T3_JFrame1();
     }
     
 }
