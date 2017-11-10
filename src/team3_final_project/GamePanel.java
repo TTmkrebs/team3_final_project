@@ -14,8 +14,6 @@ public class GamePanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        
-        
         campusMap = new ImageIcon("images/campus_map_2.jpg"); 
         
         JLabel map = new JLabel();
@@ -25,6 +23,6 @@ public class GamePanel extends JPanel
         add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
-        add(back,BorderLayout.PAGE_END);
+        add(back,BorderLayout.NORTH);
     }
 }
