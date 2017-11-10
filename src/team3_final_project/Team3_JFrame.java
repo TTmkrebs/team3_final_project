@@ -30,6 +30,13 @@ public class Team3_JFrame extends JFrame implements ActionListener
         setVisible(true);
         setResizable(false);
         
+        instr = new InstructionsPanel();
+        add(instr, "Center");
+        choices = new ChoicesPanel();
+        add(choices, "Center");
+        game = new GamePanel();
+        add(game, "Center"); 
+        
         bInstr = main.bInstruction;
         bInstr.addActionListener(this);
         bGoToGame = main.bEnterGame;
@@ -39,12 +46,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
         bBeginGame = choices.bPlayGame;
         bBeginGame.addActionListener(this);
         
-        instr = new InstructionsPanel();
-        add(instr, "Center");
-        choices = new ChoicesPanel();
-        add(choices, "Center");
-        game = new GamePanel();
-        add(game, "Center"); 
+        
     }
     
     @Override
