@@ -44,7 +44,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
         choices = new ChoicesPanel();
         add(choices, "Center");
         game = new GamePanel();
-        add(game, "Center");
+        add(game, "Center"); 
     }
     
     @Override
