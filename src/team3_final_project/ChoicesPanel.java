@@ -1,14 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package team3_final_project;
 
-/**
- *
- * @author MKrebs
- */
-public class ChoicesPanel {
+import java.awt.*;
+import javax.swing.*;
+
+public class ChoicesPanel extends JPanel
+{
+    JButton back;
+    
+    public ChoicesPanel()
+    {
+        super();
+        setBackground(Color.lightGray);
+        setLayout(new BorderLayout());
+        
+        JLabel line1 = new JLabel("Testing Choices Panel",SwingConstants.CENTER);
+        add(line1,BorderLayout.CENTER);
+        
+        back = new JButton("Main Menu");
+        add(back,BorderLayout.PAGE_END);
+    }        
     
 }

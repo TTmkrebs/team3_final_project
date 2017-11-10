@@ -13,7 +13,7 @@ public class InstructionsPanel extends JPanel
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
         
-        JLabel line1 = new JLabel("Testing testing",SwingConstants.CENTER);
+        JLabel line1 = new JLabel("Testing Instructions Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
