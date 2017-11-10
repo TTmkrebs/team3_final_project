@@ -7,12 +7,20 @@ public class GamePanel extends JPanel
 {
     JButton back;
     ImageIcon campusMap;
+    JPanel gamePanel;
+    JPanel buttonPanel;
     
     public GamePanel()
     {
         super();
         setBackground(Color.black);
         setLayout(new BorderLayout());
+        
+        gamePanel = new JPanel();
+        add(gamePanel,BorderLayout.CENTER);
+        
+        buttonPanel = new JPanel();
+        add(buttonPanel,BorderLayout.SOUTH);
         
         campusMap = new ImageIcon("images/campus_map_2.jpg"); 
         

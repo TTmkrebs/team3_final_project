@@ -13,7 +13,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
 //    DevelopersPanel developers;
             
     JButton bInstr;
-    JButton bStart; 
+    JButton bGoToGame; 
     JButton bDevs;
     JButton bBackToMain;
     JButton bGame;
@@ -32,8 +32,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
         
         bInstr = main.bInstruction;
             bInstr.addActionListener(this);
-        bStart = main.bEnterGame;
-            bStart.addActionListener(this);
+        bGoToGame = main.bEnterGame;
+            bGoToGame.addActionListener(this);
         bDevs = main.bDevs;
             bDevs.addActionListener(this);
 //        bGame = choices.bPlayGame;
@@ -57,7 +57,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
                 bBackToMain.addActionListener(this);
         }
         
-//        if(obj == bStart)
+//        if(obj == bGoToGame)
 //        {
 //            main.setVisible(false);
 //            choices = new ChoicesPanel();
