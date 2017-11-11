@@ -111,7 +111,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             instr.setVisible(false);
             game.setVisible(false);
             choices.setVisible(false);
-//            developers.setVisible(false);
+            developers.setVisible(false);
             main.setVisible(true);
 
         } 
