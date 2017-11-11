@@ -28,21 +28,24 @@ public class ChoicesPanel extends JPanel
         character1.setLayout(new BorderLayout());
         character1.setBackground (Color.yellow);
         character1.setPreferredSize (new Dimension(250, 150));
-        JButton button1 = new JButton ("Character 1");
+        ImageIcon footballPlayer = new ImageIcon("images/footballplayer.png");
+        JButton button1 = new JButton (footballPlayer);
         character1.add (button1,BorderLayout.CENTER);
         
         JPanel character2 = new JPanel();
         character2.setLayout(new BorderLayout());
         character2.setBackground (Color.green);
         character2.setPreferredSize (new Dimension(250, 150));
-        JButton button2 = new JButton ("Character 2");
+        ImageIcon student = new ImageIcon("images/student.png");
+        JButton button2 = new JButton (student);
         character2.add (button2,BorderLayout.CENTER);
         
         JPanel character3 = new JPanel();
         character3.setLayout(new BorderLayout());
         character3.setBackground (Color.orange);
         character3.setPreferredSize (new Dimension(250, 150));
-        JButton button3 = new JButton ("Character 3");
+        ImageIcon psuMascot = new ImageIcon("images/Penn State Mascot.jpg");
+        JButton button3 = new JButton (psuMascot);
         character3.add (button3,BorderLayout.CENTER);
         
         JPanel characters = new JPanel();
