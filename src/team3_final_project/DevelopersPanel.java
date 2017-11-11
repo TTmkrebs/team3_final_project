@@ -6,7 +6,6 @@ import javax.swing.*;
 public class DevelopersPanel extends JPanel
 {
     JButton back;
-    JButton goToGame;
     
     public DevelopersPanel()
     {
