@@ -7,9 +7,10 @@ import java.awt.event.*;
 public class GamePanel extends JPanel
 {
     JButton back;
-    ImageIcon campusMap;
-    JLabel map;
+//    ImageIcon campusMap;
+//    JLabel map;
     JLabel line1;
+    
     
     public GamePanel()
     {
@@ -17,9 +18,14 @@ public class GamePanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        campusMap = new ImageIcon("images/campus_map_2.jpg");
-        map = new JLabel();
-        map.setIcon(campusMap);
+        ImageIcon campusMap = new ImageIcon("images/campus_map_2.jpg");
+        JLabel map = new JLabel(campusMap);
+        add(map); 
+        map.setBounds(130, 50, 550, 350);
+        
+//        campusMap = new ImageIcon("images/campus_map_2.jpg");
+//        map = new JLabel();
+//        map.setIcon(campusMap);
  
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
