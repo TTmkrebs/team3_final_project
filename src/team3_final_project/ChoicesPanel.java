@@ -60,22 +60,24 @@ public class ChoicesPanel extends JPanel
         theme1.setLayout(new BorderLayout());
         theme1.setBackground (Color.yellow);
         theme1.setPreferredSize (new Dimension(250, 150));
-        ImageIcon psuFootball = new ImageIcon("images/football.jpg");
-        JButton button4 = new JButton ("Football Theme",psuFootball);
+        ImageIcon psuFootball = new ImageIcon("images/footballtheme.png");
+        JButton button4 = new JButton (psuFootball);
         theme1.add (button4,BorderLayout.CENTER);
         
         JPanel theme2 = new JPanel();
         theme2.setLayout(new BorderLayout());
         theme2.setBackground (Color.green);
         theme2.setPreferredSize (new Dimension(250, 150));
-        JButton button5 = new JButton ("Theme 2");
+        ImageIcon psuAcademics = new ImageIcon("images/academicstheme.png");
+        JButton button5 = new JButton (psuAcademics);
         theme2.add (button5,BorderLayout.CENTER);
         
         JPanel theme3 = new JPanel();
         theme3.setLayout(new BorderLayout());
         theme3.setBackground (Color.orange);
         theme3.setPreferredSize (new Dimension(250, 150));
-        JButton button6 = new JButton ("Theme 3");
+        ImageIcon psuFun = new ImageIcon("images/funtheme.png");
+        JButton button6 = new JButton (psuFun);
         theme3.add (button6,BorderLayout.CENTER);
         
         JPanel themes = new JPanel();
