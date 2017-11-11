@@ -20,7 +20,7 @@ public class DevelopersPanel extends JPanel
         JLabel label1 = new JLabel ("Aly", SwingConstants.CENTER);
         label1.setFont(new Font("Arial", Font.BOLD, 48));
         label1.setForeground(Color.white);
-        aly.add (label1,BorderLayout.CENTER);
+        aly.add (label1,BorderLayout.NORTH);
         
         JPanel matt = new JPanel();
         matt.setLayout(new BorderLayout());
@@ -29,7 +29,7 @@ public class DevelopersPanel extends JPanel
         JLabel label2 = new JLabel ("Matt", SwingConstants.CENTER);
         label2.setFont(new Font("Arial", Font.BOLD, 48));
         label2.setForeground(Color.white);
-        matt.add (label2,BorderLayout.CENTER);
+        matt.add (label2,BorderLayout.NORTH);
         
         JPanel valeri = new JPanel();
         valeri.setLayout(new BorderLayout());
@@ -38,7 +38,13 @@ public class DevelopersPanel extends JPanel
         JLabel label3 = new JLabel ("Valeri", SwingConstants.CENTER);
         label3.setFont(new Font("Arial", Font.BOLD, 48));
         label3.setForeground(Color.white);
-        valeri.add (label3,BorderLayout.CENTER);
+        valeri.add (label3,BorderLayout.NORTH);
+        ImageIcon valeriIcon = new ImageIcon("images/valeri.png");
+        JLabel valeriImage = new JLabel(valeriIcon);
+        valeri.add(valeriImage);
+        
+         
+//        valeriImage.setBounds(130, 50, 550, 350);
         
         JPanel developers = new JPanel();
         developers.setVisible(true);
