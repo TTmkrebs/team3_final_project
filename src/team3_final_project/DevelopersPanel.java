@@ -21,6 +21,9 @@ public class DevelopersPanel extends JPanel
         label1.setFont(new Font("Arial", Font.BOLD, 48));
         label1.setForeground(Color.white);
         aly.add (label1,BorderLayout.NORTH);
+        ImageIcon alyIcon = new ImageIcon("images/aly.jpg");
+        JLabel alyImage = new JLabel(alyIcon);
+        aly.add(alyImage);
         
         JPanel matt = new JPanel();
         matt.setLayout(new BorderLayout());
