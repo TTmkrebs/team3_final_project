@@ -7,8 +7,6 @@ import java.awt.event.*;
 public class GamePanel extends JPanel
 {
     JButton back;
-//    ImageIcon campusMap;
-//    JLabel map;
     JLabel line1;
     
     
@@ -18,19 +16,19 @@ public class GamePanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        ImageIcon campusMap = new ImageIcon("images/campus_map_2.jpg");
+        ImageIcon campusMap = new ImageIcon("images/campus_map_2.png");
         JLabel map = new JLabel(campusMap);
-        add(map); 
-        map.setBounds(130, 50, 550, 350);
+        map.setBounds(0, 0, 740, 458);
+
+        JPanel campuses = new JPanel();
+        campuses.setLayout(new BorderLayout());
+        campuses.setVisible(true);
+        add(campuses,BorderLayout.CENTER);
+        campuses.add(map);
         
-//        campusMap = new ImageIcon("images/campus_map_2.jpg");
-//        map = new JLabel();
-//        map.setIcon(campusMap);
  
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
         
-        line1 = new JLabel("Testing Game Panel",SwingConstants.CENTER);
-        add(line1,BorderLayout.CENTER);
     }
 }      
