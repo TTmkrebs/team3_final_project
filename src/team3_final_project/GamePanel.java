@@ -6,9 +6,7 @@ import java.awt.event.*;
 
 public class GamePanel extends JPanel
 {
-    JButton back;
-    JLabel line1;
-    
+    JButton back;    
     
     public GamePanel()
     {
@@ -26,7 +24,6 @@ public class GamePanel extends JPanel
         add(campuses,BorderLayout.CENTER);
         campuses.add(map);
         
- 
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
         
