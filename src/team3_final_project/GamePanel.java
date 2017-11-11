@@ -20,6 +20,7 @@ public class GamePanel extends JPanel
 
         JPanel campuses = new JPanel();
         campuses.setLayout(new BorderLayout());
+        campuses.setBackground(Color.black);
         campuses.setVisible(true);
         add(campuses,BorderLayout.CENTER);
         campuses.add(map);

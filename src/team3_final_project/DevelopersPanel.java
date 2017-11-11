@@ -18,6 +18,8 @@ public class DevelopersPanel extends JPanel
         aly.setBackground (Color.black);
         aly.setPreferredSize (new Dimension(250, 600));
         JLabel label1 = new JLabel ("Aly", SwingConstants.CENTER);
+        label1.setFont(new Font("Arial", Font.BOLD, 48));
+        label1.setForeground(Color.white);
         aly.add (label1,BorderLayout.CENTER);
         
         JPanel matt = new JPanel();
@@ -25,6 +27,8 @@ public class DevelopersPanel extends JPanel
         matt.setBackground (Color.black);
         matt.setPreferredSize (new Dimension(250, 600));
         JLabel label2 = new JLabel ("Matt", SwingConstants.CENTER);
+        label2.setFont(new Font("Arial", Font.BOLD, 48));
+        label2.setForeground(Color.white);
         matt.add (label2,BorderLayout.CENTER);
         
         JPanel valeri = new JPanel();
@@ -32,6 +36,8 @@ public class DevelopersPanel extends JPanel
         valeri.setBackground (Color.black);
         valeri.setPreferredSize (new Dimension(250, 600));
         JLabel label3 = new JLabel ("Valeri", SwingConstants.CENTER);
+        label3.setFont(new Font("Arial", Font.BOLD, 48));
+        label3.setForeground(Color.white);
         valeri.add (label3,BorderLayout.CENTER);
         
         JPanel developers = new JPanel();
