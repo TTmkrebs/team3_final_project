@@ -10,8 +10,18 @@ public class DevelopersPanel extends JPanel
     public DevelopersPanel()
     {
         super();
-        setBackground(Color.lightGray);
+        setBackground(Color.black);
         setLayout(new BorderLayout());
+        
+        JPanel aly = new JPanel();
+        JPanel matt = new JPanel();
+        JPanel valeri = new JPanel();
+        
+        JPanel developers = new JPanel();
+        add(developers,BorderLayout.CENTER);
+        developers.add(aly);
+        developers.add(matt);
+        developers.add(valeri);
         
         JLabel line1 = new JLabel("Testing Developers Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
