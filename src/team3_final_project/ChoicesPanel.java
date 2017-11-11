@@ -60,7 +60,8 @@ public class ChoicesPanel extends JPanel
         theme1.setLayout(new BorderLayout());
         theme1.setBackground (Color.yellow);
         theme1.setPreferredSize (new Dimension(250, 150));
-        JButton button4 = new JButton ("Theme 1");
+        ImageIcon psuFootball = new ImageIcon("images/football.jpg");
+        JButton button4 = new JButton ("Football Theme",psuFootball);
         theme1.add (button4,BorderLayout.CENTER);
         
         JPanel theme2 = new JPanel();
