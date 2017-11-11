@@ -16,6 +16,11 @@ public class MainPanel extends JPanel
         setBackground(Color.gray);
         setLayout(null);
         
+        ImageIcon gameLogo = new ImageIcon("images/gamelogo.png");
+        JLabel gameLogoImage = new JLabel(gameLogo);
+        add(gameLogoImage); 
+        gameLogoImage.setBounds(130, 50, 550, 350);
+        
         bInstruction = new JButton("Instructions");
         add(bInstruction);
         bInstruction.setBounds(new Rectangle(240,625,150,25));
