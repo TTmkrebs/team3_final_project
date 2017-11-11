@@ -23,7 +23,7 @@ public class DevelopersPanel extends JPanel
         developers.add(matt);
         developers.add(valeri);
         
-        JLabel line1 = new JLabel("Testing Developers Panel",SwingConstants.CENTER);
+        JLabel line1 = new JLabel("Testing Developer's Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
         
         back = new JButton("Main Menu");
