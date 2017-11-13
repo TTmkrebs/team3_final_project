@@ -5,11 +5,14 @@ import javax.swing.*;
 
 public class ChoicesPanel extends JPanel
 {
+    //back button
     JButton back;
+    //play button
     JButton bPlayGame;
     
     public ChoicesPanel()
     {
+        //setup choices panel
         super();
         setBackground(Color.cyan);
         setLayout(new BorderLayout());
@@ -17,13 +20,15 @@ public class ChoicesPanel extends JPanel
 //        JLabel line1 = new JLabel("Testing Choices Panel",SwingConstants.CENTER);
 //        add(line1,BorderLayout.CENTER);
         
+        //create and add play game button
         bPlayGame = new JButton("Play Game");
         add(bPlayGame,BorderLayout.SOUTH);
         
+        //create and add back button
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
         
-        
+        //create characters
         JPanel character1 = new JPanel();
         character1.setLayout(new BorderLayout());
         character1.setBackground (Color.yellow);
@@ -48,6 +53,7 @@ public class ChoicesPanel extends JPanel
         JButton button3 = new JButton (psuMascot);
         character3.add (button3,BorderLayout.CENTER);
         
+        //create and add characters panel
         JPanel characters = new JPanel();
         characters.setVisible(true);
 //        add(characters,BorderLayout.CENTER);
@@ -56,6 +62,7 @@ public class ChoicesPanel extends JPanel
         characters.add(character2);
         characters.add(character3);
         
+        //setup themes
         JPanel theme1 = new JPanel();
         theme1.setLayout(new BorderLayout());
         theme1.setBackground (Color.yellow);
@@ -80,6 +87,7 @@ public class ChoicesPanel extends JPanel
         JButton button6 = new JButton (psuFun);
         theme3.add (button6,BorderLayout.CENTER);
         
+        //create and add themes panel
         JPanel themes = new JPanel();
         themes.setVisible(true);
 //        add(themes,BorderLayout.CENTER);
@@ -88,6 +96,7 @@ public class ChoicesPanel extends JPanel
         themes.add(theme2);
         themes.add(theme3);
         
+        //create and add main choices panel
         JPanel mainChoices = new JPanel();
         mainChoices.setLayout(new GridLayout());
         mainChoices.setVisible(true);

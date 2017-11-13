@@ -9,10 +9,12 @@ public class DevelopersPanel extends JPanel
     
     public DevelopersPanel()
     {
+        //setup new panel type
         super();
         setBackground(Color.white);
         setLayout(new BorderLayout());
         
+        //dev 1 info panel
         JPanel aly = new JPanel();
         aly.setLayout(new BorderLayout());
         aly.setBackground (Color.black);
@@ -25,6 +27,7 @@ public class DevelopersPanel extends JPanel
         JLabel alyImage = new JLabel(alyIcon);
         aly.add(alyImage);
         
+        //dev 2 info panel
         JPanel matt = new JPanel();
         matt.setLayout(new BorderLayout());
         matt.setBackground (Color.black);
@@ -33,7 +36,11 @@ public class DevelopersPanel extends JPanel
         label2.setFont(new Font("Arial", Font.BOLD, 48));
         label2.setForeground(Color.white);
         matt.add (label2,BorderLayout.NORTH);
+        ImageIcon mattIcon = new ImageIcon("images/gc.jpg");
+        JLabel mattImage = new JLabel(mattIcon);
+        matt.add(mattImage);
         
+        //dev 3 info panel
         JPanel valeri = new JPanel();
         valeri.setLayout(new BorderLayout());
         valeri.setBackground (Color.black);
@@ -46,9 +53,7 @@ public class DevelopersPanel extends JPanel
         JLabel valeriImage = new JLabel(valeriIcon);
         valeri.add(valeriImage);
         
-         
-//        valeriImage.setBounds(130, 50, 550, 350);
-        
+        //setaup and add dev panel
         JPanel developers = new JPanel();
         developers.setVisible(true);
         add(developers,BorderLayout.CENTER);
@@ -57,6 +62,7 @@ public class DevelopersPanel extends JPanel
         developers.add(matt);
         developers.add(valeri);
         
+        //create and add back button
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
     }
