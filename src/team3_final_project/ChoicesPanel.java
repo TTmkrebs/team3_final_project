@@ -67,24 +67,24 @@ public class ChoicesPanel extends JPanel
         theme1.setLayout(new BorderLayout());
         theme1.setBackground (Color.yellow);
         theme1.setPreferredSize (new Dimension(250, 150));
-        ImageIcon psuFootball = new ImageIcon("images/footballtheme.png");
-        JButton button4 = new JButton (psuFootball);
+        ImageIcon psuColors = new ImageIcon("images/colorstheme.png");
+        JButton button4 = new JButton (psuColors);
         theme1.add (button4,BorderLayout.CENTER);
         
         JPanel theme2 = new JPanel();
         theme2.setLayout(new BorderLayout());
         theme2.setBackground (Color.green);
         theme2.setPreferredSize (new Dimension(250, 150));
-        ImageIcon psuAcademics = new ImageIcon("images/academicstheme.png");
-        JButton button5 = new JButton (psuAcademics);
+        ImageIcon snow = new ImageIcon("images/snowtheme.png");
+        JButton button5 = new JButton (snow);
         theme2.add (button5,BorderLayout.CENTER);
         
         JPanel theme3 = new JPanel();
         theme3.setLayout(new BorderLayout());
         theme3.setBackground (Color.orange);
         theme3.setPreferredSize (new Dimension(250, 150));
-        ImageIcon psuFun = new ImageIcon("images/funtheme.png");
-        JButton button6 = new JButton (psuFun);
+        ImageIcon vacation = new ImageIcon("images/vacationtheme.png");
+        JButton button6 = new JButton (vacation);
         theme3.add (button6,BorderLayout.CENTER);
         
         //create and add themes panel
