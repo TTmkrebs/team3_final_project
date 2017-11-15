@@ -22,5 +22,7 @@ public class GameBoard extends JPanel
         
         add(map, BorderLayout.CENTER);
 
+        
+        //COMMENT COMMENT
     }
 }      
