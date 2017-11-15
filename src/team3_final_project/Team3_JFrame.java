@@ -19,6 +19,9 @@ public class Team3_JFrame extends JFrame implements ActionListener
     JButton bDevs;
     JButton bBackToMain;
     JButton bBeginGame;
+    
+    //chosen character
+    String character;
 
     
     public Team3_JFrame()
@@ -114,7 +117,9 @@ public class Team3_JFrame extends JFrame implements ActionListener
             //hide main & choices panel and setup-show game panel
             main.setVisible(false);
             choices.setVisible(false);
+            character = choices.character;
             game = new GamePanel();
+            game.setCharacter(character);
             add(game, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setSize(800,700);

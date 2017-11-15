@@ -7,7 +7,9 @@ import java.awt.event.*;
 public class GamePanel extends JPanel
 {
     //back button
-    JButton back;    
+    JButton back;
+    //character
+    String character;
     
     public GamePanel()
     {
@@ -19,7 +21,7 @@ public class GamePanel extends JPanel
         //setup map image
         ImageIcon campusMap = new ImageIcon("images/campus_map_2.png");
         JLabel map = new JLabel(campusMap);
-        map.setBounds(0, 0, 740, 458);
+        map.setBounds(0,0,740,458);
         
         //setup and display campus panel
         JPanel campuses = new JPanel();
@@ -32,6 +34,10 @@ public class GamePanel extends JPanel
         //create and add back button
         back = new JButton("Main Menu");
         add(back,BorderLayout.NORTH);
-        
+    }
+    
+    public void setCharacter(String charName)
+    {
+        character = charName;
     }
 }      
