@@ -1,8 +1,8 @@
 package team3_final_project;
 
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Team3_JFrame extends JFrame implements ActionListener
 {
@@ -10,8 +10,9 @@ public class Team3_JFrame extends JFrame implements ActionListener
     MainPanel main;
     InstructionsPanel instr;
     ChoicesPanel choices;
-    GamePanel game;
+    GameBoard game;
     DevelopersPanel developers;
+    ControlPanel control;
     
     //buttons with listeners
     JButton bInstr;
@@ -40,7 +41,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
         //declare additional starting panels
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
-        game = new GamePanel();
+        game = new GameBoard("");
+        control = new ControlPanel("");
         developers = new DevelopersPanel();
         
         //assign instructions button and add listener
@@ -55,8 +57,6 @@ public class Team3_JFrame extends JFrame implements ActionListener
         //assign play game button in choices panel and add listener
         bBeginGame = choices.bPlayGame;
         bBeginGame.addActionListener(this);
-        
-        
     }
     
     @Override
@@ -104,7 +104,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            ////assign and add listener to play button
+            //assign and add listener to play button
             bBeginGame = choices.bPlayGame;
             bBeginGame.addActionListener(this);
             //assign and add listener to back button
@@ -114,20 +114,27 @@ public class Team3_JFrame extends JFrame implements ActionListener
         //if begin game button pressed...
         if(obj == bBeginGame)
         {
-            //hide main & choices panel and setup-show game panel
+            //hide main & choices panel
             main.setVisible(false);
             choices.setVisible(false);
+            
+            //read chosen character
             character = choices.character;
-            game = new GamePanel();
-            game.setCharacter(character);
-            add(game, "Center");
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
-            setSize(800,700);
-            setVisible(true);
-            setResizable(false);
-            //assign and add listener to back button
-            bBackToMain = game.back;
+            
+            //setup control panel
+            control = new ControlPanel(character);
+            add(control);
+            control.setBounds(new Rectangle(0,0,800,50));
+            control.setVisible(true);
+            bBackToMain = control.back;
             bBackToMain.addActionListener(this);
+            
+            //setup game panel
+            game = new GameBoard(character);
+            add(game);
+            game.setBounds(new Rectangle(0,50,800,650));
+            game.setVisible(true);
+            
         }
         //if go to back button pressed...
         if(obj == bBackToMain)
@@ -137,6 +144,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             game.setVisible(false);
             choices.setVisible(false);
             developers.setVisible(false);
+            control.setVisible(false);
             main.setVisible(true);
         } 
     }
