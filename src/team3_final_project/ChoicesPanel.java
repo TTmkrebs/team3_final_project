@@ -2,106 +2,100 @@ package team3_final_project;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 
-public class ChoicesPanel extends JPanel
+public class ChoicesPanel extends JPanel implements ActionListener
 {
     //back button
     JButton back;
     //play button
     JButton bPlayGame;
+    //char1 button
+    JButton char1;
+    //char2 button
+    JButton char2;
+    //char3 button
+    JButton char3;
+    //character text display
+    JTextField charText;
+    //character selection
+    String character;
     
     public ChoicesPanel()
     {
         //setup choices panel
         super();
         setBackground(Color.cyan);
-        setLayout(new BorderLayout());
-        
-//        JLabel line1 = new JLabel("Testing Choices Panel",SwingConstants.CENTER);
-//        add(line1,BorderLayout.CENTER);
+        setLayout(null);
         
         //create and add play game button
         bPlayGame = new JButton("Play Game");
-        add(bPlayGame,BorderLayout.SOUTH);
+        add(bPlayGame);
+        bPlayGame.setBounds(new Rectangle(50,625,200,25));
+        bPlayGame.setEnabled(false);
         
         //create and add back button
         back = new JButton("Main Menu");
-        add(back,BorderLayout.NORTH);
+        add(back);
+        back.setBounds(new Rectangle(575,625,200,25));
+        
+        //add label for characters
+        JLabel charLabel = new JLabel("Select Character:");
+        add(charLabel);
+        charLabel.setBounds(new Rectangle(350,50,200,25));
         
         //create characters
-        JPanel character1 = new JPanel();
-        character1.setLayout(new BorderLayout());
-        character1.setBackground (Color.yellow);
-        character1.setPreferredSize (new Dimension(250, 150));
         ImageIcon footballPlayer = new ImageIcon("images/footballplayer.png");
-        JButton button1 = new JButton (footballPlayer);
-        character1.add (button1,BorderLayout.CENTER);
+        char1 = new JButton(footballPlayer);
+        char1.addActionListener(this);
+        add(char1);
+        char1.setBounds(new Rectangle(125,100,150,150));
         
-        JPanel character2 = new JPanel();
-        character2.setLayout(new BorderLayout());
-        character2.setBackground (Color.green);
-        character2.setPreferredSize (new Dimension(250, 150));
         ImageIcon student = new ImageIcon("images/student.png");
-        JButton button2 = new JButton (student);
-        character2.add (button2,BorderLayout.CENTER);
+        char2 = new JButton(student);
+        char2.addActionListener(this);
+        add(char2);
+        char2.setBounds(new Rectangle(325,100,150,150));
         
-        JPanel character3 = new JPanel();
-        character3.setLayout(new BorderLayout());
-        character3.setBackground (Color.orange);
-        character3.setPreferredSize (new Dimension(250, 150));
         ImageIcon psuMascot = new ImageIcon("images/Penn State Mascot.jpg");
-        JButton button3 = new JButton (psuMascot);
-        character3.add (button3,BorderLayout.CENTER);
+        char3 = new JButton(psuMascot);
+        char3.addActionListener(this);
+        add(char3);
+        char3.setBounds(new Rectangle(525,100,150,150));
         
-        //create and add characters panel
-        JPanel characters = new JPanel();
-        characters.setVisible(true);
-//        add(characters,BorderLayout.CENTER);
+        //Create character selection display
+        JLabel charTextLabel = new JLabel("Chosen Character");
+        add(charTextLabel);
+        charTextLabel.setBounds(new Rectangle(350,275,150,25));
+        charText = new JTextField(20);
+        charText.setEditable(false);
+        add(charText);
+        charText.setBounds(new Rectangle(325,300,150,25));
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        Object obj = e.getSource();
+        if(obj == char1)
+        {
+            character = "Football Player";
+            charText.setText(character);
+        }
+        if(obj == char2)
+        {
+            character = "Student";
+            charText.setText(character);
+        }
+        if(obj == char3)
+        {
+            character = "Mascot";
+            charText.setText(character);
+        }
         
-        characters.add(character1);
-        characters.add(character2);
-        characters.add(character3);
-        
-        //setup themes
-        JPanel theme1 = new JPanel();
-        theme1.setLayout(new BorderLayout());
-        theme1.setBackground (Color.yellow);
-        theme1.setPreferredSize (new Dimension(250, 150));
-        ImageIcon psuColors = new ImageIcon("images/colorstheme.png");
-        JButton button4 = new JButton (psuColors);
-        theme1.add (button4,BorderLayout.CENTER);
-        
-        JPanel theme2 = new JPanel();
-        theme2.setLayout(new BorderLayout());
-        theme2.setBackground (Color.green);
-        theme2.setPreferredSize (new Dimension(250, 150));
-        ImageIcon snow = new ImageIcon("images/snowtheme.png");
-        JButton button5 = new JButton (snow);
-        theme2.add (button5,BorderLayout.CENTER);
-        
-        JPanel theme3 = new JPanel();
-        theme3.setLayout(new BorderLayout());
-        theme3.setBackground (Color.orange);
-        theme3.setPreferredSize (new Dimension(250, 150));
-        ImageIcon vacation = new ImageIcon("images/vacationtheme.png");
-        JButton button6 = new JButton (vacation);
-        theme3.add (button6,BorderLayout.CENTER);
-        
-        //create and add themes panel
-        JPanel themes = new JPanel();
-        themes.setVisible(true);
-//        add(themes,BorderLayout.CENTER);
-        
-        themes.add(theme1);
-        themes.add(theme2);
-        themes.add(theme3);
-        
-        //create and add main choices panel
-        JPanel mainChoices = new JPanel();
-        mainChoices.setLayout(new GridLayout());
-        mainChoices.setVisible(true);
-        mainChoices.add(characters);
-        mainChoices.add(themes);
-        add(mainChoices,BorderLayout.CENTER);
+        if(character != null)
+        {
+            bPlayGame.setEnabled(true);
+        }
     }
 }
