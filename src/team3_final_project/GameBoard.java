@@ -17,7 +17,7 @@ public class GameBoard extends JPanel
         setLayout(new BorderLayout());
         
         /* setup campusMap image */
-        ImageIcon campusMap = new ImageIcon("images/campus_map_2.png");
+        ImageIcon campusMap = new ImageIcon("images/general/campus_map_2.png");
         JLabel map = new JLabel(campusMap);
         /* add campusMap image */
         add(map, BorderLayout.CENTER);
