@@ -20,6 +20,7 @@ public class ChoicesPanel extends JPanel implements ActionListener
     JTextField charText;
     /* declare variable to hold character selection value */
     String character;
+    JPanel innerChoicesPanel;
     
     public ChoicesPanel()
     {

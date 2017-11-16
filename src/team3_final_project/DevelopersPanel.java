@@ -7,6 +7,7 @@ public class DevelopersPanel extends JPanel
 {
        /* declare bBackMainMenu button to display MainPanel */
     JButton bBackMainMenu;
+    JPanel allDevelopers;
     
     public DevelopersPanel()
     {
@@ -54,15 +55,15 @@ public class DevelopersPanel extends JPanel
         JLabel valeriImage = new JLabel(valeriIcon);
         valeri.add(valeriImage);
         
-        /* create setup and add panel to contain all developer panels */
-        JPanel developers = new JPanel();
-        developers.setVisible(true);
-        add(developers,BorderLayout.CENTER);
+        /* create setup and add allDevelopers panel to contain individual developer panels */
+        allDevelopers = new JPanel();
+        allDevelopers.setVisible(true);
+        add(allDevelopers,BorderLayout.CENTER);
         
         /* add all developer panels */
-        developers.add(aly);
-        developers.add(matt);
-        developers.add(valeri);
+        allDevelopers.add(aly);
+        allDevelopers.add(matt);
+        allDevelopers.add(valeri);
         
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
