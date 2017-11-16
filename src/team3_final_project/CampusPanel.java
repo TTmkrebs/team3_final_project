@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class CampusPanel extends JPanel
 {
-    String campus;
+    String campusName;
     ImageIcon characterImage;
     ImageIcon campusImage;
     ImageIcon campusLogo;
@@ -15,10 +15,10 @@ public class CampusPanel extends JPanel
     JButton backMap;
     JButton backMainMenu;
     
-    public CampusPanel(String inCampus)
+    public CampusPanel(String inCampusName)
     {
         super();
-        campus = inCampus;
+        campusName = inCampusName;
         
         setBackground(Color.gray);
         setLayout(null);
