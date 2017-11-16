@@ -18,7 +18,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
     JButton bInstr;
     JButton bGoToGame; 
     JButton bDevs;
-    JButton bBackToMain;
+    JButton bBackMainMenu;
     JButton bBeginGame;
     
     /* chosen character */
@@ -74,30 +74,32 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            /* assign and add listener to backMainMenu button */
-            bBackToMain = instr.backMainMenu;
-            bBackToMain.addActionListener(this);
+            /* assign and add listener to bBackMainMenu button */
+            bBackMainMenu = instr.bBackMainMenu;
+            bBackMainMenu.addActionListener(this);
         }
-        /* if developers button pressed... */
+        /* if bDevs button pressed... */
         if(obj == bDevs)
         {
-            /* hide main panel and setup-show developers panel */
+            /* hide main panel */
             main.setVisible(false);
+            /* setup and show developers panel */
             developers = new DevelopersPanel();
             add(developers, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            /* assign and add listener to backMainMenu button */
-            bBackToMain = developers.backMainMenu;
-            bBackToMain.addActionListener(this);
+            /* assign and add listener to bBackMainMenu button */
+            bBackMainMenu = developers.bBackMainMenu;
+            bBackMainMenu.addActionListener(this);
         }
-        /* if go to game button pressed... */
+        /* if bGoToGame button pressed... */
         if(obj == bGoToGame)
         {
-            /* hide main panel and setup-show choices panel */
+            /* hide main panel */
             main.setVisible(false);
+            /* setup and show choices panel */
             choices = new ChoicesPanel();
             add(choices, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -107,11 +109,11 @@ public class Team3_JFrame extends JFrame implements ActionListener
             /* assign and add listener to play button */
             bBeginGame = choices.bPlayGame;
             bBeginGame.addActionListener(this);
-            /* assign and add listener to backMainMenu button */
-            bBackToMain = choices.backMainMenu;
-            bBackToMain.addActionListener(this);
+            /* assign and add listener to bBackMainMenu button */
+            bBackMainMenu = choices.bBackMainMenu;
+            bBackMainMenu.addActionListener(this);
         }
-        /* if begin game button pressed... */
+        /* if bBeginGame button pressed... */
         if(obj == bBeginGame)
         {
             /* hide main & choices panel */
@@ -126,8 +128,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
             add(control);
             control.setBounds(new Rectangle(0,0,800,50));
             control.setVisible(true);
-            bBackToMain = control.back;
-            bBackToMain.addActionListener(this);
+            bBackMainMenu = control.back;
+            bBackMainMenu.addActionListener(this);
             
             /* setup game panel */
             game = new GameBoard(character);
@@ -136,8 +138,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
             game.setVisible(true);
             
         }
-        /* if go to backMainMenu button pressed... */
-        if(obj == bBackToMain)
+        /* if bBackMainMenu button pressed... */
+        if(obj == bBackMainMenu)
         {
             /* hide all panels except main panel */
             instr.setVisible(false);

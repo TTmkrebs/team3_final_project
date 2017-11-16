@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class ChoicesPanel extends JPanel implements ActionListener
 {
     /* back button */
-    JButton backMainMenu;
+    JButton bBackMainMenu;
     /* play button */
     JButton bPlayGame;
     /* char1 button */
@@ -34,10 +34,10 @@ public class ChoicesPanel extends JPanel implements ActionListener
         bPlayGame.setBounds(new Rectangle(575,625,200,25));
         bPlayGame.setEnabled(false);
         
-        /* create and add backMainMenu button */
-        backMainMenu = new JButton("Main Menu");
-        add(backMainMenu);
-        backMainMenu.setBounds(new Rectangle(50,625,200,25));
+        /* create and add bBackMainMenu button */
+        bBackMainMenu = new JButton("Main Menu");
+        add(bBackMainMenu);
+        bBackMainMenu.setBounds(new Rectangle(50,625,200,25));
         
         /* add label for characters */
         JLabel charLabel = new JLabel("Select Character:");

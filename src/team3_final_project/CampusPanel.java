@@ -14,7 +14,7 @@ public class CampusPanel extends JPanel
     ImageIcon campusLogo;
     int currentPoints;
     JButton backMap;
-    JButton backMainMenu;
+    JButton bBackMainMenu;
     
     public CampusPanel(String inCampusName)
     {

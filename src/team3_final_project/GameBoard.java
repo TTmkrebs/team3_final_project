@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class GameBoard extends JPanel
 {
     /* back button */
-    JButton backMainMenu;    
+    JButton bBackMainMenu;    
     
     public GameBoard(String charName)
     {
