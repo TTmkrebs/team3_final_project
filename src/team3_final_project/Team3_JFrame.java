@@ -2,9 +2,11 @@ package team3_final_project;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import javax.imageio.*;
 import javax.swing.*;
 
-public class Team3_JFrame extends JFrame implements ActionListener
+public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
 {
     /* create panels */
     MainPanel main;
@@ -23,9 +25,15 @@ public class Team3_JFrame extends JFrame implements ActionListener
     
     /* store value for selected character */
     String character;
+    ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
+    Image charImage = charIcon.getImage();
+    
+    /* campus map image and icon */
+    ImageIcon map = new ImageIcon("images/general/campus_map_2.png");
+    Image mapImage = map.getImage();
 
     
-    public Team3_JFrame()
+    public Team3_JFrame() throws IOException
     {
         /* setup new JFrame */
         super("Team 3 - Penn State Explorer");
@@ -41,7 +49,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
         /* create additional starting panels */
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
-        game = new GameBoard("");
+        game = new GameBoard(mapImage);
         control = new ControlPanel("");
         developers = new DevelopersPanel();
         
@@ -132,12 +140,19 @@ public class Team3_JFrame extends JFrame implements ActionListener
             bBackMainMenu = control.bBackMainMenu;
             bBackMainMenu.addActionListener(this);
             
-            /* setup GameBoard */
-            game = new GameBoard(character);
-            add(game);
-            game.setBounds(new Rectangle(0,50,800,650));
-            game.setVisible(true);
+            JPanel gameFrame = new JPanel();
+            gameFrame.setLayout(null);
+            add(gameFrame);
+            gameFrame.setBounds(new Rectangle(0,50,800,650));
             
+            PlayerIcon player = new PlayerIcon(charImage);
+            gameFrame.add(player);
+            player.setBounds(new Rectangle(100,200,100,120));
+            
+            game = new GameBoard(mapImage);
+            game.addKeyListener(this);
+            gameFrame.add(game);
+            game.setBounds(new Rectangle(0,100,800,650));
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
@@ -150,5 +165,23 @@ public class Team3_JFrame extends JFrame implements ActionListener
             control.setVisible(false);
             main.setVisible(true);
         } 
+    }
+    
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        int i = e.getKeyCode();
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e)
+    {
+        int i = e.getKeyCode();
+    }
+    
+    @Override
+    public void keyTyped(KeyEvent e)
+    {
+        int i = e.getKeyCode();
     }
 }
