@@ -7,17 +7,18 @@ import javax.swing.*;
 
 public class CampusPanel extends JPanel
 {
-    String theme;
+    String campus;
     ImageIcon characterImage;
-    int currentPoints;
+    ImageIcon campusImage;
     ImageIcon campusLogo;
+    int currentPoints;
     JButton backMap;
     JButton backMainMenu;
     
-    public CampusPanel(String inTheme)
+    public CampusPanel(String inCampus)
     {
         super();
-        theme = inTheme;
+        campus = inCampus;
         
         setBackground(Color.gray);
         setLayout(null);
