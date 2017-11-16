@@ -6,7 +6,7 @@ import javax.swing.*;
 public class InstructionsPanel extends JPanel
 {
     //back button
-    JButton back;
+    JButton backMainMenu;
     //go to game button
     JButton goToGame;
     
@@ -21,8 +21,8 @@ public class InstructionsPanel extends JPanel
         JLabel line1 = new JLabel("Testing Instructions Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
         
-        //create and add back button
-        back = new JButton("Main Menu");
-        add(back,BorderLayout.NORTH);
+        //create and add backMainMenu button
+        backMainMenu = new JButton("Main Menu");
+        add(backMainMenu,BorderLayout.NORTH);
     }
 }

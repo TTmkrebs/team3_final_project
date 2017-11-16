@@ -74,8 +74,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            //assign and add listener to back button
-            bBackToMain = instr.back;
+            //assign and add listener to backMainMenu button
+            bBackToMain = instr.backMainMenu;
             bBackToMain.addActionListener(this);
         }
         //if developers button pressed...
@@ -89,8 +89,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            //assign and add listener to back button
-            bBackToMain = developers.back;
+            //assign and add listener to backMainMenu button
+            bBackToMain = developers.backMainMenu;
             bBackToMain.addActionListener(this);
         }
         //if go to game button pressed...
@@ -107,8 +107,8 @@ public class Team3_JFrame extends JFrame implements ActionListener
             //assign and add listener to play button
             bBeginGame = choices.bPlayGame;
             bBeginGame.addActionListener(this);
-            //assign and add listener to back button
-            bBackToMain = choices.back;
+            //assign and add listener to backMainMenu button
+            bBackToMain = choices.backMainMenu;
             bBackToMain.addActionListener(this);
         }
         //if begin game button pressed...
@@ -136,7 +136,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             game.setVisible(true);
             
         }
-        //if go to back button pressed...
+        //if go to backMainMenu button pressed...
         if(obj == bBackToMain)
         {
             //hide all panels except main panel

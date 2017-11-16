@@ -8,6 +8,11 @@ import javax.swing.*;
 public class CampusPanel extends JPanel
 {
     String theme;
+    ImageIcon characterImage;
+    int currentPoints;
+    ImageIcon campusLogo;
+    JButton backMap;
+    JButton backMainMenu;
     
     public CampusPanel(String inTheme)
     {

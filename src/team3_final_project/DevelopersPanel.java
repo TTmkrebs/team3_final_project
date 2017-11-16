@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class DevelopersPanel extends JPanel
 {
-    JButton back;
+    JButton backMainMenu;
     
     public DevelopersPanel()
     {
@@ -62,8 +62,8 @@ public class DevelopersPanel extends JPanel
         developers.add(matt);
         developers.add(valeri);
         
-        //create and add back button
-        back = new JButton("Main Menu");
-        add(back,BorderLayout.NORTH);
+        //create and add backMainMenu button
+        backMainMenu = new JButton("Main Menu");
+        add(backMainMenu,BorderLayout.NORTH);
     }
 }
