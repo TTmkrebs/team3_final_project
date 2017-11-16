@@ -1,21 +1,20 @@
 package team3_final_project;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class PlayerIcon extends JPanel
 {
-    Image background;
-    
-    public PlayerIcon(Image image)
-    {       
-        background = image;
-    }
-    
-    @Override
-    public void paintComponent(Graphics g)
+    public PlayerIcon()
     {
-        super.paintComponent(g);
-        g.drawImage(background,0,0,this);
+        setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(100,100));
+        
+        JLabel icon = new JLabel();
+        icon.setLayout(new BorderLayout());
+        icon.setIcon(new ImageIcon("images/general/paw_print_black.png"));
+        add(icon);
     }
+
 }      

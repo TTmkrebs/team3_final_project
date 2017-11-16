@@ -6,16 +6,35 @@ import javax.swing.*;
 public class GameBoard extends JPanel
 {
     Image background;
+    int x = 0;
+    int y = 0;
     
     public GameBoard(Image image)
     {       
+        setBackground(Color.white);
+        setLayout(null);
         background = image;
+    }
+    
+    public void focus()
+    {
+        requestFocus();
+    }
+    
+    public void setX(int inX)
+    {
+        x = inX;
+    }
+    
+    public void setY(int inY)
+    {
+        y = inY;
     }
     
     @Override
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        g.drawImage(background,0,0,this);
+        g.drawImage(background,x,y,this);
     }
 }      
