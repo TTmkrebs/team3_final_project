@@ -31,13 +31,13 @@ public class ChoicesPanel extends JPanel implements ActionListener
         //create and add play game button
         bPlayGame = new JButton("Play Game");
         add(bPlayGame);
-        bPlayGame.setBounds(new Rectangle(50,625,200,25));
+        bPlayGame.setBounds(new Rectangle(575,625,200,25));
         bPlayGame.setEnabled(false);
         
         //create and add backMainMenu button
         backMainMenu = new JButton("Main Menu");
         add(backMainMenu);
-        backMainMenu.setBounds(new Rectangle(575,625,200,25));
+        backMainMenu.setBounds(new Rectangle(50,625,200,25));
         
         //add label for characters
         JLabel charLabel = new JLabel("Select Character:");
