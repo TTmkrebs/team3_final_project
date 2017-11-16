@@ -21,7 +21,7 @@ public class MainPanel extends JPanel
         setLayout(null);
         
         //create and add game logo
-        ImageIcon gameLogo = new ImageIcon("images/gamelogo.png");
+        ImageIcon gameLogo = new ImageIcon("images/text_graphics/gamelogo.png");
         JLabel gameLogoImage = new JLabel(gameLogo);
         add(gameLogoImage); 
         gameLogoImage.setBounds(130, 50, 550, 350);

@@ -23,7 +23,7 @@ public class DevelopersPanel extends JPanel
         label1.setFont(new Font("Arial", Font.BOLD, 48));
         label1.setForeground(Color.white);
         aly.add (label1,BorderLayout.NORTH);
-        ImageIcon alyIcon = new ImageIcon("images/aly.jpg");
+        ImageIcon alyIcon = new ImageIcon("images/developers/aly.jpg");
         JLabel alyImage = new JLabel(alyIcon);
         aly.add(alyImage);
         
@@ -36,7 +36,7 @@ public class DevelopersPanel extends JPanel
         label2.setFont(new Font("Arial", Font.BOLD, 48));
         label2.setForeground(Color.white);
         matt.add (label2,BorderLayout.NORTH);
-        ImageIcon mattIcon = new ImageIcon("images/gc.jpg");
+        ImageIcon mattIcon = new ImageIcon("images/developers/gc.jpg");
         JLabel mattImage = new JLabel(mattIcon);
         matt.add(mattImage);
         
@@ -49,7 +49,7 @@ public class DevelopersPanel extends JPanel
         label3.setFont(new Font("Arial", Font.BOLD, 48));
         label3.setForeground(Color.white);
         valeri.add (label3,BorderLayout.NORTH);
-        ImageIcon valeriIcon = new ImageIcon("images/valeri.png");
+        ImageIcon valeriIcon = new ImageIcon("images/developers/valeri.png");
         JLabel valeriImage = new JLabel(valeriIcon);
         valeri.add(valeriImage);
         

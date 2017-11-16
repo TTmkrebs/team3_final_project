@@ -45,19 +45,19 @@ public class ChoicesPanel extends JPanel implements ActionListener
         charLabel.setBounds(new Rectangle(350,50,200,25));
         
         //create characters
-        ImageIcon footballPlayer = new ImageIcon("images/footballplayer.png");
+        ImageIcon footballPlayer = new ImageIcon("images/characters/footballplayer.png");
         char1 = new JButton(footballPlayer);
         char1.addActionListener(this);
         add(char1);
         char1.setBounds(new Rectangle(125,100,150,150));
         
-        ImageIcon student = new ImageIcon("images/student.png");
+        ImageIcon student = new ImageIcon("images/characters/student.png");
         char2 = new JButton(student);
         char2.addActionListener(this);
         add(char2);
         char2.setBounds(new Rectangle(325,100,150,150));
         
-        ImageIcon psuMascot = new ImageIcon("images/Penn State Mascot.jpg");
+        ImageIcon psuMascot = new ImageIcon("images/characters/mascot.jpg");
         char3 = new JButton(psuMascot);
         char3.addActionListener(this);
         add(char3);
