@@ -21,6 +21,5 @@ public class GameBoard extends JPanel
         JLabel map = new JLabel(campusMap);
         /* add campusMap image */
         add(map, BorderLayout.CENTER);
-
     }
 }      
