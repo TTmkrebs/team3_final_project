@@ -28,7 +28,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
     public Team3_JFrame()
     {
         /* setup new JFrame */
-        super("Team 3 - Penn State Adventure");
+        super("Team 3 - Penn State Explorer");
 
         /* add main panel */
         main = new MainPanel();
