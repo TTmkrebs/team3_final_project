@@ -5,16 +5,17 @@ import javax.swing.*;
 
 public class DevelopersPanel extends JPanel
 {
+       /* declare bBackMainMenu button to display MainPanel */
     JButton bBackMainMenu;
     
     public DevelopersPanel()
     {
-        /* setup new panel type */
+        /* setup DevelopersPanel */
         super();
         setBackground(Color.white);
         setLayout(new BorderLayout());
         
-        /* dev 1 info panel */
+        /* create and setup panel for developer Aly */
         JPanel aly = new JPanel();
         aly.setLayout(new BorderLayout());
         aly.setBackground (Color.black);
@@ -27,7 +28,7 @@ public class DevelopersPanel extends JPanel
         JLabel alyImage = new JLabel(alyIcon);
         aly.add(alyImage);
         
-        /* dev 2 info panel */
+        /* create and setup panel for developer Matt */
         JPanel matt = new JPanel();
         matt.setLayout(new BorderLayout());
         matt.setBackground (Color.black);
@@ -40,7 +41,7 @@ public class DevelopersPanel extends JPanel
         JLabel mattImage = new JLabel(mattIcon);
         matt.add(mattImage);
         
-        /* dev 3 info panel */
+        /* create and setup panel for developer Valeri */
         JPanel valeri = new JPanel();
         valeri.setLayout(new BorderLayout());
         valeri.setBackground (Color.black);
@@ -53,11 +54,12 @@ public class DevelopersPanel extends JPanel
         JLabel valeriImage = new JLabel(valeriIcon);
         valeri.add(valeriImage);
         
-        /* setup and add dev panel */
+        /* create setup and add panel to contain all developer panels */
         JPanel developers = new JPanel();
         developers.setVisible(true);
         add(developers,BorderLayout.CENTER);
         
+        /* add all developer panels */
         developers.add(aly);
         developers.add(matt);
         developers.add(valeri);

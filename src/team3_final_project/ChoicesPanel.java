@@ -6,29 +6,29 @@ import java.awt.event.*;
 
 public class ChoicesPanel extends JPanel implements ActionListener
 {
-    /* back button */
+    /* declare bBackMainMenu button to display MainPanel */
     JButton bBackMainMenu;
-    /* play button */
+    /* declare bPlayGame button */
     JButton bPlayGame;
-    /* char1 button */
+    /* declare char1 button */
     JButton char1;
-    /* char2 button */
+    /* declare char2 button */
     JButton char2;
-    /* char3 button */
+    /* declare char3 button */
     JButton char3;
-    /* character text display */
+    /* declare charText display */
     JTextField charText;
-    /* character selection */
+    /* declare variable to hold character selection value */
     String character;
     
     public ChoicesPanel()
     {
-        /* setup choices panel */
+        /* setup ChoicesPanel */
         super();
         setBackground(Color.cyan);
         setLayout(null);
         
-        /* create and add play game button */
+        /* create and add bPlayGame button */
         bPlayGame = new JButton("Play Game");
         add(bPlayGame);
         bPlayGame.setBounds(new Rectangle(575,625,200,25));
@@ -63,7 +63,7 @@ public class ChoicesPanel extends JPanel implements ActionListener
         add(char3);
         char3.setBounds(new Rectangle(525,100,150,150));
         
-        /* Create character selection display */
+        /* create character selection display */
         JLabel charTextLabel = new JLabel("Chosen Character");
         add(charTextLabel);
         charTextLabel.setBounds(new Rectangle(350,275,150,25));

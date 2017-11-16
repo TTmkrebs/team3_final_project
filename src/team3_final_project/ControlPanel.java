@@ -5,14 +5,14 @@ import javax.swing.*;
 
 public class ControlPanel extends JPanel
 {
-    /* Score Field */
+    /* create scoreField */
     JTextField scoreField;
-    /* Score */
+    /* create and initialize score variable to store score value */
     int score = 0;
-    /* character */
+    /* create and initialize character variable to store selected character value */
     String character;
-    /* back button */
-    JButton back;
+    /* declare bBackMainMenu button */
+    JButton bBackMainMenu;
     
     public ControlPanel(String charName)
     {
@@ -22,22 +22,24 @@ public class ControlPanel extends JPanel
         
         character = charName;
         
-        /* initialize control panel items */
+        /* initialize ControlPanel items */
         scoreField = new JTextField(11);
         scoreField.setEnabled(false);
         scoreField.setText("Score: " + score);
         
-        back = new JButton("Main Menu");
+        /* create new bBackMainMenu button */
+        bBackMainMenu = new JButton("Main Menu");
+        /* add bBackMainMenu button */
+        add(bBackMainMenu);
+        bBackMainMenu.setBounds(new Rectangle(300,10,200,25));
         
+        /* setup and add control panel items */
         JTextField charDisplay = new JTextField(30);
         charDisplay.setEnabled(false);
         charDisplay.setText("Playing as " + character);
-        
-        /* add control panel items */
         add(scoreField);
         scoreField.setBounds(new Rectangle(10,10,100,25));
-        add(back);
-        back.setBounds(new Rectangle(300,10,200,25));
+        
         add(charDisplay);
         charDisplay.setBounds(new Rectangle(610,10,175,25));
     }

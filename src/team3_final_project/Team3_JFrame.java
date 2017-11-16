@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Team3_JFrame extends JFrame implements ActionListener
 {
-    /* panel types */
+    /* create panels */
     MainPanel main;
     InstructionsPanel instr;
     ChoicesPanel choices;
@@ -14,20 +14,20 @@ public class Team3_JFrame extends JFrame implements ActionListener
     DevelopersPanel developers;
     ControlPanel control;
     
-    /* buttons with listeners */
+    /* create buttons with listeners */
     JButton bInstr;
     JButton bGoToGame; 
     JButton bDevs;
     JButton bBackMainMenu;
     JButton bBeginGame;
     
-    /* chosen character */
+    /* store value for selected character */
     String character;
 
     
     public Team3_JFrame()
     {
-        /* setup new frame */
+        /* setup new JFrame */
         super("Team 3 - Penn State Adventure");
 
         /* add main panel */
@@ -38,7 +38,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
         setVisible(true);
         setResizable(false);
         
-        /* declare additional starting panels */
+        /* create additional starting panels */
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
         game = new GameBoard("");
@@ -63,11 +63,12 @@ public class Team3_JFrame extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         Object obj = e.getSource();
-        /* if instructions button pressed... */
+        /* if bInstr button pressed... */
         if(obj == bInstr)
         {
-            /* hide main panel and setup-show instructions panel */
+            /* hide main panel */
             main.setVisible(false);
+            /* setup and show instructions panel */
             instr = new InstructionsPanel();
             add(instr, "Center");
             setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -106,7 +107,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
             setSize(800,700);
             setVisible(true);
             setResizable(false);
-            /* assign and add listener to play button */
+            /* assign and add listener to bBeginGame button */
             bBeginGame = choices.bPlayGame;
             bBeginGame.addActionListener(this);
             /* assign and add listener to bBackMainMenu button */
@@ -123,15 +124,15 @@ public class Team3_JFrame extends JFrame implements ActionListener
             /* read chosen character */
             character = choices.character;
             
-            /* setup control panel */
+            /* setup ControlPanel */
             control = new ControlPanel(character);
             add(control);
             control.setBounds(new Rectangle(0,0,800,50));
             control.setVisible(true);
-            bBackMainMenu = control.back;
+            bBackMainMenu = control.bBackMainMenu;
             bBackMainMenu.addActionListener(this);
             
-            /* setup game panel */
+            /* setup GameBoard */
             game = new GameBoard(character);
             add(game);
             game.setBounds(new Rectangle(0,50,800,650));
