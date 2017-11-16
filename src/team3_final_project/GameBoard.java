@@ -6,23 +6,21 @@ import java.awt.event.*;
 
 public class GameBoard extends JPanel
 {
-    //back button
+    /* back button */
     JButton backMainMenu;    
     
     public GameBoard(String charName)
     {
-        //setup new panel type
+        /* setup new panel type */
         super();
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        //setup map image
+        /* setup map image */
         ImageIcon campusMap = new ImageIcon("images/campus_map_2.png");
         JLabel map = new JLabel(campusMap);
         
         add(map, BorderLayout.CENTER);
 
-        
-        //COMMENT COMMENT
     }
 }      

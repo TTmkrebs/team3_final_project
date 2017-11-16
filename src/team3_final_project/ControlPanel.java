@@ -5,13 +5,13 @@ import javax.swing.*;
 
 public class ControlPanel extends JPanel
 {
-    //Score Field
+    /* Score Field */
     JTextField scoreField;
-    //Score
+    /* Score */
     int score = 0;
-    //character
+    /* character */
     String character;
-    //back button
+    /* back button */
     JButton back;
     
     public ControlPanel(String charName)
@@ -22,7 +22,7 @@ public class ControlPanel extends JPanel
         
         character = charName;
         
-        //initialize control panel items
+        /* initialize control panel items */
         scoreField = new JTextField(11);
         scoreField.setEnabled(false);
         scoreField.setText("Score: " + score);
@@ -33,7 +33,7 @@ public class ControlPanel extends JPanel
         charDisplay.setEnabled(false);
         charDisplay.setText("Playing as " + character);
         
-        //add control panel items
+        /* add control panel items */
         add(scoreField);
         scoreField.setBounds(new Rectangle(10,10,100,25));
         add(back);

@@ -5,23 +5,23 @@ import javax.swing.*;
 
 public class InstructionsPanel extends JPanel
 {
-    //back button
+    /* back button */
     JButton backMainMenu;
-    //go to game button
+    /* go to game button */
     JButton goToGame;
     
     public InstructionsPanel()
     {
-        //setup new panel type
+        /* setup new panel type */
         super();
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
         
-        //create and add new label
+        /* create and add new label */
         JLabel line1 = new JLabel("Testing Instructions Panel",SwingConstants.CENTER);
         add(line1,BorderLayout.CENTER);
         
-        //create and add backMainMenu button
+        /* create and add backMainMenu button */
         backMainMenu = new JButton("Main Menu");
         add(backMainMenu,BorderLayout.NORTH);
     }

@@ -7,6 +7,7 @@ import javax.swing.*;
 
 public class CampusPanel extends JPanel
 {
+    /* create campus attributes */
     String campusName;
     ImageIcon characterImage;
     ImageIcon campusImage;
@@ -17,11 +18,14 @@ public class CampusPanel extends JPanel
     
     public CampusPanel(String inCampusName)
     {
+        /* setup CampusPanel */
         super();
-        campusName = inCampusName;
-        
         setBackground(Color.gray);
         setLayout(null);
+        
+        campusName = inCampusName;
+        
+        
         
     }
 }
