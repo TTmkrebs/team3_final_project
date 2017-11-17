@@ -10,9 +10,11 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     MainPanel main;
     InstructionsPanel instr;
     ChoicesPanel choices;
-    GameBoard game;
+    MapCampusesPanel mapCampuses;
     DevelopersPanel developers;
     ControlPanel control;
+    GameFullPanel game;
+    CreditsPanel credits;
     
     /* create buttons with listeners */
     JButton bInstr;
@@ -23,10 +25,12 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     
     /* store value for selected character */
     String character;
+    /* store value for selected selectedCampus */
+    String selectedCampus;
     ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
     Image charImage = charIcon.getImage();
     
-    /* campus map image on GameBoard*/
+    /* selectedCampus map image on MapCampusesPanel*/
     ImageIcon map = new ImageIcon("images/general/campus_map_2.png");
     Image mapImage = map.getImage();
     
@@ -51,20 +55,22 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         /* create additional starting panels */
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
-        game = new GameBoard(mapImage);
+        mapCampuses = new MapCampusesPanel(mapImage);
         control = new ControlPanel("");
         developers = new DevelopersPanel();
+        credits = new CreditsPanel();
+        game = new GameFullPanel(selectedCampus);
         
         /* assign instructions button and add listener */
         bInstr = main.bInstruction;
         bInstr.addActionListener(this);
-        /* assign go to game button and add listener */
+        /* assign go to mapCampuses button and add listener */
         bGoToGame = main.bEnterGame;
         bGoToGame.addActionListener(this);
         /* assign developers button and add listener */
         bDevs = main.bDevs;
         bDevs.addActionListener(this);
-        /* assign play game button in choices panel and add listener */
+        /* assign play mapCampuses button in choices panel and add listener */
         bBeginGame = choices.bPlayGame;
         bBeginGame.addActionListener(this);
     }
@@ -142,29 +148,29 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             bBackMainMenu = control.bBackMainMenu;
             bBackMainMenu.addActionListener(this);
               
-            /* setup GameBoard */
-            game = new GameBoard(mapImage);
-            game.setX(0);
-            game.setY(100);
-            game.addKeyListener(this);
-            add(game);
-            game.setBounds(new Rectangle(0,50,800,650));
+            /* setup MapCampusesPanel */
+            mapCampuses = new MapCampusesPanel(mapImage);
+            mapCampuses.setX(0);
+            mapCampuses.setY(100);
+            mapCampuses.addKeyListener(this);
+            add(mapCampuses);
+            mapCampuses.setBounds(new Rectangle(0,50,800,650));
             
             /* setup PlayerIcon */
             p1X = 150;
             p1Y = 150;
             player = new PlayerIcon();
-            game.add(player);
+            mapCampuses.add(player);
             player.setBounds(new Rectangle(p1X,p1Y,50,50));
             
-            game.focus();
+            mapCampuses.focus();
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
         {
             /* hide all panels except main panel */
             instr.setVisible(false);
-            game.setVisible(false);
+            mapCampuses.setVisible(false);
             choices.setVisible(false);
             developers.setVisible(false);
             control.setVisible(false);
@@ -176,7 +182,6 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e)
     {
         int i = e.getKeyCode();
-        String campus;
         
         if(i == e.VK_LEFT)
         {
@@ -211,35 +216,77 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             }
         }
         
-        /* if paw icon is over Shenango, enter campus */
+        /* if paw icon is over Shenango, enter selectedCampus */
         if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
         {
-            campus  = "Shenango";
+            selectedCampus  = "Shenango";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
-        /* if paw icon is over World Campus, enter campus */
-        if(p1X > 300 && p1X < 465 && p1Y > 60 && p1Y < 120)
+        /* if paw icon is over World Campus, enter selectedCampus */
+        if(p1X > 300 && p1X < 330 && p1Y > 160 && p1Y < 190)
         {
-            campus  = "World Campus";
+            selectedCampus  = "World Campus";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
-        /* if paw icon is over Greater Allegheny, enter campus */
+        /* if paw icon is over Greater Allegheny, enter selectedCampus */
         if(p1X > 92 && p1X < 120 && p1Y > 440 && p1Y < 462)
         {
-            campus  = "Greater Allegheny";
+            selectedCampus  = "Greater Allegheny";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
-        /* if paw icon is over University Park, enter campus */
+        /* if paw icon is over University Park, enter selectedCampus */
         if(p1X > 352 && p1X < 381 && p1Y > 346 && p1Y < 369)
         {
-            campus  = "University Park";
+            selectedCampus  = "University Park";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
-        /* if paw icon is over Worthington Scranton, enter campus */
+        /* if paw icon is over Worthington Scranton, enter selectedCampus */
         if(p1X > 672 && p1X < 696 && p1Y > 245 && p1Y < 270)
         {
-            campus  = "Worthington Scranton";
+            selectedCampus  = "Worthington Scranton";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
-        /* if paw icon is over Shenango, enter campus */
+        /* if paw icon is over Shenango, enter selectedCampus */
         if(p1X > 670 && p1X < 690 && p1Y > 499 && p1Y < 521)
         {
-            campus  = "Great Valley";
+            selectedCampus  = "Great Valley";
+            instr.setVisible(false);
+            main.setVisible(false);
+            mapCampuses.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            control.setVisible(false);
+            game.setVisible(true);
         }
     }
     

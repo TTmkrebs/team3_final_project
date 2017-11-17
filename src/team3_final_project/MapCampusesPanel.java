@@ -3,13 +3,13 @@ package team3_final_project;
 import java.awt.*;
 import javax.swing.*;
 
-public class GameBoard extends JPanel
+public class MapCampusesPanel extends JPanel
 {
     Image background;
     int x = 0;
     int y = 0;
     
-    public GameBoard(Image image)
+    public MapCampusesPanel(Image image)
     {       
         setBackground(Color.black);
         setLayout(null);
