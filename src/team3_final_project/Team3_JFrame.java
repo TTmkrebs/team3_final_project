@@ -229,7 +229,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             game.setVisible(true);
         }
         /* if paw icon is over World Campus, enter selectedCampus */
-        if(p1X > 300 && p1X < 330 && p1Y > 60 && p1Y < 90)
+        if(p1X > 300 && p1X < 330 && p1Y > 160 && p1Y < 190)
         {
             selectedCampus  = "World Campus";
             instr.setVisible(false);
