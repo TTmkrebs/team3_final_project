@@ -27,9 +27,8 @@ public class ControlPanel extends JPanel
         scoreField.setEnabled(false);
         scoreField.setText("Score: " + score);
         
-        /* create new bBackMainMenu button */
+        /* create and add new bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
-        /* add bBackMainMenu button */
         add(bBackMainMenu);
         bBackMainMenu.setBounds(new Rectangle(300,10,200,25));
         

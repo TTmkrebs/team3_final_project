@@ -20,10 +20,12 @@ public class CampusPanel extends JPanel
     {
         /* setup CampusPanel */
         super();
-        setBackground(Color.gray);
+        setBackground(Color.black);
         setLayout(null);
         
         campusName = inCampusName;
+        
+        
         
         
         
