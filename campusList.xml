@@ -3,31 +3,31 @@
  <string>Campus:Shenango</string>
  <int>16711680</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/Shenango.png</string>
+  <string>images/campuses/shenango.png</string>
  </object>
  <string>Campus:Greater Allegheny</string>
  <int>65280</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/Greater Allegheny.png</string>
+  <string>images/campuses/greater_allegheny.png</string>
  </object>
  <string>Campus:University Park</string>
  <int>255</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/University Park.png</string>
+  <string>images/campuses/university_park.png</string>
  </object>
  <string>Campus:Worthington Scranton</string>
  <int>16744448</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/Worthington Scranton.png</string>
+  <string>images/campuses/worthington_scranton.png</string>
  </object>
  <string>Campus:Great Valley</string>
  <int>16776960</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/Great Valley.png</string>
+  <string>images/campuses/great_valley.png</string>
  </object>
  <string>Campus:World Campus</string>
  <int>12632256</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/World Campus.png</string>
+  <string>images/campuses/world_campus.png</string>
  </object>
 </java>
