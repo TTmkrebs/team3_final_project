@@ -210,31 +210,32 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             }
         }
         
+        /* if paw icon is over Shenango, enter campus */
         if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
         {
             String campus  = "Shenango";
         }
-        
+        /* if paw icon is over World Campus, enter campus */
         if(p1X > 300 && p1X < 465 && p1Y > 60 && p1Y < 120)
         {
             String campus  = "World Campus";
         }
-        
+        /* if paw icon is over Greater Allegheny, enter campus */
         if(p1X > 92 && p1X < 120 && p1Y > 440 && p1Y < 462)
         {
             String campus  = "Greater Allegheny";
         }
-        
+        /* if paw icon is over University Park, enter campus */
         if(p1X > 352 && p1X < 381 && p1Y > 346 && p1Y < 369)
         {
             String campus  = "University Park";
         }
-        
+        /* if paw icon is over Worthington Scranton, enter campus */
         if(p1X > 672 && p1X < 696 && p1Y > 245 && p1Y < 270)
         {
             String campus  = "Worthington Scranton";
         }
-        
+        /* if paw icon is over Shenango, enter campus */
         if(p1X > 670 && p1X < 690 && p1Y > 499 && p1Y < 521)
         {
             String campus  = "Great Valley";
