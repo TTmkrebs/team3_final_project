@@ -11,7 +11,7 @@ public class GameBoard extends JPanel
     
     public GameBoard(Image image)
     {       
-        setBackground(Color.white);
+        setBackground(Color.black);
         setLayout(null);
         background = image;
     }
