@@ -21,6 +21,17 @@ public class ChoicesPanel extends JPanel implements ActionListener
     /* declare variable to hold character selection value */
     String character;
     
+    /* declare theme1 button */
+    JButton theme1;
+    /* declare theme2 button */
+    JButton theme2;
+    /* declare theme3 button */
+    JButton theme3;
+    /* declare themeText display */
+    JTextField themeText;
+    /* declare variable to hold theme selection value */
+    String theme;    
+    
     public ChoicesPanel()
     {
         /* setup ChoicesPanel */
@@ -64,13 +75,45 @@ public class ChoicesPanel extends JPanel implements ActionListener
         char3.setBounds(new Rectangle(525,100,150,150));
         
         /* create character selection display */
-        JLabel charTextLabel = new JLabel("Chosen Character");
+        JLabel charTextLabel = new JLabel("Chosen Character:");
         add(charTextLabel);
         charTextLabel.setBounds(new Rectangle(350,275,150,25));
         charText = new JTextField(20);
         charText.setEditable(false);
         add(charText);
         charText.setBounds(new Rectangle(325,300,150,25));
+        
+        /* add label for themes */
+        JLabel themeLabel = new JLabel("Select Theme:");
+        add(themeLabel);
+        themeLabel.setBounds(new Rectangle(360,350,200,25));
+        
+        /* create themes */
+        theme1 = new JButton("Theme 1");
+        theme1.addActionListener(this);
+        add(theme1);
+        theme1.setBounds(new Rectangle(125, 400, 150, 150));
+        
+        theme2 = new JButton("Theme 2");
+        theme2.addActionListener(this);
+        add(theme2);
+        theme2.setBounds(new Rectangle(325, 400, 150, 150));
+        
+        theme3 = new JButton("Theme 3");
+        theme3.addActionListener(this);
+        add(theme3);
+        theme3.setBounds(new Rectangle(525, 400, 150, 150));
+        
+        /* create character selection display */
+        JLabel themeTextLabel = new JLabel("Chosen Theme:");
+        add(themeTextLabel);
+        themeTextLabel.setBounds(new Rectangle(355, 555, 150, 25));
+        themeText = new JTextField(20);
+        themeText.setEditable(false);
+        add(themeText);
+        themeText.setBounds(new Rectangle(325, 580, 150, 25));
+        
+        
     }
     
     @Override
@@ -93,7 +136,23 @@ public class ChoicesPanel extends JPanel implements ActionListener
             charText.setText(character);
         }
         
-        if(character != null)
+        if(obj == theme1)
+        {
+            theme = "Theme 1";
+            themeText.setText(theme);
+        }
+        if(obj == theme2)
+        {
+            theme = "Theme 2";
+            themeText.setText(theme);
+        }
+        if(obj == theme3)
+        {
+            theme = "Theme 3";
+            themeText.setText(theme);
+        }
+        
+        if(character != null && theme != null)
         {
             bPlayGame.setEnabled(true);
         }
