@@ -11,10 +11,10 @@ public class PlayerIcon extends JPanel
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(100,100));
         
-        JLabel icon = new JLabel();
-        icon.setLayout(new BorderLayout());
-        icon.setIcon(new ImageIcon("images/general/paw_print_black.png"));
-        add(icon);
+        JLabel pawIcon = new JLabel();
+        pawIcon.setLayout(new BorderLayout());
+        pawIcon.setIcon(new ImageIcon("images/general/paw_print_black.png"));
+        add(pawIcon);
     }
 
 }      
