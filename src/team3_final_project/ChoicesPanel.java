@@ -89,17 +89,20 @@ public class ChoicesPanel extends JPanel implements ActionListener
         themeLabel.setBounds(new Rectangle(360,350,200,25));
         
         /* create themes */
-        theme1 = new JButton("Theme 1");
+        ImageIcon academics = new ImageIcon("images/themes/psuacademics.png");
+        theme1 = new JButton(academics);
         theme1.addActionListener(this);
         add(theme1);
         theme1.setBounds(new Rectangle(125, 400, 150, 150));
         
-        theme2 = new JButton("Theme 2");
+        ImageIcon sports = new ImageIcon("images/themes/psusports.png");
+        theme2 = new JButton(sports);
         theme2.addActionListener(this);
         add(theme2);
         theme2.setBounds(new Rectangle(325, 400, 150, 150));
         
-        theme3 = new JButton("Theme 3");
+        ImageIcon history = new ImageIcon("images/themes/psuhistory.png");
+        theme3 = new JButton(history);
         theme3.addActionListener(this);
         add(theme3);
         theme3.setBounds(new Rectangle(525, 400, 150, 150));
@@ -138,17 +141,17 @@ public class ChoicesPanel extends JPanel implements ActionListener
         
         if(obj == theme1)
         {
-            theme = "Theme 1";
+            theme = "PSU Academics";
             themeText.setText(theme);
         }
         if(obj == theme2)
         {
-            theme = "Theme 2";
+            theme = "PSU Sports";
             themeText.setText(theme);
         }
         if(obj == theme3)
         {
-            theme = "Theme 3";
+            theme = "PSU History";
             themeText.setText(theme);
         }
         
