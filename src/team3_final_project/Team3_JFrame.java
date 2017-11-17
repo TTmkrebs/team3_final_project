@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Team3_JFrame extends JFrame implements ActionListener
+public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
 {
     /* create panels */
     MainPanel main;
@@ -23,7 +23,17 @@ public class Team3_JFrame extends JFrame implements ActionListener
     
     /* store value for selected character */
     String character;
-
+    ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
+    Image charImage = charIcon.getImage();
+    
+    /* campus map image*/
+    ImageIcon map = new ImageIcon("images/general/campus_map_2.png");
+    Image mapImage = map.getImage();
+    
+    /* playerIcon */
+    PlayerIcon player;
+    int p1X;
+    int p1Y;
     
     public Team3_JFrame()
     {
@@ -41,7 +51,7 @@ public class Team3_JFrame extends JFrame implements ActionListener
         /* create additional starting panels */
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
-        game = new GameBoard("");
+        game = new GameBoard(mapImage);
         control = new ControlPanel("");
         developers = new DevelopersPanel();
         
@@ -131,13 +141,23 @@ public class Team3_JFrame extends JFrame implements ActionListener
             control.setVisible(true);
             bBackMainMenu = control.bBackMainMenu;
             bBackMainMenu.addActionListener(this);
-            
+              
             /* setup GameBoard */
-            game = new GameBoard(character);
+            game = new GameBoard(mapImage);
+            game.setX(0);
+            game.setY(100);
+            game.addKeyListener(this);
             add(game);
             game.setBounds(new Rectangle(0,50,800,650));
-            game.setVisible(true);
             
+            /* setup PlayerIcon */
+            p1X = 150;
+            p1Y = 150;
+            player = new PlayerIcon();
+            game.add(player);
+            player.setBounds(new Rectangle(p1X,p1Y,50,50));
+            
+            game.focus();
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
@@ -151,4 +171,79 @@ public class Team3_JFrame extends JFrame implements ActionListener
             main.setVisible(true);
         } 
     }
+    
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        int i = e.getKeyCode();
+        
+        if(i == e.VK_LEFT)
+        {
+            if(p1X > 0)
+            {
+                p1X += -1;
+                player.setBounds(new Rectangle(p1X,p1Y,50,50));
+            }
+        }
+        if(i == e.VK_RIGHT)
+        {
+            if(p1X < 750)
+            {
+                p1X += 1;
+                player.setBounds(new Rectangle(p1X,p1Y,50,50));
+            }
+        }
+        if(i == e.VK_UP)
+        {
+            if(p1Y > 100)
+            {
+                p1Y += -1;
+                player.setBounds(new Rectangle(p1X,p1Y,50,50));
+            }
+        }
+        if(i == e.VK_DOWN)
+        {
+            if(p1Y < 546)
+            {
+                p1Y += 1;
+                player.setBounds(new Rectangle(p1X,p1Y,50,50));
+            }
+        }
+        
+        if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
+        {
+            String campus  = "Shenango";
+        }
+        
+        if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
+        {
+            String campus  = "Shenango";
+        }
+        
+        if(p1X > 92 && p1X < 120 && p1Y > 440 && p1Y < 462)
+        {
+            String campus  = "Greater Allegheny";
+        }
+        
+        if(p1X > 352 && p1X < 381 && p1Y > 346 && p1Y < 369)
+        {
+            String campus  = "University Park";
+        }
+        
+        if(p1X > 672 && p1X < 696 && p1Y > 245 && p1Y < 270)
+        {
+            String campus  = "Worthington Scranton";
+        }
+        
+        if(p1X > 670 && p1X < 690 && p1Y > 499 && p1Y < 521)
+        {
+            String campus  = "Great Valley";
+        }
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e){}
+    
+    @Override
+    public void keyTyped(KeyEvent e){}
 }

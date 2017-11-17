@@ -2,24 +2,39 @@ package team3_final_project;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 
 public class GameBoard extends JPanel
 {
-    /* declare bBackMainMenu button to display MainPanel */
-    JButton bBackMainMenu;    
+    Image background;
+    int x = 0;
+    int y = 0;
     
-    public GameBoard(String charName)
+    public GameBoard(Image image)
+    {       
+        setBackground(Color.white);
+        setLayout(null);
+        background = image;
+    }
+    
+    public void focus()
     {
-        /* setup GameBoard */
-        super();
-        setBackground(Color.black);
-        setLayout(new BorderLayout());
-        
-        /* setup campusMap image */
-        ImageIcon campusMap = new ImageIcon("images/general/campus_map_2.png");
-        JLabel map = new JLabel(campusMap);
-        /* add campusMap image */
-        add(map, BorderLayout.CENTER);
+        requestFocus();
+    }
+    
+    public void setX(int inX)
+    {
+        x = inX;
+    }
+    
+    public void setY(int inY)
+    {
+        y = inY;
+    }
+    
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(background,x,y,this);
     }
 }      
