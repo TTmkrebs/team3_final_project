@@ -65,5 +65,7 @@ public class CampusPanel extends JPanel
         logoCampus = new JPanel();
         add(logoCampus);
         logoCampus.setBounds(new Rectangle(590,415,190,150));
+        
+        
     }
 }
