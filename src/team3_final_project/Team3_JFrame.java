@@ -215,9 +215,9 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             String campus  = "Shenango";
         }
         
-        if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
+        if(p1X > 300 && p1X < 465 && p1Y > 60 && p1Y < 120)
         {
-            String campus  = "Shenango";
+            String campus  = "World Campus";
         }
         
         if(p1X > 92 && p1X < 120 && p1Y > 440 && p1Y < 462)
