@@ -191,6 +191,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             game.setVisible(false);
             control.setVisible(true);
             mapCampuses.setVisible(true);
+            mapCampuses.focus();
         } 
     }
     
