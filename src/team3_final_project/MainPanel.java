@@ -7,11 +7,11 @@ import javax.swing.*;
 public class MainPanel extends JPanel
 {
     /* declare bInstruction button to display InstructionsPanel */
-    JButton bInstruction;
+    private JButton bInstruction;
     /* declare bDevs button to display DevelopersPanel */
-    JButton bDevs;
-    /* declare bEnterGame button to display ChoicesPanel */
-    JButton bEnterGame;
+    private JButton bDevs;
+    /* declare bAdvance button to display ChoicesPanel */
+    private JButton bChoices;
     
     public MainPanel()
     {
@@ -37,8 +37,21 @@ public class MainPanel extends JPanel
         bDevs.setBounds(new Rectangle(410,625,150,25));
         
         /* create and add bEnterGame button */
-        bEnterGame = new JButton("Go to Game");
-        add(bEnterGame);
-        bEnterGame.setBounds(new Rectangle(240,550,320,50));        
+        bChoices = new JButton("New Game");
+        add(bChoices);
+        bChoices.setBounds(new Rectangle(240,550,320,50));
+    }
+    
+    public JButton getChoicesButton()
+    {
+        return bChoices;
+    }
+    public JButton getDevelopersButton()
+    {
+        return bDevs;
+    }
+    public JButton getInstructionsButton()
+    {
+        return bInstruction;
     }
 }

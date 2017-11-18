@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import org.w3c.dom.NodeList;
 
 /*
  * This class reads and writes XML files based on Java Beans DTD
@@ -98,8 +99,7 @@ public class XML_240
         }
         return o;
     }
-//==========================================================================
-
+//==========================================================================    
     public void closeReaderXML()
     {
         try

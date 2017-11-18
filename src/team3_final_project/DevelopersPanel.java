@@ -5,9 +5,9 @@ import javax.swing.*;
 
 public class DevelopersPanel extends JPanel
 {
-       /* declare bBackMainMenu button to display MainPanel */
-    JButton bBackMainMenu;
-    JPanel allDevelopers;
+    /* declare bBackMainMenu button to display MainPanel */
+    private JButton bBackMainMenu;
+    private JPanel allDevelopers;
     
     public DevelopersPanel()
     {
@@ -68,5 +68,10 @@ public class DevelopersPanel extends JPanel
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
         add(bBackMainMenu,BorderLayout.NORTH);
+    }
+    
+    public JButton getBackButton()
+    {
+        return bBackMainMenu;
     }
 }

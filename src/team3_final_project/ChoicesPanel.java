@@ -21,6 +21,19 @@ public class ChoicesPanel extends JPanel implements ActionListener
     /* declare variable to hold character selection value */
     String character;
     
+    /* declare theme1 button */
+    JButton theme1;
+    /* declare theme2 button */
+    JButton theme2;
+    /* declare theme3 button */
+    JButton theme3;
+    /* declare themeText display */
+    JTextField themeText;
+    /* declare variable to hold theme selection value */
+    String theme;
+    /* declare variable to character information */
+    Player player1;
+    
     public ChoicesPanel()
     {
         /* setup ChoicesPanel */
@@ -64,36 +77,108 @@ public class ChoicesPanel extends JPanel implements ActionListener
         char3.setBounds(new Rectangle(525,100,150,150));
         
         /* create character selection display */
-        JLabel charTextLabel = new JLabel("Chosen Character");
+        JLabel charTextLabel = new JLabel("Chosen Character:");
         add(charTextLabel);
         charTextLabel.setBounds(new Rectangle(350,275,150,25));
         charText = new JTextField(20);
         charText.setEditable(false);
         add(charText);
         charText.setBounds(new Rectangle(325,300,150,25));
+        
+        /* add label for themes */
+        JLabel themeLabel = new JLabel("Select Theme:");
+        add(themeLabel);
+        themeLabel.setBounds(new Rectangle(360,350,200,25));
+        
+        /* create themes */
+        theme1 = new JButton("Theme 1");
+        theme1.addActionListener(this);
+        add(theme1);
+        theme1.setBounds(new Rectangle(125, 400, 150, 150));
+        theme1.setEnabled(false);
+        
+        theme2 = new JButton("Theme 2");
+        theme2.addActionListener(this);
+        add(theme2);
+        theme2.setBounds(new Rectangle(325, 400, 150, 150));
+        theme2.setEnabled(false);
+        
+        theme3 = new JButton("Theme 3");
+        theme3.addActionListener(this);
+        add(theme3);
+        theme3.setBounds(new Rectangle(525, 400, 150, 150));
+        theme3.setEnabled(false);
+        
+        /* create character selection display */
+        JLabel themeTextLabel = new JLabel("Chosen Theme:");
+        add(themeTextLabel);
+        themeTextLabel.setBounds(new Rectangle(355, 555, 150, 25));
+        themeText = new JTextField(20);
+        themeText.setEditable(false);
+        add(themeText);
+        themeText.setBounds(new Rectangle(325, 580, 150, 25));
+    }
+    
+    public Player getPlayer()
+    {
+        Player temp = null;
+        
+        if(player1 != null)
+        {
+            temp = player1;
+        }
+        
+        return temp;
+    }
+    
+    public JButton getBackButton()
+    {
+        return bBackMainMenu;
+    }
+    
+    public JButton getPlayButton()
+    {
+        return bPlayGame;
+    }
+    
+    public void setCharacter(String inChar)
+    {
+        if(inChar == "char1") { player1 = new Player("Football Player");}
+        if(inChar == "char2") { player1 = new Player("Student");}
+        if(inChar == "char3") { player1 = new Player("Mascot");}
+        charText.setText(player1.getCharacter());
+    }
+    
+    public void setTheme(String inTheme)
+    {
+        player1.setTheme(inTheme);
+        if(player1.getTheme() == "theme1") { themeText.setText("Theme 1");}
+        if(player1.getTheme() == "theme2") { themeText.setText("Theme 2");}
+        if(player1.getTheme() == "theme3") { themeText.setText("Theme 3");}
     }
     
     @Override
     public void actionPerformed(ActionEvent e)
     {
         Object obj = e.getSource();
-        if(obj == char1)
-        {
-            character = "Football Player";
-            charText.setText(character);
-        }
-        if(obj == char2)
-        {
-            character = "Student";
-            charText.setText(character);
-        }
-        if(obj == char3)
-        {
-            character = "Mascot";
-            charText.setText(character);
-        }
         
-        if(character != null)
+        /* set character */
+        if(obj == char1) { setCharacter("char1");}
+        if(obj == char2) { setCharacter("char2");}
+        if(obj == char3) { setCharacter("char3");}
+        
+        /* set theme */
+        if(obj == theme1) { setTheme("theme1");}
+        if(obj == theme1) { setTheme("theme2");}
+        if(obj == theme1) { setTheme("theme3");}
+        
+        if(player1 != null)
+        {
+            theme1.setEnabled(true);
+            theme2.setEnabled(true);
+            theme3.setEnabled(true);
+        }
+        if(player1.getCharacter() != null && player1.getTheme() != null)
         {
             bPlayGame.setEnabled(true);
         }

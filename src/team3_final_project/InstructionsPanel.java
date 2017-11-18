@@ -6,9 +6,7 @@ import javax.swing.*;
 public class InstructionsPanel extends JPanel
 {
     /* declare bBackMainMenu button to display MainPanel */
-    JButton bBackMainMenu;
-    /* create goToGame button */
-    JButton goToGame;
+    private JButton bBackMainMenu;
     
     public InstructionsPanel()
     {
@@ -24,5 +22,10 @@ public class InstructionsPanel extends JPanel
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
         add(bBackMainMenu,BorderLayout.NORTH);
+    }
+    
+    public JButton getBackButton()
+    {
+        return bBackMainMenu;
     }
 }
