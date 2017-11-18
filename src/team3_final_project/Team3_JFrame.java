@@ -22,6 +22,8 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     JButton bDevs;
     JButton bBackMainMenu;
     JButton bBeginGame;
+    JButton bBackToMap;
+    
     
     /* store value for selected character */
     String character;
@@ -170,8 +172,8 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             game.setVisible(true);
             bBackMainMenu = game.bBackMainMenu;
             bBackMainMenu.addActionListener(this);
-            bBeginGame = game.backMap;
-            bBeginGame.addActionListener(this);
+            bBackToMap = game.backMap;
+            bBackToMap.addActionListener(this);
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
