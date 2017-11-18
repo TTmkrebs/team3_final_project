@@ -59,7 +59,6 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         control = new ControlPanel("");
         developers = new DevelopersPanel();
         credits = new CreditsPanel();
-        game = new GameFullPanel(selectedCampus);
         
         /* assign instructions button and add listener */
         bInstr = main.bInstruction;
@@ -164,6 +163,15 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             player.setBounds(new Rectangle(p1X,p1Y,50,50));
             
             mapCampuses.focus();
+            
+             /* setup GameFullPanel */
+            game = new GameFullPanel(selectedCampus);            
+            add(game);
+            game.setVisible(true);
+            bBackMainMenu = game.bBackMainMenu;
+            bBackMainMenu.addActionListener(this);
+            bBeginGame = game.backMap;
+            bBeginGame.addActionListener(this);
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
