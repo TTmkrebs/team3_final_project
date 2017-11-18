@@ -19,13 +19,17 @@ public class GameFullPanel extends JPanel
     /* create inner panels */
     JPanel gameInstructions;
     JPanel miniGame;
-    JPanel characterStats;
+    JPanel playerStats;
     JPanel logoTheme;
     JPanel imageCharacter;
     JPanel logoCampus;
 
     
     TitledBorder instructionsBorder;
+    TitledBorder playerStatsBorder;
+    TitledBorder characterImageBorder;
+    TitledBorder campusLogoBorder;
+    TitledBorder themeLogoBorder;
     Border whiteLine;
     
     public GameFullPanel(String inCampusName)
@@ -37,6 +41,11 @@ public class GameFullPanel extends JPanel
         
         whiteLine = BorderFactory.createLineBorder(Color.white);
         instructionsBorder = BorderFactory.createTitledBorder(whiteLine, "Instructions");
+        playerStatsBorder = BorderFactory.createTitledBorder(whiteLine, "Player Stats");
+        characterImageBorder = BorderFactory.createTitledBorder(whiteLine, "Playing As");
+        campusLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Campus");
+        themeLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Chosen Theme");
+        
         
         campusName = inCampusName;
         
@@ -95,32 +104,32 @@ public class GameFullPanel extends JPanel
         miniGame.setBorder(whiteLine);
         miniGame.setBackground(new Color(0,0,0,65));
         
-        /* add characterStats JPanel for character stats and timer */
-        characterStats = new JPanel();
-        add(characterStats);
-        characterStats.setBounds(new Rectangle(585,20,190,100));
-        characterStats.setBorder(whiteLine);
-        characterStats.setBackground(new Color(0,0,0,65));
+        /* add playerStats JPanel for character stats and timer */
+        playerStats = new JPanel();
+        add(playerStats);
+        playerStats.setBounds(new Rectangle(585,20,190,100));
+        playerStats.setBorder(playerStatsBorder);
+        playerStats.setBackground(new Color(0,0,0,65));
         
         /* add logoTheme JPanel for theme logo */
         logoTheme = new JPanel();
         add(logoTheme);
         logoTheme.setBounds(new Rectangle(585,125,190,172));
-        logoTheme.setBorder(whiteLine);
+        logoTheme.setBorder(themeLogoBorder);
         logoTheme.setBackground(new Color(0,0,0,65));
         
         /* add imageCharacter JPanel for character image */
         imageCharacter = new JPanel();
         add(imageCharacter);
         imageCharacter.setBounds(new Rectangle(585,303,190,172));
-        imageCharacter.setBorder(whiteLine);
+        imageCharacter.setBorder(characterImageBorder);
         imageCharacter.setBackground(new Color(0,0,0,65));
         
         /* add logoCampus JPanel for character image */
         logoCampus = new JPanel();
         add(logoCampus);
         logoCampus.setBounds(new Rectangle(585,480,190,100));
-        logoCampus.setBorder(whiteLine);
+        logoCampus.setBorder(campusLogoBorder);
         logoCampus.setBackground(new Color(0,0,0,65));
         JLabel campusLogoLabel = new JLabel(campusLogo);
         logoCampus.add(campusLogoLabel);
