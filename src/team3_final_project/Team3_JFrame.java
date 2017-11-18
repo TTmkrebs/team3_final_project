@@ -32,7 +32,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
     Image charImage = charIcon.getImage();
     
-    /* selectedCampus map image on MapCampusesPanel*/
+    /* map image on MapCampusesPanel*/
     ImageIcon map = new ImageIcon("images/general/campus_map_2.png");
     Image mapImage = map.getImage();
     
