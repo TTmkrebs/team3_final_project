@@ -23,60 +23,65 @@ public class GameFullPanel extends JPanel
     JPanel imageCharacter;
     JPanel logoCampus;
     
-    TitledBorder titleBorderWhite;
+    TitledBorder instructionsBorder;
     Border whiteLine;
     
     public GameFullPanel(String inCampusName)
     {
         /* setup GameFullPanel */
         super();
-        setBackground(Color.black);
+        setBackground(Color.cyan);
         setLayout(null);
         
         whiteLine = BorderFactory.createLineBorder(Color.white);
-        titleBorderWhite = BorderFactory.createTitledBorder(whiteLine, "title");
+        instructionsBorder = BorderFactory.createTitledBorder(whiteLine, "Instructions");
         
         campusName = inCampusName;
         
         /* create and add backMap button */
         backMap = new JButton("Back to Map");
         add(backMap);
-        backMap.setBounds(new Rectangle(590,600,190,25));
+        backMap.setBounds(new Rectangle(585,590,190,25));
         
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
         add(bBackMainMenu);
-        bBackMainMenu.setBounds(new Rectangle(590,650,190,25));
+        bBackMainMenu.setBounds(new Rectangle(585,625,190,25));
         
         /* add gameInstructions JPanel for mini game instructions */
         gameInstructions = new JPanel();
         add(gameInstructions);
-        gameInstructions.setBounds(new Rectangle(25,30,525,70));
-        gameInstructions.setBorder(titleBorderWhite);
+        gameInstructions.setBounds(new Rectangle(20,20,545,75));
+        gameInstructions.setBorder(instructionsBorder);
+        gameInstructions.setBackground(new Color(0,0,0,65));
         
         /* add miniGame JPanel for mini game */
         miniGame = new JPanel();
         add(miniGame);
-        miniGame.setBounds(new Rectangle(25,125,525,550));
+        miniGame.setBounds(new Rectangle(20,100,545,550));
         miniGame.setBorder(whiteLine);
+        miniGame.setBackground(new Color(0,0,0,65));
         
         /* add characterStats JPanel for character stats and timer */
         characterStats = new JPanel();
         add(characterStats);
-        characterStats.setBounds(new Rectangle(590,30,190,70));
+        characterStats.setBounds(new Rectangle(585,20,190,125));
         characterStats.setBorder(whiteLine);
+        characterStats.setBackground(new Color(0,0,0,65));
         
         /* add imageCharacter JPanel for character image */
         imageCharacter = new JPanel();
         add(imageCharacter);
-        imageCharacter.setBounds(new Rectangle(590,125,190,265));
+        imageCharacter.setBounds(new Rectangle(585,155,190,265));
         imageCharacter.setBorder(whiteLine);
+        imageCharacter.setBackground(new Color(0,0,0,65));
         
         /* add logoCampus JPanel for character image */
         logoCampus = new JPanel();
         add(logoCampus);
-        logoCampus.setBounds(new Rectangle(590,415,190,150));
+        logoCampus.setBounds(new Rectangle(585,430,190,150));
         logoCampus.setBorder(whiteLine);
+        logoCampus.setBackground(new Color(0,0,0,65));
         
     }
 }
