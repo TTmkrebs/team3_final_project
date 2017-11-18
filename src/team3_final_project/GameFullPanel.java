@@ -23,14 +23,6 @@ public class GameFullPanel extends JPanel
     JPanel logoTheme;
     JPanel imageCharacter;
     JPanel logoCampus;
-
-    
-    TitledBorder instructionsBorder;
-    TitledBorder playerStatsBorder;
-    TitledBorder characterImageBorder;
-    TitledBorder campusLogoBorder;
-    TitledBorder themeLogoBorder;
-    Border whiteLine;
     
     public GameFullPanel(String inCampusName)
     {
@@ -39,12 +31,12 @@ public class GameFullPanel extends JPanel
         setBackground(Color.cyan);
         setLayout(null);
         
-        whiteLine = BorderFactory.createLineBorder(Color.white);
-        instructionsBorder = BorderFactory.createTitledBorder(whiteLine, "Instructions");
-        playerStatsBorder = BorderFactory.createTitledBorder(whiteLine, "Player Stats");
-        characterImageBorder = BorderFactory.createTitledBorder(whiteLine, "Playing As");
-        campusLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Campus");
-        themeLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Chosen Theme");
+        Border whiteLine = BorderFactory.createLineBorder(Color.white);
+        TitledBorder instructionsBorder = BorderFactory.createTitledBorder(whiteLine, "Instructions");
+        TitledBorder playerStatsBorder = BorderFactory.createTitledBorder(whiteLine, "Player Stats");
+        TitledBorder characterImageBorder = BorderFactory.createTitledBorder(whiteLine, "Playing As");
+        TitledBorder campusLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Campus");
+        TitledBorder themeLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Chosen Theme");
         
         
         campusName = inCampusName;
@@ -133,7 +125,6 @@ public class GameFullPanel extends JPanel
         logoCampus.setBackground(new Color(0,0,0,65));
         JLabel campusLogoLabel = new JLabel(campusLogo);
         logoCampus.add(campusLogoLabel);
-        
-        
+
     }
 }
