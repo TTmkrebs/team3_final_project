@@ -32,7 +32,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
     Image charImage = charIcon.getImage();
     
-    /* selectedCampus map image on MapCampusesPanel*/
+    /* map image on MapCampusesPanel*/
     ImageIcon map = new ImageIcon("images/general/campus_map_2.png");
     Image mapImage = map.getImage();
     
@@ -134,7 +134,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         /* if bBeginGame button pressed... */
         if(obj == bBeginGame)
         {
-            /* hide main & choices panel */
+            /* hide main and choices panel */
             main.setVisible(false);
             choices.setVisible(false);
             
@@ -166,14 +166,6 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             
             mapCampuses.focus();
             
-             /* setup GameFullPanel */
-            game = new GameFullPanel(selectedCampus);            
-            add(game);
-            game.setVisible(true);
-            bBackMainMenu = game.bBackMainMenu;
-            bBackMainMenu.addActionListener(this);
-            bBackToMap = game.backMap;
-            bBackToMap.addActionListener(this);
         }
         /* if bBackMainMenu button pressed... */
         if(obj == bBackMainMenu)
@@ -187,12 +179,34 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             game.setVisible(false);
             main.setVisible(true);
         } 
+        
+        /* if bBackToMap button pressed... */
+        if(obj == bBackToMap)
+        {
+            /* hide all panels except MapCampuses and Control panel */
+            instr.setVisible(false);
+            main.setVisible(false);
+            choices.setVisible(false);
+            developers.setVisible(false);
+            game.setVisible(false);
+            control.setVisible(true);
+            mapCampuses.setVisible(true);
+            mapCampuses.focus();
+        } 
     }
     
     @Override
     public void keyPressed(KeyEvent e)
     {
         int i = e.getKeyCode();
+        
+         /* setup GameFullPanel */
+        game = new GameFullPanel(selectedCampus);            
+        add(game);
+        bBackMainMenu = game.bBackMainMenu;
+        bBackMainMenu.addActionListener(this);
+        bBackToMap = game.backMap;
+        bBackToMap.addActionListener(this);
         
         if(i == e.VK_LEFT)
         {
@@ -231,11 +245,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 7 && p1X < 40 && p1Y > 270 && p1Y < 291)
         {
             selectedCampus  = "Shenango";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
@@ -243,11 +253,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 300 && p1X < 330 && p1Y > 160 && p1Y < 190)
         {
             selectedCampus  = "World Campus";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
@@ -255,11 +261,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 92 && p1X < 120 && p1Y > 440 && p1Y < 462)
         {
             selectedCampus  = "Greater Allegheny";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
@@ -267,11 +269,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 352 && p1X < 381 && p1Y > 346 && p1Y < 369)
         {
             selectedCampus  = "University Park";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
@@ -279,11 +277,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 672 && p1X < 696 && p1Y > 245 && p1Y < 270)
         {
             selectedCampus  = "Worthington Scranton";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
@@ -291,11 +285,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         if(p1X > 670 && p1X < 690 && p1Y > 499 && p1Y < 521)
         {
             selectedCampus  = "Great Valley";
-            instr.setVisible(false);
-            main.setVisible(false);
             mapCampuses.setVisible(false);
-            choices.setVisible(false);
-            developers.setVisible(false);
             control.setVisible(false);
             game.setVisible(true);
         }
