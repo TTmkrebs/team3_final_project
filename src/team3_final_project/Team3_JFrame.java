@@ -61,6 +61,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         control = new ControlPanel("");
         developers = new DevelopersPanel();
         credits = new CreditsPanel();
+        game = new GameFullPanel(selectedCampus);
         
         /* assign instructions button and add listener */
         bInstr = main.bInstruction;
@@ -201,7 +202,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         int i = e.getKeyCode();
         
          /* setup GameFullPanel */
-        game = new GameFullPanel(selectedCampus);            
+                   
         add(game);
         bBackMainMenu = game.bBackMainMenu;
         bBackMainMenu.addActionListener(this);
