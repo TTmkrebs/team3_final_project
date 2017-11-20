@@ -12,8 +12,13 @@ public class GameFullPanel extends JPanel
     String campusName;
     int currentPoints;
     ImageIcon characterImageIcon;
-    ImageIcon campusImageIcon;
+    ImageIcon campusBackgroundIcon;
     ImageIcon campusLogoIcon;
+    Image campusBackgroundImage;
+    
+    int x = 0;
+    int y = 0;
+    
     JButton backMap;
     JButton bBackMainMenu;
     /* create inner panels */
@@ -28,7 +33,7 @@ public class GameFullPanel extends JPanel
     {
         /* setup GameFullPanel */
         super();
-        setBackground(Color.cyan);
+        setBackground(Color.black);
         setLayout(null);
         
         Border whiteLine = BorderFactory.createLineBorder(Color.white);
@@ -40,34 +45,41 @@ public class GameFullPanel extends JPanel
         
         campusName = inCampusName;
         
-        if (campusName == "WorldCampus") 
+        
+        if (campusName == "World Campus") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/world_campus.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/world_campus.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/world_campus.png");
         }
         if (campusName == "Shenango") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/shenango.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/shenango.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/shenango.png");
         }
         if (campusName == "Greater Allegheny") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/greater_allegheny.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/greater_allegheny.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/greater_allegheny.png");
         }
         if (campusName == "Great Valley") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/great_valley.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/great_valley.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/great_valley.png");
         }
         if (campusName == "Worthington Scranton") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/worthington_scranton.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/worthington_scranton.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/worthington_scranton.png");
         }
         if (campusName == "University Park") 
         {
-            campusImageIcon = new ImageIcon("images/campuses/university_park.png");
+            campusBackgroundIcon = new ImageIcon("images/campuses/university_park.png");
+            campusBackgroundImage = campusBackgroundIcon.getImage();
             campusLogoIcon = new ImageIcon("images/campuses/logos/university_park.png");
         }
         
@@ -124,5 +136,22 @@ public class GameFullPanel extends JPanel
         logoCampusPanel.setBackground(new Color(0,0,0,65));
         JLabel campusLogoLabel = new JLabel(campusLogoIcon);
         logoCampusPanel.add(campusLogoLabel);
+    }
+    
+    public void setX(int inX)
+    {
+        x = inX;
+    }
+    
+    public void setY(int inY)
+    {
+        y = inY;
+    }
+    
+@Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(campusBackgroundImage,x,y,this);
     }
 }
