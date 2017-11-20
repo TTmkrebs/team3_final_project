@@ -8,21 +8,21 @@ import javax.swing.BorderFactory;
 
 public class GameFullPanel extends JPanel
 {
-    /* create campus attributes */
+    /* create GameFullPanel entities */
     String campusName;
-    ImageIcon characterImage;
-    ImageIcon campusImage;
-    ImageIcon campusLogo;
     int currentPoints;
+    ImageIcon characterImageIcon;
+    ImageIcon campusImageIcon;
+    ImageIcon campusLogoIcon;
     JButton backMap;
     JButton bBackMainMenu;
     /* create inner panels */
-    JPanel gameInstructions;
-    JPanel miniGame;
-    JPanel playerStats;
-    JPanel logoTheme;
-    JPanel imageCharacter;
-    JPanel logoCampus;
+    JPanel gameInstructionsPanel;
+    JPanel miniGamePanel;
+    JPanel playerStatsPanel;
+    JPanel logoThemePanel;
+    JPanel imageCharacterPanel;
+    JPanel logoCampusPanel;
     
     public GameFullPanel(String inCampusName)
     {
@@ -38,38 +38,37 @@ public class GameFullPanel extends JPanel
         TitledBorder campusLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Campus");
         TitledBorder themeLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Chosen Theme");
         
-        
         campusName = inCampusName;
         
         if (campusName == "WorldCampus") 
         {
-            campusImage = new ImageIcon("images/campuses/world_campus.png");
-            campusLogo = new ImageIcon("images/campuses/logos/world_campus.png");
+            campusImageIcon = new ImageIcon("images/campuses/world_campus.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/world_campus.png");
         }
         if (campusName == "Shenango") 
         {
-            campusImage = new ImageIcon("images/campuses/shenango.png");
-            campusLogo = new ImageIcon("images/campuses/logos/shenango.png");
+            campusImageIcon = new ImageIcon("images/campuses/shenango.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/shenango.png");
         }
         if (campusName == "Greater Allegheny") 
         {
-            campusImage = new ImageIcon("images/campuses/greater_allegheny.png");
-            campusLogo = new ImageIcon("images/campuses/logos/greater_allegheny.png");
+            campusImageIcon = new ImageIcon("images/campuses/greater_allegheny.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/greater_allegheny.png");
         }
         if (campusName == "Great Valley") 
         {
-            campusImage = new ImageIcon("images/campuses/great_valley.png");
-            campusLogo = new ImageIcon("images/campuses/logos/great_valley.png");
+            campusImageIcon = new ImageIcon("images/campuses/great_valley.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/great_valley.png");
         }
         if (campusName == "Worthington Scranton") 
         {
-            campusImage = new ImageIcon("images/campuses/worthington_scranton.png");
-            campusLogo = new ImageIcon("images/campuses/logos/worthington_scranton.png");
+            campusImageIcon = new ImageIcon("images/campuses/worthington_scranton.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/worthington_scranton.png");
         }
         if (campusName == "University Park") 
         {
-            campusImage = new ImageIcon("images/campuses/university_park.png");
-            campusLogo = new ImageIcon("images/campuses/logos/university_park.png");
+            campusImageIcon = new ImageIcon("images/campuses/university_park.png");
+            campusLogoIcon = new ImageIcon("images/campuses/logos/university_park.png");
         }
         
         /* create and add backMap button */
@@ -82,49 +81,48 @@ public class GameFullPanel extends JPanel
         add(bBackMainMenu);
         bBackMainMenu.setBounds(new Rectangle(585,625,190,25));
         
-        /* add gameInstructions JPanel for mini game instructions */
-        gameInstructions = new JPanel();
-        add(gameInstructions);
-        gameInstructions.setBounds(new Rectangle(20,20,545,75));
-        gameInstructions.setBorder(instructionsBorder);
-        gameInstructions.setBackground(new Color(0,0,0,65));
+        /* add gameInstructionsPanel JPanel for mini game instructions */
+        gameInstructionsPanel = new JPanel();
+        add(gameInstructionsPanel);
+        gameInstructionsPanel.setBounds(new Rectangle(20,20,545,75));
+        gameInstructionsPanel.setBorder(instructionsBorder);
+        gameInstructionsPanel.setBackground(new Color(0,0,0,65));
         
-        /* add miniGame JPanel for mini game */
-        miniGame = new JPanel();
-        add(miniGame);
-        miniGame.setBounds(new Rectangle(20,100,545,550));
-        miniGame.setBorder(whiteLine);
-        miniGame.setBackground(new Color(0,0,0,65));
+        /* add miniGamePanel JPanel for mini game */
+        miniGamePanel = new JPanel();
+        add(miniGamePanel);
+        miniGamePanel.setBounds(new Rectangle(20,100,545,550));
+        miniGamePanel.setBorder(whiteLine);
+        miniGamePanel.setBackground(new Color(0,0,0,65));
         
-        /* add playerStats JPanel for character stats and timer */
-        playerStats = new JPanel();
-        add(playerStats);
-        playerStats.setBounds(new Rectangle(585,20,190,100));
-        playerStats.setBorder(playerStatsBorder);
-        playerStats.setBackground(new Color(0,0,0,65));
+        /* add playerStatsPanel JPanel for character stats and timer */
+        playerStatsPanel = new JPanel();
+        add(playerStatsPanel);
+        playerStatsPanel.setBounds(new Rectangle(585,20,190,100));
+        playerStatsPanel.setBorder(playerStatsBorder);
+        playerStatsPanel.setBackground(new Color(0,0,0,65));
         
-        /* add logoTheme JPanel for theme logo */
-        logoTheme = new JPanel();
-        add(logoTheme);
-        logoTheme.setBounds(new Rectangle(585,125,190,172));
-        logoTheme.setBorder(themeLogoBorder);
-        logoTheme.setBackground(new Color(0,0,0,65));
+        /* add logoThemePanel JPanel for theme logo */
+        logoThemePanel = new JPanel();
+        add(logoThemePanel);
+        logoThemePanel.setBounds(new Rectangle(585,125,190,172));
+        logoThemePanel.setBorder(themeLogoBorder);
+        logoThemePanel.setBackground(new Color(0,0,0,65));
         
-        /* add imageCharacter JPanel for character image */
-        imageCharacter = new JPanel();
-        add(imageCharacter);
-        imageCharacter.setBounds(new Rectangle(585,303,190,172));
-        imageCharacter.setBorder(characterImageBorder);
-        imageCharacter.setBackground(new Color(0,0,0,65));
+        /* add imageCharacterPanel JPanel for character image */
+        imageCharacterPanel = new JPanel();
+        add(imageCharacterPanel);
+        imageCharacterPanel.setBounds(new Rectangle(585,303,190,172));
+        imageCharacterPanel.setBorder(characterImageBorder);
+        imageCharacterPanel.setBackground(new Color(0,0,0,65));
         
-        /* add logoCampus JPanel for character image */
-        logoCampus = new JPanel();
-        add(logoCampus);
-        logoCampus.setBounds(new Rectangle(585,480,190,100));
-        logoCampus.setBorder(campusLogoBorder);
-        logoCampus.setBackground(new Color(0,0,0,65));
-        JLabel campusLogoLabel = new JLabel(campusLogo);
-        logoCampus.add(campusLogoLabel);
-
+        /* add logoCampusPanel JPanel for character image */
+        logoCampusPanel = new JPanel();
+        add(logoCampusPanel);
+        logoCampusPanel.setBounds(new Rectangle(585,480,190,100));
+        logoCampusPanel.setBorder(campusLogoBorder);
+        logoCampusPanel.setBackground(new Color(0,0,0,65));
+        JLabel campusLogoLabel = new JLabel(campusLogoIcon);
+        logoCampusPanel.add(campusLogoLabel);
     }
 }

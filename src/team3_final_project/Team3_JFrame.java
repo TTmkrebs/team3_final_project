@@ -25,9 +25,10 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     JButton bBackToMap;
     
     
-    /* store value for selected character */
+    /* store value for selected character and theme */
     String character;
-    /* store value for selected selectedCampus */
+    String theme;
+    /* store value for selectedCampus */
     String selectedCampus;
     ImageIcon charIcon = new ImageIcon("images/characters/footballplayer.png");
     Image charImage = charIcon.getImage();
@@ -58,10 +59,10 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
         instr = new InstructionsPanel();
         choices = new ChoicesPanel();
         mapCampuses = new MapCampusesPanel(mapImage);
-        control = new ControlPanel("");
+        control = new ControlPanel("","");
         developers = new DevelopersPanel();
         credits = new CreditsPanel();
-        game = new GameFullPanel(selectedCampus);
+        game = new GameFullPanel("");
         
         /* assign instructions button and add listener */
         bInstr = main.bInstruction;
@@ -141,9 +142,10 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             
             /* read chosen character */
             character = choices.character;
+            theme = choices.theme;
             
             /* setup ControlPanel */
-            control = new ControlPanel(character);
+            control = new ControlPanel(character,theme);
             add(control);
             control.setBounds(new Rectangle(0,0,800,50));
             control.setVisible(true);
@@ -151,7 +153,6 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             bBackMainMenu.addActionListener(this);
               
             /* setup MapCampusesPanel */
-            mapCampuses = new MapCampusesPanel(mapImage);
             mapCampuses.setX(0);
             mapCampuses.setY(100);
             mapCampuses.addKeyListener(this);
@@ -200,15 +201,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e)
     {
         int i = e.getKeyCode();
-        
-         /* setup GameFullPanel */
-                   
-        add(game);
-        bBackMainMenu = game.bBackMainMenu;
-        bBackMainMenu.addActionListener(this);
-        bBackToMap = game.backMap;
-        bBackToMap.addActionListener(this);
-        
+              
         if(i == e.VK_LEFT)
         {
             if(p1X > 0)
@@ -290,6 +283,14 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             control.setVisible(false);
             game.setVisible(true);
         }
+        
+         /* setup GameFullPanel */  
+        game = new GameFullPanel(selectedCampus);
+        add(game);
+        bBackMainMenu = game.bBackMainMenu;
+        bBackMainMenu.addActionListener(this);
+        bBackToMap = game.backMap;
+        bBackToMap.addActionListener(this);
     }
     
     @Override
