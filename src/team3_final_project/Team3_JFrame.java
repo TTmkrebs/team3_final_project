@@ -142,6 +142,7 @@ public class Team3_JFrame extends JFrame implements ActionListener, KeyListener
             
             /* read chosen character */
             character = choices.character;
+            theme = choices.theme;
             
             /* setup ControlPanel */
             control = new ControlPanel(character,theme);
