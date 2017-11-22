@@ -1,5 +1,6 @@
 package team3_final_project;
 
+import java.awt.Color;
 import javax.swing.*;
 
 public class Team3_JFrame extends JFrame
@@ -14,5 +15,6 @@ public class Team3_JFrame extends JFrame
         setSize(800,700);
         setVisible(true);
         setResizable(false);
+        setBackground(Color.green);
     }
 }

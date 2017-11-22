@@ -99,10 +99,9 @@ public class CampusPanel extends JPanel
         logoCampus.setBackground(new Color(0,0,0,65));
         JLabel campusLogoLabel = new JLabel(campusLogo);
         logoCampus.add(campusLogoLabel);
-        
-        setVisible(false);
     }
     
+    @Override
     public void setName(String name)
     {
         campusName = name;
@@ -123,6 +122,7 @@ public class CampusPanel extends JPanel
         campusComplete = tf;
     }
     
+    @Override
     public String getName()
     {
         return campusName;

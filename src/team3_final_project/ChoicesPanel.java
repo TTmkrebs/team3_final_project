@@ -143,18 +143,18 @@ public class ChoicesPanel extends JPanel implements ActionListener
     
     public void setCharacter(String inChar)
     {
-        if(inChar == "char1") { player1 = new Player("Football Player");}
-        if(inChar == "char2") { player1 = new Player("Student");}
-        if(inChar == "char3") { player1 = new Player("Mascot");}
+        if(inChar.equals("char1")) { player1 = new Player("Football Player");}
+        if(inChar.equals("char2")) { player1 = new Player("Student");}
+        if(inChar.equals("char3")) { player1 = new Player("Mascot");}
         charText.setText(player1.getCharacter());
     }
     
     public void setTheme(String inTheme)
     {
         player1.setTheme(inTheme);
-        if(player1.getTheme() == "theme1") { themeText.setText("Theme 1");}
-        if(player1.getTheme() == "theme2") { themeText.setText("Theme 2");}
-        if(player1.getTheme() == "theme3") { themeText.setText("Theme 3");}
+        if(player1.getTheme().equals("theme1")) { themeText.setText("Theme 1");}
+        if(player1.getTheme().equals("theme2")) { themeText.setText("Theme 2");}
+        if(player1.getTheme().equals("theme3")) { themeText.setText("Theme 3");}
     }
     
     @Override
@@ -169,8 +169,8 @@ public class ChoicesPanel extends JPanel implements ActionListener
         
         /* set theme */
         if(obj == theme1) { setTheme("theme1");}
-        if(obj == theme1) { setTheme("theme2");}
-        if(obj == theme1) { setTheme("theme3");}
+        if(obj == theme2) { setTheme("theme2");}
+        if(obj == theme3) { setTheme("theme3");}
         
         if(player1 != null)
         {

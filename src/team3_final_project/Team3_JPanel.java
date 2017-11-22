@@ -41,7 +41,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         /* setup base panel */
         super();
         setLayout(null);
-        setBackground(Color.white);
+        setBackground(Color.green);
         setSize(dim);
         
         /* initialize & display main panel */
@@ -90,9 +90,16 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         
         /* create campus objects */
         campusList = createCampuses();
+        for(int i=0; i<campusList.length;i++)
+        {
+            campusList[i].setSize(dim);
+            add(campusList[i]);
+            campusList[i].setBounds(win);
+            campusList[i].setVisible(false);
+        }
         
         /* initialize timer */
-        time = new Timer(1000,this);
+        time = new Timer(1000,this);      
     }
     
     public void showChoice()
@@ -200,9 +207,10 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         for(int i = 0; i < 6; i++)
         {          
             campusList[i] = new CampusPanel((String)xml.ReadObject(), 
-                    (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());
+                    (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
         }
         xml.closeReaderXML();
+        
         return campusList;
     }
     
