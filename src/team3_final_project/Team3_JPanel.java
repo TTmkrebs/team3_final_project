@@ -30,7 +30,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     
     /* character information */
     private Player currentPlayer;
-    private JLabel playerIcon;
     
     /* campus information */
     private CampusPanel[] campusList;
@@ -38,6 +37,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     /* game timer */
     private Timer time;
     private int playerTime;
+    private boolean gamePaused = false;
     
     public Team3_JPanel()
     {
@@ -105,6 +105,25 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         time = new Timer(1000,this);      
     }
     
+    public CampusPanel[] createCampuses()
+    {
+        XML_240 xml = new XML_240();
+        xml.openReaderXML("campusList.xml");
+        
+        CampusPanel[] campusList = new CampusPanel[6];
+        
+        for(int i = 0; i < 6; i++)
+        {          
+            campusList[i] = new CampusPanel((String)xml.ReadObject(), 
+                    (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
+        }
+        xml.closeReaderXML();
+        
+        campus = campusList[0];
+        
+        return campusList;
+    }
+        
     public void showChoice()
     {
         /* toggle panel visibility */
@@ -144,6 +163,72 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             bBack.addActionListener(this);
     }
     
+    public void playGame()
+    {
+        /* clear prior player information */
+            if(currentPlayer != null)
+            {
+                currentPlayer = null;
+            }
+            /* obtain player information from characer selection */
+            currentPlayer = choice.getPlayer();
+            
+            /* pass player into game & campus panel */
+            game.assignPlayer(currentPlayer);
+            
+            /* pass character icon into campus panel */
+            for(int i=0;i<campusList.length;i++)
+            {
+                campusList[i].setPlayer(currentPlayer);
+            }
+            
+            /* toggle panel visibility */
+            instr.setVisible(false);
+            devs.setVisible(false);
+            choice.setVisible(false);
+            main.setVisible(false);
+            game.setVisible(true);
+            
+            /* toggle background color */
+            setBackground(Color.BLACK);
+            
+            /* reassign buttons */
+            bBack = game.getBackButton();
+            bBack.addActionListener(this);
+            bPause = game.getPauseButton();
+            bPause.addActionListener(this);
+            
+            /* start timer */
+            time.restart();
+            
+            /* focus on game board */
+            game.setFocus();
+    }
+    
+    public void displayCampus(String inCampus)
+    {
+        for(int i=0; i<campusList.length; i++)
+        {
+            boolean nameMatch = campusList[i].getName().equals(inCampus);
+            boolean completed = campusList[i].getCompleted() == false;
+            
+            if(nameMatch && completed)
+            {
+                campus = campusList[i];
+                game.setVisible(false);
+                campus.setVisible(true);
+                bBack = campusList[i].getBackButton();
+                bBack.addActionListener(this);
+                bMainMenu = campusList[i].getMainMenuButton();
+                bMainMenu.addActionListener(this);
+            }
+            else
+            {
+                campusList[i].setVisible(false);
+            }
+        }
+    }
+    
     public void backButton()
     {
         if(instr.isVisible() || choice.isVisible() || devs.isVisible() || game.isVisible())
@@ -181,81 +266,19 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         for(int i=0; i<campusList.length; i++) {campusList[i].setVisible(false);}
         main.setVisible(true);
     }
-    
-    public void playGame()
-    {
-        /* clear prior player information */
-            if(currentPlayer != null)
-            {
-                currentPlayer = null;
-            }
-            /* obtain player information from characer selection */
-            currentPlayer = choice.getPlayer();
-            
-            /* pass player into game panel */
-            game.assignPlayer(currentPlayer);
-            
-            /* pass character icon into campus panel */
-            for(int i=0;i<campusList.length;i++)
-            {
-                campusList[i].setCharacter(currentPlayer.getImageIcon());
-            }
-            
-            /* toggle panel visibility */
-            instr.setVisible(false);
-            devs.setVisible(false);
-            choice.setVisible(false);
-            main.setVisible(false);
-            game.setVisible(true);
-            
-            /* toggle background color */
-            setBackground(Color.BLACK);
-            
-            /* reassign buttons */
-            bBack = game.getBackButton();
-            bBack.addActionListener(this);
-            bPause = game.getPauseButton();
-            bPause.addActionListener(this);
-            
-            /* aquire player icon */
-            playerIcon = game.getPlayerIcon();
-            
-            /* start timer */
-            time.restart();
-            
-            /* focus on game board */
-            game.setFocus();
-    }
-    
-    public CampusPanel[] createCampuses()
-    {
-        XML_240 xml = new XML_240();
-        xml.openReaderXML("campusList.xml");
-        
-        CampusPanel[] campusList = new CampusPanel[6];
-        
-        for(int i = 0; i < 6; i++)
-        {          
-            campusList[i] = new CampusPanel((String)xml.ReadObject(), 
-                    (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
-        }
-        xml.closeReaderXML();
-        
-        campus = campusList[0];
-        
-        return campusList;
-    }
-    
+   
     private void pausePressed()
     {
         if(time.isRunning())
         {
+            gamePaused = true;
             game.setPauseButtonText("Resume Game");
             time.stop();
             game.setFocus();
         }
         else
         {
+            gamePaused = false;
             game.setPauseButtonText("Pause Game");
             time.start();
             game.setFocus();
@@ -266,7 +289,9 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     {
         int code = e.getKeyCode();
         int speed = 2;
-        if(code == e.VK_LEFT)
+        if(gamePaused == false)
+        {
+            if(code == e.VK_LEFT)
             { 
                 if(game.getPlayerY() - speed > gameWin.x)
                 {
@@ -294,12 +319,13 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                     game.setPlayerY(speed);
                 }
             }
+        }
     }
     
     public String campusCheck(int x, int y)
     {
         String campus = "";
-        
+
         /* if paw icon is over Shenango, return selectedCampus */
         if(x > 7 && x < 40 && y > 270 && y < 291) { campus = "Campus:Shenango"; }
          /* if paw icon is over World Campus, return selectedCampus */
@@ -315,31 +341,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         
         return campus;
     }
-    
-    public void displayCampus(String inCampus)
-    {
-        for(int i=0; i<campusList.length; i++)
-        {
-            boolean nameMatch = campusList[i].getName().equals(inCampus);
-            boolean completed = campusList[i].getCompleted() == false;
-            
-            if(nameMatch && completed)
-            {
-                campus = campusList[i];
-                game.setVisible(false);
-                campus.setVisible(true);
-                bBack = campusList[i].getBackButton();
-                bBack.addActionListener(this);
-                bMainMenu = campusList[i].getMainMenuButton();
-                bMainMenu.addActionListener(this);
-            }
-            else
-            {
-                campusList[i].setVisible(false);
-            }
-        }
-    }
-    
+        
     @Override
     public void actionPerformed(ActionEvent e)
     {
