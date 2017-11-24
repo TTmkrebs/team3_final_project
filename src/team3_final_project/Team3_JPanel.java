@@ -17,6 +17,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private DevelopersPanel devs;
     private ChoicesPanel choice;
     private GameBoard game;
+    private CampusPanel campus;
     
     /* button initializations */
     private JButton bNewGame;
@@ -25,6 +26,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private JButton bBack;
     private JButton bPlayGame;
     private JButton bPause;
+    private JButton bMainMenu;
     
     /* character information */
     private Player currentPlayer;
@@ -35,6 +37,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     
     /* game timer */
     private Timer time;
+    private int playerTime;
     
     public Team3_JPanel()
     {
@@ -156,6 +159,27 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 /* reassign buttons */
                 bBack = null;
             }
+        for(int i=0; i<campusList.length; i++)
+        {
+            if(campusList[i].isVisible())
+            {
+                campusList[i].setVisible(false);
+                game.setVisible(true);
+                game.setFocus();
+                bBack = game.getBackButton();
+                
+            }
+        }
+    }
+    
+    public void mainMenuButton()
+    {
+        game.setVisible(false);
+        instr.setVisible(false);
+        devs.setVisible(false);
+        choice.setVisible(false);
+        for(int i=0; i<campusList.length; i++) {campusList[i].setVisible(false);}
+        main.setVisible(true);
     }
     
     public void playGame()
@@ -170,6 +194,12 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             
             /* pass player into game panel */
             game.assignPlayer(currentPlayer);
+            
+            /* pass character icon into campus panel */
+            for(int i=0;i<campusList.length;i++)
+            {
+                campusList[i].setCharacter(currentPlayer.getImageIcon());
+            }
             
             /* toggle panel visibility */
             instr.setVisible(false);
@@ -210,6 +240,8 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                     (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
         }
         xml.closeReaderXML();
+        
+        campus = campusList[0];
         
         return campusList;
     }
@@ -293,8 +325,13 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             
             if(nameMatch && completed)
             {
+                campus = campusList[i];
                 game.setVisible(false);
-                campusList[i].setVisible(true);
+                campus.setVisible(true);
+                bBack = campusList[i].getBackButton();
+                bBack.addActionListener(this);
+                bMainMenu = campusList[i].getMainMenuButton();
+                bMainMenu.addActionListener(this);
             }
             else
             {
@@ -312,8 +349,9 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bDevelopers) { showDeveloper(); }
         if(obj == bBack) { backButton(); }
         if(obj == bPlayGame) { playGame(); game.setFocus();}
-        if(obj == time) { game.setTimer(); }
+        if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
         if(obj == bPause) { pausePressed(); }
+        if(obj == bMainMenu) { mainMenuButton(); }
     }
     
     @Override
