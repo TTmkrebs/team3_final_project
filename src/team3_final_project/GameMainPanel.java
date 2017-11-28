@@ -8,7 +8,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.BorderFactory;
 
-public class CampusPanel extends JPanel implements ActionListener
+public class GameMainPanel extends JPanel implements ActionListener
 {
     /* create campus attributes */
     private String campusName;
@@ -48,9 +48,9 @@ public class CampusPanel extends JPanel implements ActionListener
     JButton ttt9;
     JButton[] buttonList = new JButton[9];
     
-    public CampusPanel(String inName, int inColor, ImageIcon inLogo, ImageIcon inImage)
+    public GameMainPanel(String inName, int inColor, ImageIcon inLogo, ImageIcon inImage)
     {
-        /* setup CampusPanel */
+        /* setup GameMainPanel */
         super();
         setBackground(Color.cyan);
         setLayout(null);

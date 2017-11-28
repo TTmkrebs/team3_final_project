@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class GameBoard extends JPanel
+public class MapsPanel extends JPanel
 {
     /* initialize campus map image */
     private Image img;
@@ -25,11 +25,11 @@ public class GameBoard extends JPanel
     private Rectangle playerIconXY = new Rectangle(200,200,50,50);
     private JLabel playerIcon = new JLabel();
     
-    public GameBoard()
+    public MapsPanel()
     {
         /* create game board */
         setLayout(null);
-        setBackground(Color.WHITE);
+        setBackground(Color.black);
         
         /* create campus map image */
         ImageIcon icon = new ImageIcon("images/general/campus_map_2.png");
@@ -124,7 +124,7 @@ public class GameBoard extends JPanel
         requestFocus();
     }
     
-    public void setTimer()
+    public void setTimer(int inTime)
     {
         time +=1;
         bTimer.setText("Time: " + time);

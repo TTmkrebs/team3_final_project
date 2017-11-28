@@ -16,8 +16,8 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private InstructionsPanel instr;
     private DevelopersPanel devs;
     private ChoicesPanel choice;
-    private GameBoard game;
-    private CampusPanel campus;
+    private MapsPanel game;
+    private GameMainPanel campus;
     
     /* button initializations */
     private JButton bNewGame;
@@ -32,7 +32,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private Player currentPlayer;
     
     /* campus information */
-    private CampusPanel[] campusList;
+    private GameMainPanel[] campusList;
     
     /* game timer */
     private Timer time;
@@ -84,7 +84,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         choice.setVisible(false);
         
         /* initialize game panel */
-        game = new GameBoard();
+        game = new MapsPanel();
         game.setSize(dim);
         add(game);
         game.setBounds(win);
@@ -105,16 +105,16 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         time = new Timer(1000,this);      
     }
     
-    public CampusPanel[] createCampuses()
+    public GameMainPanel[] createCampuses()
     {
         XML_240 xml = new XML_240();
         xml.openReaderXML("campusList.xml");
         
-        CampusPanel[] campusList = new CampusPanel[6];
+        GameMainPanel[] campusList = new GameMainPanel[6];
         
         for(int i = 0; i < 6; i++)
         {          
-            campusList[i] = new CampusPanel((String)xml.ReadObject(), 
+            campusList[i] = new GameMainPanel((String)xml.ReadObject(), 
                     (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
         }
         xml.closeReaderXML();
