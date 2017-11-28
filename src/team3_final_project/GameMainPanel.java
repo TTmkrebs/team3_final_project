@@ -136,6 +136,8 @@ public class GameMainPanel extends JPanel implements ActionListener
         JLabel campusLogoLabel = new JLabel(campusLogo);
         logoCampus.add(campusLogoLabel);
         add(logoCampus);
+        
+        game_selection(1);
     }
     
     @Override
@@ -203,7 +205,7 @@ public class GameMainPanel extends JPanel implements ActionListener
         JLabel charIcon = new JLabel(player1.getImageIcon());
         imageCharacter.add(charIcon, BorderLayout.CENTER);
         
-        JLabel theme = new JLabel(player1.getTheme());
+        JLabel theme = new JLabel(player1.getThemeIcon());
         logoTheme.add(theme, BorderLayout.CENTER);
         
         bScore.setText("Score: " + player1.getScore());
