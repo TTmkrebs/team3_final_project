@@ -91,19 +91,22 @@ public class ChoicesPanel extends JPanel implements ActionListener
         themeLabel.setBounds(new Rectangle(360,350,200,25));
         
         /* create themes */
-        theme1 = new JButton("Theme 1");
+        ImageIcon psuAcademics = new ImageIcon("images/themes/psuacademics.png");
+        theme1 = new JButton(psuAcademics);
         theme1.addActionListener(this);
         add(theme1);
         theme1.setBounds(new Rectangle(125, 400, 150, 150));
         theme1.setEnabled(false);
         
-        theme2 = new JButton("Theme 2");
+        ImageIcon psuHistory = new ImageIcon("images/themes/psuhistory.png");
+        theme2 = new JButton(psuHistory);
         theme2.addActionListener(this);
         add(theme2);
         theme2.setBounds(new Rectangle(325, 400, 150, 150));
         theme2.setEnabled(false);
         
-        theme3 = new JButton("Theme 3");
+        ImageIcon psuSports = new ImageIcon("images/themes/psusports.png");
+        theme3 = new JButton(psuSports);
         theme3.addActionListener(this);
         add(theme3);
         theme3.setBounds(new Rectangle(525, 400, 150, 150));

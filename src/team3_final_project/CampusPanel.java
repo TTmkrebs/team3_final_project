@@ -15,6 +15,7 @@ public class CampusPanel extends JPanel implements ActionListener
     private int campusColor;
     private ImageIcon campusLogo;
     private ImageIcon campusImage;
+    private ImageIcon themeImage;
     private JButton backMap;
     private JButton bBackMainMenu;
     
@@ -54,6 +55,7 @@ public class CampusPanel extends JPanel implements ActionListener
         setBackground(Color.cyan);
         setLayout(null);
         
+        themeImage = inLogo;
         campusName = inName;
         campusColor = inColor;
         campusLogo = inLogo;

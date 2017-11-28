@@ -3,49 +3,49 @@
  <string>Campus:Shenango</string>
  <int>16711680</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/shenango.png</string>
+  <string>images/campuses/logos/shenango.png</string>
  </object>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/shenango.png</string>
+  <string>images/campuses/shenango.png</string>
  </object>
  <string>Campus:Greater Allegheny</string>
  <int>65280</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/greater_allegheny.png</string>
+  <string>images/campuses/logos/greater_allegheny.png</string>
  </object>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/greater_allegheny.png</string>
+  <string>images/campuses/greater_allegheny.png</string>
  </object>
  <string>Campus:University Park</string>
  <int>255</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/university_park.png</string>
+  <string>images/campuses/logos/university_park.png</string>
  </object>
   <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/university_park.png</string>
+  <string>images/campuses/university_park.png</string>
  </object>
  <string>Campus:Worthington Scranton</string>
  <int>16744448</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/worthington_scranton.png</string>
+  <string>images/campuses/logos/worthington_scranton.png</string>
  </object>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/worthington_scranton.png</string>
+  <string>images/campuses/worthington_scranton.png</string>
  </object>
  <string>Campus:Great Valley</string>
  <int>16776960</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/great_valley.png</string>
+  <string>images/campuses/logos/great_valley.png</string>
  </object>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/great_valley.png</string>
+  <string>images/campuses/great_valley.png</string>
  </object>
  <string>Campus:World Campus</string>
  <int>12632256</int>
  <object class="javax.swing.ImageIcon">
-  <string>images/campuses/world_campus.png</string>
+  <string>images/campuses/logos/world_campus.png</string>
  </object>
   <object class="javax.swing.ImageIcon">
-  <string>images/campuses/logos/world_campus.png</string>
+  <string>images/campuses/world_campus.png</string>
  </object>
 </java>

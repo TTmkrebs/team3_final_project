@@ -351,7 +351,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bDevelopers) { showDeveloper(); }
         if(obj == bBack) { backButton(); }
         if(obj == bPlayGame) { playGame(); game.setFocus();}
-        if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
+//        if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
         if(obj == bPause) { pausePressed(); }
         if(obj == bMainMenu) { mainMenuButton(); }
     }
