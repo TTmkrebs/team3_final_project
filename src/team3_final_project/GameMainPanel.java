@@ -81,18 +81,18 @@ public class GameMainPanel extends JPanel implements ActionListener
         
         /* add gameInstructions JPanel for mini game instructions */
         gameInstructions = new JPanel();
-        add(gameInstructions);
         gameInstructions.setBounds(new Rectangle(20,20,545,75));
         gameInstructions.setBorder(instructionsBorder);
         gameInstructions.setBackground(new Color(0,0,0,65));
+        add(gameInstructions);
         
         /* add miniGame JPanel for mini game */
         miniGame = new JPanel();
-        add(miniGame);
         miniGame.setLayout(new GridLayout(3,3));
         miniGame.setBounds(new Rectangle(20,100,545,550));
         miniGame.setBorder(whiteLine);
         miniGame.setBackground(new Color(0,0,0,65));
+        add(miniGame);
         
         /* add playerStats JPanel for character stats and timer */
         playerStats = new JPanel();
@@ -114,28 +114,28 @@ public class GameMainPanel extends JPanel implements ActionListener
         
         /* add logoTheme JPanel for theme logo */
         logoTheme = new JPanel();
-        add(logoTheme);
         logoTheme.setLayout(new BorderLayout());
         logoTheme.setBounds(new Rectangle(585,125,190,172));
         logoTheme.setBorder(themeLogoBorder);
         logoTheme.setBackground(new Color(0,0,0,65));
+        add(logoTheme);
         
         /* add imageCharacter JPanel for character image */
         imageCharacter = new JPanel();
         imageCharacter.setLayout(new BorderLayout());
-        add(imageCharacter);
         imageCharacter.setBounds(new Rectangle(585,303,190,172));
         imageCharacter.setBorder(characterImageBorder);
         imageCharacter.setBackground(new Color(0,0,0,65));
+        add(imageCharacter);
         
         /* add logoCampus JPanel for campus image */
         logoCampus = new JPanel();
-        add(logoCampus);
         logoCampus.setBounds(new Rectangle(585,480,190,100));
         logoCampus.setBorder(campusLogoBorder);
         logoCampus.setBackground(new Color(0,0,0,65));
         JLabel campusLogoLabel = new JLabel(campusLogo);
         logoCampus.add(campusLogoLabel);
+        add(logoCampus);
     }
     
     @Override

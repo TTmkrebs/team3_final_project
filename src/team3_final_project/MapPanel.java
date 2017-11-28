@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class MapsPanel extends JPanel
+public class MapPanel extends JPanel
 {
     /* initialize campus map image */
     private Image img;
@@ -25,7 +25,7 @@ public class MapsPanel extends JPanel
     private Rectangle playerIconXY = new Rectangle(200,200,50,50);
     private JLabel playerIcon = new JLabel();
     
-    public MapsPanel()
+    public MapPanel()
     {
         /* create game board */
         setLayout(null);

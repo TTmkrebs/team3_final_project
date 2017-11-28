@@ -16,7 +16,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private InstructionsPanel instr;
     private DevelopersPanel devs;
     private ChoicesPanel choice;
-    private MapsPanel game;
+    private MapPanel game;
     private GameMainPanel campus;
     
     /* button initializations */
@@ -84,7 +84,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         choice.setVisible(false);
         
         /* initialize game panel */
-        game = new MapsPanel();
+        game = new MapPanel();
         game.setSize(dim);
         add(game);
         game.setBounds(win);

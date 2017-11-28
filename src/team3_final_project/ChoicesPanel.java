@@ -91,21 +91,21 @@ public class ChoicesPanel extends JPanel implements ActionListener
         themeLabel.setBounds(new Rectangle(360,350,200,25));
         
         /* create themes */
-        ImageIcon psuAcademics = new ImageIcon("images/themes/psuacademics.png");
+        ImageIcon psuAcademics = new ImageIcon("images/themes/psusports.png");
         theme1 = new JButton(psuAcademics);
         theme1.addActionListener(this);
         add(theme1);
         theme1.setBounds(new Rectangle(125, 400, 150, 150));
         theme1.setEnabled(false);
         
-        ImageIcon psuHistory = new ImageIcon("images/themes/psuhistory.png");
+        ImageIcon psuHistory = new ImageIcon("images/themes/psuacademics.png");
         theme2 = new JButton(psuHistory);
         theme2.addActionListener(this);
         add(theme2);
         theme2.setBounds(new Rectangle(325, 400, 150, 150));
         theme2.setEnabled(false);
         
-        ImageIcon psuSports = new ImageIcon("images/themes/psusports.png");
+        ImageIcon psuSports = new ImageIcon("images/themes/psuhistory.png");
         theme3 = new JButton(psuSports);
         theme3.addActionListener(this);
         add(theme3);
@@ -155,9 +155,9 @@ public class ChoicesPanel extends JPanel implements ActionListener
     public void setTheme(String inTheme)
     {
         player1.setTheme(inTheme);
-        if(player1.getTheme().equals("theme1")) { themeText.setText("Theme 1");}
-        if(player1.getTheme().equals("theme2")) { themeText.setText("Theme 2");}
-        if(player1.getTheme().equals("theme3")) { themeText.setText("Theme 3");}
+        if(player1.getTheme().equals("theme1")) { themeText.setText("PSU Sports");}
+        if(player1.getTheme().equals("theme2")) { themeText.setText("PSU Academics");}
+        if(player1.getTheme().equals("theme3")) { themeText.setText("PSU History");}
     }
     
     @Override
