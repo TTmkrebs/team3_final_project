@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_71" class="java.beans.XMLDecoder">
  <string>Campus:Shenango</string>
- <int>16711680</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/shenango.png</string>
  </object>
@@ -9,7 +8,6 @@
   <string>images/campuses/shenango.png</string>
  </object>
  <string>Campus:Greater Allegheny</string>
- <int>65280</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/greater_allegheny.png</string>
  </object>
@@ -17,7 +15,6 @@
   <string>images/campuses/greater_allegheny.png</string>
  </object>
  <string>Campus:University Park</string>
- <int>255</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/university_park.png</string>
  </object>
@@ -25,7 +22,6 @@
   <string>images/campuses/university_park.png</string>
  </object>
  <string>Campus:Worthington Scranton</string>
- <int>16744448</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/worthington_scranton.png</string>
  </object>
@@ -33,7 +29,6 @@
   <string>images/campuses/worthington_scranton.png</string>
  </object>
  <string>Campus:Great Valley</string>
- <int>16776960</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/great_valley.png</string>
  </object>
@@ -41,7 +36,6 @@
   <string>images/campuses/great_valley.png</string>
  </object>
  <string>Campus:World Campus</string>
- <int>12632256</int>
  <object class="javax.swing.ImageIcon">
   <string>images/campuses/logos/world_campus.png</string>
  </object>

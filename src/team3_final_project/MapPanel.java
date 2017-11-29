@@ -58,7 +58,7 @@ public class MapPanel extends JPanel
         
         /* create character image */
         JLabel charImage = new JLabel();
-        charImage.setIcon(player1.getImageIcon());
+        charImage.setIcon(player1.getCharacterIcon());
         
         /* create score button */
         bScore = new JButton("Score: " + player1.getScore());

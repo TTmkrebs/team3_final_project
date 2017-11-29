@@ -115,7 +115,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         for(int i = 0; i < 6; i++)
         {          
             campusList[i] = new GameMainPanel((String)xml.ReadObject(), 
-                    (int)xml.ReadObject(),(ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
+                    (ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
         }
         xml.closeReaderXML();
         
