@@ -10,6 +10,8 @@ public class Player
     private String bonus;
     private ImageIcon icon;
     private Image image;
+    private ImageIcon mapIcon;
+    private Image mapImage;
     private String theme;
     
     /* game information */
@@ -23,18 +25,29 @@ public class Player
             bonus = "Sports";
             icon = new ImageIcon("images/characters/footballplayer.png");
             image = icon.getImage();
+            
+            mapIcon = new ImageIcon("images/icons/football.png");
+            mapImage = mapIcon.getImage();
+            
         }
         if(character == "Mascot")
         {
             bonus = "History";
             icon = new ImageIcon("images/characters/mascot.jpg");
             image = icon.getImage();
+            
+            mapIcon = new ImageIcon("images/icons/pawprint.png");
+            mapImage = mapIcon.getImage();
+            
         }
         if(character == "Student")
         {
             bonus = "Academics";
             icon = new ImageIcon("images/characters/student.png");
             image = icon.getImage();
+            
+            mapIcon = new ImageIcon("images/icons/book.png");
+            mapImage = mapIcon.getImage();
         }
     }
     
@@ -46,6 +59,11 @@ public class Player
     public String getBonus()
     {
         return bonus;
+    }
+    
+    public ImageIcon getMapIcon()
+    {
+        return mapIcon;
     }
     
     public ImageIcon getImageIcon()

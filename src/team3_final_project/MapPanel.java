@@ -72,7 +72,7 @@ public class MapPanel extends JPanel
         
         /* create player icon */
         playerIcon.setLayout(new BorderLayout());
-        playerIcon.setIcon(player1.getImageIcon());
+        playerIcon.setIcon(player1.getMapIcon());
         add(playerIcon);
         playerIcon.setBounds(playerIconXY);
     }
