@@ -8,7 +8,7 @@ public class Player
     /* player information */
     private String character;
     private String bonus;
-    private ImageIcon icon;
+    private ImageIcon characterIcon;
     private Image image;
     private ImageIcon mapIcon;
     private Image mapImage;
@@ -23,8 +23,8 @@ public class Player
         if(character == "Football Player")
         {
             bonus = "Sports";
-            icon = new ImageIcon("images/characters/footballplayer.png");
-            image = icon.getImage();
+            characterIcon = new ImageIcon("images/characters/footballplayer.png");
+            image = characterIcon.getImage();
             
             mapIcon = new ImageIcon("images/icons/football.png");
             mapImage = mapIcon.getImage();
@@ -33,8 +33,8 @@ public class Player
         if(character == "Mascot")
         {
             bonus = "History";
-            icon = new ImageIcon("images/characters/mascot.jpg");
-            image = icon.getImage();
+            characterIcon = new ImageIcon("images/characters/mascot.jpg");
+            image = characterIcon.getImage();
             
             mapIcon = new ImageIcon("images/icons/pawprint.png");
             mapImage = mapIcon.getImage();
@@ -43,8 +43,8 @@ public class Player
         if(character == "Student")
         {
             bonus = "Academics";
-            icon = new ImageIcon("images/characters/student.png");
-            image = icon.getImage();
+            characterIcon = new ImageIcon("images/characters/student.png");
+            image = characterIcon.getImage();
             
             mapIcon = new ImageIcon("images/icons/book.png");
             mapImage = mapIcon.getImage();
@@ -66,9 +66,9 @@ public class Player
         return mapIcon;
     }
     
-    public ImageIcon getImageIcon()
+    public ImageIcon getCharacterIcon()
     {
-        return icon;
+        return characterIcon;
     }
     
     public Image getImage()

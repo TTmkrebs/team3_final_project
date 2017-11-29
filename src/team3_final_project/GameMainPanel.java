@@ -12,10 +12,9 @@ public class GameMainPanel extends JPanel implements ActionListener
 {
     /* create campus attributes */
     private String campusName;
-    private int campusColor;
     private ImageIcon campusLogo;
-    private ImageIcon campusImage;
-    private ImageIcon themeImage;
+    private ImageIcon campusBackgroundIcon;
+    private Image campusBackgroundImage;
     private JButton backMap;
     private JButton bBackMainMenu;
     
@@ -48,26 +47,33 @@ public class GameMainPanel extends JPanel implements ActionListener
     JButton ttt9;
     JButton[] buttonList = new JButton[9];
     
-    public GameMainPanel(String inName, int inColor, ImageIcon inLogo, ImageIcon inImage)
+    /* background image coordinates */
+    int x = 0;
+    int y = 0;
+    
+    public GameMainPanel(String inName, ImageIcon inLogo, ImageIcon inBackground)
     {
         /* setup GameMainPanel */
         super();
-        setBackground(Color.cyan);
+        setBackground(Color.black);
         setLayout(null);
         
-        themeImage = inLogo;
+//        themeImage = inTheme;
         campusName = inName;
-        campusColor = inColor;
         campusLogo = inLogo;
-        campusImage = inImage;
+        campusBackgroundIcon = inBackground;
         campusComplete = false;
         
+        Font borderFont = new Font("SansSerif", Font.BOLD, 15);
         Border whiteLine = BorderFactory.createLineBorder(Color.white);
-        TitledBorder instructionsBorder = BorderFactory.createTitledBorder(whiteLine, "Instructions");
-        TitledBorder playerStatsBorder = BorderFactory.createTitledBorder(whiteLine, "Player Stats");
-        TitledBorder characterImageBorder = BorderFactory.createTitledBorder(whiteLine, "Playing As");
-        TitledBorder campusLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Campus");
-        TitledBorder themeLogoBorder = BorderFactory.createTitledBorder(whiteLine, "Chosen Theme");
+        Border whiteLineTitle = BorderFactory.createTitledBorder(whiteLine, "");
+                
+        Border instructionsBorder = new TitledBorder(whiteLineTitle, "Instructions",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border playerStatsBorder = new TitledBorder(whiteLineTitle, "Player Stats",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border characterImageBorder = new TitledBorder(whiteLineTitle, "Character",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border campusLogoBorder = new TitledBorder(whiteLineTitle, "Campus",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border themeLogoBorder = new TitledBorder(whiteLineTitle, "Theme",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        
         
         /* create and add backMap button */
         backMap = new JButton("Back to Map");
@@ -78,6 +84,9 @@ public class GameMainPanel extends JPanel implements ActionListener
         bBackMainMenu = new JButton("Main Menu");
         add(bBackMainMenu);
         bBackMainMenu.setBounds(new Rectangle(585,625,190,25));
+        
+        /* add campus background */
+        campusBackgroundImage = campusBackgroundIcon.getImage();
         
         /* add gameInstructions JPanel for mini game instructions */
         gameInstructions = new JPanel();
@@ -138,6 +147,24 @@ public class GameMainPanel extends JPanel implements ActionListener
         add(logoCampus);
         
         game_selection(1);
+
+    }
+    
+    public void setX(int inX)
+    {
+        x = inX;
+    }
+    
+    public void setY(int inY)
+    {
+        y = inY;
+    }
+    
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(campusBackgroundImage,x,y,this);
     }
     
     @Override
@@ -145,12 +172,7 @@ public class GameMainPanel extends JPanel implements ActionListener
     {
         campusName = name;
     }
-    
-    public void setColor(int color)
-    {
-        campusColor = color;
-    }
-    
+       
     public void setIcon(ImageIcon icon)
     {
         campusLogo = icon;
@@ -165,11 +187,6 @@ public class GameMainPanel extends JPanel implements ActionListener
     public String getName()
     {
         return campusName;
-    }
-    
-    public int getColor()
-    {
-        return campusColor;
     }
     
     public ImageIcon getLogo()
@@ -202,11 +219,11 @@ public class GameMainPanel extends JPanel implements ActionListener
     {
         player1 = p1;
         
-        JLabel charIcon = new JLabel(player1.getImageIcon());
+        JLabel charIcon = new JLabel(player1.getCharacterIcon());
         imageCharacter.add(charIcon, BorderLayout.CENTER);
         
-//        JLabel theme = new JLabel(player1.getThemeIcon());
-//        logoTheme.add(theme, BorderLayout.CENTER);
+        JLabel theme = new JLabel(player1.getTheme());
+        logoTheme.add(theme, BorderLayout.CENTER);
         
         bScore.setText("Score: " + player1.getScore());
     }
