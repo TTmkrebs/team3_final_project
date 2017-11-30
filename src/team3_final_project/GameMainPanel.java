@@ -17,6 +17,7 @@ public class GameMainPanel extends JPanel
     private Image campusBackgroundImage;
     private JButton backMap;
     private JButton bBackMainMenu;
+    private JLabel instructionsLabel;
     
     /* create inner panels */
     private JPanel gameInstructions;
@@ -81,6 +82,10 @@ public class GameMainPanel extends JPanel
         gameInstructions.setBounds(new Rectangle(20,20,545,75));
         gameInstructions.setBorder(instructionsBorder);
         gameInstructions.setBackground(new Color(0,0,0,65));
+        instructionsLabel = new JLabel("Connect three X's in a row to win!");
+        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
+        instructionsLabel.setForeground(Color.white);
+        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
         add(gameInstructions);
         
         /* add miniGame JPanel for mini game */
@@ -115,9 +120,10 @@ public class GameMainPanel extends JPanel
         logoTheme.setBounds(new Rectangle(585,125,190,172));
         logoTheme.setBorder(themeLogoBorder);
         logoTheme.setBackground(new Color(0,0,0,65));
-        add(logoTheme);
         themeIcon = new JLabel();
         logoTheme.add(themeIcon, BorderLayout.CENTER);
+        add(logoTheme);
+        
         
         /* add imageCharacter JPanel for character image */
         imageCharacter = new JPanel();
@@ -125,9 +131,10 @@ public class GameMainPanel extends JPanel
         imageCharacter.setBounds(new Rectangle(585,303,190,172));
         imageCharacter.setBorder(characterImageBorder);
         imageCharacter.setBackground(new Color(0,0,0,65));
-        add(imageCharacter);
         charIcon = new JLabel();
         imageCharacter.add(charIcon, BorderLayout.CENTER);
+        add(imageCharacter);
+        
         
         /* add logoCampus JPanel for campus image */
         logoCampus = new JPanel();
