@@ -211,10 +211,10 @@ public class GameMainPanel extends JPanel
         
         charIcon.setIcon(currentPlayer.getCharacterIcon());
         
-//        themeIcon.setIcon(currentPlayer.getThemeIcon());
+        themeIcon.setIcon(currentPlayer.getThemeIcon());
         
         bScore.setText("Score: " + currentPlayer.getScore());
-//        bTimer.setText("Time: " + currentPlayer.getTime());
+        bTimer.setText("Time: " + currentPlayer.getTime());
     }
 
     
