@@ -163,46 +163,47 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             bBack.addActionListener(this);
     }
     
+    public Player createPlayer()
+    {
+        currentPlayer = new Player(choice.getCharacter());
+        currentPlayer.setTheme(choice.getTheme());
+        currentPlayer.setThemeIcon(choice.getThemeIcon(currentPlayer.getTheme()));
+        return currentPlayer;
+    }
+    
     public void playGame()
     {
-        /* clear prior player information */
-            if(currentPlayer != null)
-            {
-                currentPlayer = null;
-            }
-            /* obtain player information from characer selection */
-            currentPlayer = choice.getPlayer();
-            
-            /* pass player into game & campus panel */
-            game.assignPlayer(currentPlayer);
-            
-            /* pass character icon into campus panel */
-            for(int i=0;i<campusList.length;i++)
-            {
-                campusList[i].setPlayer(currentPlayer);
-            }
-            
-            /* toggle panel visibility */
-            instr.setVisible(false);
-            devs.setVisible(false);
-            choice.setVisible(false);
-            main.setVisible(false);
-            game.setVisible(true);
-            
-            /* toggle background color */
-            setBackground(Color.BLACK);
-            
-            /* reassign buttons */
-            bBack = game.getBackButton();
-            bBack.addActionListener(this);
-            bPause = game.getPauseButton();
-            bPause.addActionListener(this);
-            
-            /* start timer */
-            time.restart();
-            
-            /* focus on game board */
-            game.setFocus();
+        /* pass player into game & campus panel */
+        game.assignPlayer(currentPlayer);
+
+        /* pass character icon into campus panel */
+        for(int i=0;i<campusList.length;i++)
+        {
+            campusList[i].setPlayer(currentPlayer);
+            campusList[i].repaint();
+        }
+
+        /* toggle panel visibility */
+        instr.setVisible(false);
+        devs.setVisible(false);
+        choice.setVisible(false);
+        main.setVisible(false);
+        game.setVisible(true);
+
+        /* toggle background color */
+        setBackground(Color.BLACK);
+
+        /* reassign buttons */
+        bBack = game.getBackButton();
+        bBack.addActionListener(this);
+        bPause = game.getPauseButton();
+        bPause.addActionListener(this);
+
+        /* start timer */
+        time.restart();
+
+        /* focus on game board */
+        game.setFocus();
     }
     
     public void displayCampus(String inCampus)
@@ -350,7 +351,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bInstructions) { showInstruction(); }
         if(obj == bDevelopers) { showDeveloper(); }
         if(obj == bBack) { backButton(); }
-        if(obj == bPlayGame) { playGame(); game.setFocus();}
+        if(obj == bPlayGame) { createPlayer(); playGame(); game.setFocus();}
         if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
         if(obj == bPause) { pausePressed(); }
         if(obj == bMainMenu) { mainMenuButton(); }

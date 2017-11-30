@@ -7,32 +7,31 @@ import java.awt.event.*;
 public class ChoicesPanel extends JPanel implements ActionListener
 {
     /* declare bBackMainMenu button to display MainPanel */
-    JButton bBackMainMenu;
+    private JButton bBackMainMenu;
     /* declare bPlayGame button */
-    JButton bPlayGame;
+    private JButton bPlayGame;
     /* declare char1 button */
-    JButton char1;
+    private JButton char1;
     /* declare char2 button */
-    JButton char2;
+    private JButton char2;
     /* declare char3 button */
-    JButton char3;
+    private JButton char3;
     /* declare charText display */
-    JTextField charText;
+    private JTextField charText;
     /* declare variable to hold character selection value */
-    String character;
+    private String character;
     
     /* declare theme1 button */
-    JButton theme1;
+    private JButton theme1;
+    private ImageIcon psuSports;
     /* declare theme2 button */
-    JButton theme2;
+    private JButton theme2;
+    private ImageIcon psuAcademics;
     /* declare theme3 button */
-    JButton theme3;
+    private JButton theme3;
+    private ImageIcon psuHistory;
     /* declare themeText display */
-    JTextField themeText;
-    /* declare variable to hold theme selection value */
-    String theme;
-    /* declare variable to character information */
-    Player player1;
+    private JTextField themeText;
     
     public ChoicesPanel()
     {
@@ -91,22 +90,22 @@ public class ChoicesPanel extends JPanel implements ActionListener
         themeLabel.setBounds(new Rectangle(360,350,200,25));
         
         /* create themes */
-        ImageIcon psuAcademics = new ImageIcon("images/themes/psusports.png");
-        theme1 = new JButton(psuAcademics);
+        psuSports = new ImageIcon("images/themes/psusports.png");
+        theme1 = new JButton(psuSports);
         theme1.addActionListener(this);
         add(theme1);
         theme1.setBounds(new Rectangle(125, 400, 150, 150));
         theme1.setEnabled(false);
         
-        ImageIcon psuHistory = new ImageIcon("images/themes/psuacademics.png");
-        theme2 = new JButton(psuHistory);
+        psuAcademics = new ImageIcon("images/themes/psuacademics.png");
+        theme2 = new JButton(psuAcademics);
         theme2.addActionListener(this);
         add(theme2);
         theme2.setBounds(new Rectangle(325, 400, 150, 150));
         theme2.setEnabled(false);
         
-        ImageIcon psuSports = new ImageIcon("images/themes/psuhistory.png");
-        theme3 = new JButton(psuSports);
+        psuHistory = new ImageIcon("images/themes/psuhistory.png");
+        theme3 = new JButton(psuHistory);
         theme3.addActionListener(this);
         add(theme3);
         theme3.setBounds(new Rectangle(525, 400, 150, 150));
@@ -121,19 +120,7 @@ public class ChoicesPanel extends JPanel implements ActionListener
         add(themeText);
         themeText.setBounds(new Rectangle(325, 580, 150, 25));
     }
-    
-    public Player getPlayer()
-    {
-        Player temp = null;
-        
-        if(player1 != null)
-        {
-            temp = player1;
-        }
-        
-        return temp;
-    }
-    
+
     public JButton getBackButton()
     {
         return bBackMainMenu;
@@ -146,18 +133,33 @@ public class ChoicesPanel extends JPanel implements ActionListener
     
     public void setCharacter(String inChar)
     {
-        if(inChar.equals("char1")) { player1 = new Player("Football Player");}
-        if(inChar.equals("char2")) { player1 = new Player("Student");}
-        if(inChar.equals("char3")) { player1 = new Player("Mascot");}
-        charText.setText(player1.getCharacter());
+        if(inChar.equals("char1")) { charText.setText("Football Player");}
+        if(inChar.equals("char2")) { charText.setText("Student");}
+        if(inChar.equals("char3")) { charText.setText("Mascot");}
+    }
+    
+    public String getCharacter()
+    {
+        return charText.getText();
     }
     
     public void setTheme(String inTheme)
     {
-        player1.setTheme(inTheme);
-        if(player1.getTheme().equals("theme1")) { themeText.setText("PSU Sports");}
-        if(player1.getTheme().equals("theme2")) { themeText.setText("PSU Academics");}
-        if(player1.getTheme().equals("theme3")) { themeText.setText("PSU History");}
+        if(inTheme.equals("theme1")) { themeText.setText("PSU Sports");}
+        if(inTheme.equals("theme2")) { themeText.setText("PSU Academics");}
+        if(inTheme.equals("theme3")) { themeText.setText("PSU History");}
+    }
+    
+    public String getTheme()
+    {
+        return themeText.getText();
+    }
+    
+    public ImageIcon getThemeIcon(String inTheme)
+    {
+        if(inTheme.equals("PSU Sports")){return psuSports;}
+        if(inTheme.equals("PSU Academics")){return psuAcademics;}
+        else{return psuHistory;}
     }
     
     @Override
@@ -175,13 +177,13 @@ public class ChoicesPanel extends JPanel implements ActionListener
         if(obj == theme2) { setTheme("theme2");}
         if(obj == theme3) { setTheme("theme3");}
         
-        if(player1 != null)
+        if(charText.getText() != null)
         {
             theme1.setEnabled(true);
             theme2.setEnabled(true);
             theme3.setEnabled(true);
         }
-        if(player1.getCharacter() != null && player1.getTheme() != null)
+        if(charText.getText() != null && themeText.getText() != null)
         {
             bPlayGame.setEnabled(true);
         }
