@@ -81,10 +81,10 @@ public class Game_TicTacToe extends JPanel implements ActionListener
     
     public void cpuTurn()
     {
-        int rInt = (int)(Math.floor(Math.random()*8));
-        while(buttonList[rInt].getText()=="X")
+        int rInt = (int)(Math.random()*9);
+        while(!buttonList[rInt].isEnabled())
         {
-            rInt = (int)(Math.floor(Math.random()*8));
+            rInt = (int)(Math.random()*9);
         }
         buttonList[rInt].setText("O");
         buttonList[rInt].setEnabled(false);
@@ -217,11 +217,11 @@ public class Game_TicTacToe extends JPanel implements ActionListener
         if(obj == button8) {playerTurn(7);}
         if(obj == button9) {playerTurn(8);}
         
-        if(winCheck()){winner();}
-        else
-        {
-            cpuTurn();
-            if(lossCheck()){loser();}
-        }
+        gameWon = winCheck();
+        if(gameWon) {winner();}
+        else {cpuTurn();}
+        
+        Boolean gameLost = lossCheck();
+        if(gameLost) {loser();}
     }
 }
