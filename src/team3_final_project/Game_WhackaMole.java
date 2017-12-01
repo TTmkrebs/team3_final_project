@@ -27,10 +27,6 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
         b2.addActionListener(this);
         add(b2);
 
-        b3 = new JButton("Score: 0");                                           //Score keeper
-        b3.addActionListener(this);
-        add(b3);
-
         setLayout(null);                                                        //Setting layout and locations
         b1.setBounds(new Rectangle(15, 15, 75, 50));
         b2.setBounds(new Rectangle(200, 50, 85, 75));
