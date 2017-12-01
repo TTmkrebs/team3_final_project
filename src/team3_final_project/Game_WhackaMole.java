@@ -15,7 +15,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
 
     public Game_WhackaMole() {
         super();
-        setBackground(Color.BLACK);
+        setBackground(Color.gray);
             
         b1 = new JButton("Start");                                              //Start button
         b1.addActionListener(this);
@@ -39,10 +39,11 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
         moleButton = new ImageIcon("images/icons/buckeye.png");
         b2.setIcon(moleButton);
         
+        /* Can't figure out how to get the timer to stop the game after 10 seconds
         long start = System.currentTimeMillis();
         long end = start + 10*1000;
         while (System.currentTimeMillis() < end);
-        
+        */
     }
 
     @Override
@@ -67,7 +68,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
             double r = Math.random();                                           //declaring variable for random number
             xNum = (int) (r * 450.0);
             double s = Math.random();
-            yNum = (int) (s * 550.0);
+            yNum = (int) (s * 450.0);
 
             b2.setBounds(new Rectangle(xNum, yNum, 100, 75));
           
