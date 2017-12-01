@@ -145,7 +145,16 @@ public class GameMainPanel extends JPanel
         logoCampus.add(campusLogoLabel);
         add(logoCampus);
         
-        game_selection(1);
+        game_selection(2);
+    }
+    public int randomNum() 
+    {
+        int num = 0;
+
+        double r = Math.random();                                           //declaring variable for random number
+        num = (int) (r * 1);
+        
+        return num;
     }
     
     public void setX(int inX)
@@ -232,6 +241,12 @@ public class GameMainPanel extends JPanel
             Game_TicTacToe ticTacToe = new Game_TicTacToe();
             miniGame.add(ticTacToe);
             ticTacToe.setBounds(new Rectangle(0,0,545,550));
+        }
+        if(number == 2)
+        {
+            Game_WhackaMole whackAMole = new Game_WhackaMole();
+            miniGame.add(whackAMole);
+            whackAMole.setBounds(new Rectangle(0,0,545,550));
         }
     }
 }
