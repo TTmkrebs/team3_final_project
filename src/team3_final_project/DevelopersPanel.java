@@ -7,63 +7,94 @@ public class DevelopersPanel extends JPanel
 {
     /* declare bBackMainMenu button to display MainPanel */
     private JButton bBackMainMenu;
+    /*declare panels */
     private JPanel allDevelopers;
+    private JPanel alyPanel;
+    private JPanel mattPanel;
+    private JPanel valeriPanel;
+    
+    /*declare labels */
+    private JLabel alyNameLabel;
+    private JLabel alyImage;
+    private JLabel alyBioLabel;
+    private JLabel mattNameLabel;
+    private JLabel mattBioLabel;
+    private JLabel valeriNameLabel;
+    private JLabel valeriBioLabel;
+    
+    /*declare ImageIcons */
+    ImageIcon alyIcon;
+    ImageIcon mattIcon;
+    ImageIcon valeriIcon;
     
     public DevelopersPanel()
     {
         /* setup DevelopersPanel */
         super();
-        setBackground(Color.white);
+        setBackground(Color.black);
         setLayout(new BorderLayout());
         
         /* create and setup panel for developer Aly */
-        JPanel aly = new JPanel();
-        aly.setLayout(new BorderLayout());
-        aly.setBackground (Color.black);
-        aly.setPreferredSize (new Dimension(250, 600));
-        JLabel label1 = new JLabel ("Aly", SwingConstants.CENTER);
-        label1.setFont(new Font("Arial", Font.BOLD, 48));
-        label1.setForeground(Color.white);
-        aly.add (label1,BorderLayout.NORTH);
-        ImageIcon alyIcon = new ImageIcon("images/developers/aly.jpg");
-        JLabel alyImage = new JLabel(alyIcon);
-        aly.add(alyImage);
+        alyPanel = new JPanel();
+        alyPanel.setLayout(new BorderLayout());
+        alyPanel.setBackground (Color.black);
+        alyPanel.setPreferredSize (new Dimension(250, 600));
+        alyNameLabel = new JLabel ("Aly", SwingConstants.CENTER);
+        alyNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        alyNameLabel.setForeground(Color.white);
+        alyPanel.add (alyNameLabel,BorderLayout.NORTH);
+        alyIcon = new ImageIcon("images/developers/aly.jpg");
+        alyBioLabel = new JLabel("Aly Bio",alyIcon,JLabel.CENTER);
+        alyBioLabel.setFont(new Font("Arial", Font.BOLD, 32));
+        alyBioLabel.setForeground(Color.white);
+        alyBioLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        alyBioLabel.setVerticalTextPosition(JLabel.CENTER);
+        alyPanel.add(alyBioLabel);
         
         /* create and setup panel for developer Matt */
-        JPanel matt = new JPanel();
-        matt.setLayout(new BorderLayout());
-        matt.setBackground (Color.black);
-        matt.setPreferredSize (new Dimension(250, 600));
-        JLabel label2 = new JLabel ("Matt", SwingConstants.CENTER);
-        label2.setFont(new Font("Arial", Font.BOLD, 48));
-        label2.setForeground(Color.white);
-        matt.add (label2,BorderLayout.NORTH);
-        ImageIcon mattIcon = new ImageIcon("images/developers/gc.jpg");
-        JLabel mattImage = new JLabel(mattIcon);
-        matt.add(mattImage);
+        mattPanel = new JPanel();
+        mattPanel.setLayout(new BorderLayout());
+        mattPanel.setBackground (Color.black);
+        mattPanel.setPreferredSize (new Dimension(250, 600));
+        mattNameLabel = new JLabel ("Matt", SwingConstants.CENTER);
+        mattNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        mattNameLabel.setForeground(Color.white);
+        mattPanel.add (mattNameLabel,BorderLayout.NORTH);
+        mattIcon = new ImageIcon("images/developers/gc.jpg");
+        mattBioLabel = new JLabel("Matt Bio",mattIcon,JLabel.CENTER);
+        mattBioLabel.setFont(new Font("Arial",Font.BOLD,32));
+        mattBioLabel.setForeground(Color.white);
+        mattBioLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        mattBioLabel.setVerticalTextPosition(JLabel.CENTER);
+        mattPanel.add(mattBioLabel);
         
         /* create and setup panel for developer Valeri */
-        JPanel valeri = new JPanel();
-        valeri.setLayout(new BorderLayout());
-        valeri.setBackground (Color.black);
-        valeri.setPreferredSize (new Dimension(250, 600));
-        JLabel label3 = new JLabel ("Valeri", SwingConstants.CENTER);
-        label3.setFont(new Font("Arial", Font.BOLD, 48));
-        label3.setForeground(Color.white);
-        valeri.add (label3,BorderLayout.NORTH);
-        ImageIcon valeriIcon = new ImageIcon("images/developers/valeri.png");
-        JLabel valeriImage = new JLabel(valeriIcon);
-        valeri.add(valeriImage);
+        valeriPanel = new JPanel();
+        valeriPanel.setLayout(new BorderLayout());
+        valeriPanel.setBackground (Color.black);
+        valeriPanel.setPreferredSize (new Dimension(250, 600));
+        valeriNameLabel = new JLabel ("Valeri", SwingConstants.CENTER);
+        valeriNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        valeriNameLabel.setForeground(Color.white);
+        valeriPanel.add (valeriNameLabel,BorderLayout.NORTH);
+        valeriIcon = new ImageIcon("images/developers/valeri.png");
+        valeriBioLabel = new JLabel("Valeri Bio",valeriIcon,JLabel.CENTER);
+        valeriBioLabel.setFont(new Font("Arial",Font.BOLD,32));
+        valeriBioLabel.setForeground(Color.white);
+        valeriBioLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        valeriBioLabel.setVerticalTextPosition(JLabel.CENTER);
+        valeriPanel.add(valeriBioLabel);
         
         /* create setup and add allDevelopers panel to contain individual developer panels */
         allDevelopers = new JPanel();
+        allDevelopers.setBackground(Color.black);
         allDevelopers.setVisible(true);
         add(allDevelopers,BorderLayout.CENTER);
         
         /* add all developer panels */
-        allDevelopers.add(aly);
-        allDevelopers.add(matt);
-        allDevelopers.add(valeri);
+        allDevelopers.add(alyPanel);
+        allDevelopers.add(mattPanel);
+        allDevelopers.add(valeriPanel);
         
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
