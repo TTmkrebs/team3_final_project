@@ -27,6 +27,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private JButton bPlayGame;
     private JButton bPause;
     private JButton bMainMenu;
+    private JButton bScore;
     
     /* character information */
     private Player currentPlayer;
@@ -222,6 +223,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 bBack.addActionListener(this);
                 bMainMenu = campusList[i].getMainMenuButton();
                 bMainMenu.addActionListener(this);
+                
             }
             else
             {
@@ -241,6 +243,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 choice.setVisible(false);
                 game.setVisible(false);
                 main.setVisible(true);
+                bScore.setText("Score: " + currentPlayer.getScore());
                 
                 /* reassign buttons */
                 bBack = null;
@@ -249,11 +252,12 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         {
             if(campusList[i].isVisible())
             {
+                bScore = game.getScoreButton();
+                bScore.setText("Score: " + currentPlayer.getScore());
                 campusList[i].setVisible(false);
                 game.setVisible(true);
                 game.setFocus();
                 bBack = game.getBackButton();
-                
             }
         }
     }
@@ -350,7 +354,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bNewGame) { showChoice(); }
         if(obj == bInstructions) { showInstruction(); }
         if(obj == bDevelopers) { showDeveloper(); }
-        if(obj == bBack) { backButton(); }
+        if(obj == bBack) { backButton();}
         if(obj == bPlayGame) { createPlayer(); playGame(); game.setFocus();}
         if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
         if(obj == bPause) { pausePressed(); }

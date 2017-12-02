@@ -97,6 +97,11 @@ public class MapPanel extends JPanel
         return playerIcon;
     }
     
+    public JButton getScoreButton()
+    {
+        return bScore;
+    }
+    
     public void setPlayerX(int inX)
     {
         playerIconXY.x += inX;
