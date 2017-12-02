@@ -148,7 +148,7 @@ public class GameMainPanel extends JPanel
         logoCampus.add(campusLogoLabel);
         add(logoCampus);
         
-        game_selection(randomNum());
+        game_selection(3);
     }
     public int randomNum() 
     {
@@ -263,5 +263,18 @@ public class GameMainPanel extends JPanel
         gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
         add(gameInstructions);
         }
+        if (number == 3)
+        {
+            Game_Questions trivia = new Game_Questions();
+            miniGame.add(trivia);
+            trivia.setBounds(new Rectangle(0,0,545,550));
+            
+        instructionsLabel = new JLabel("Answer the question below!");
+        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+        instructionsLabel.setForeground(Color.white);
+        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+        add(gameInstructions);
+        }
+
     }
 }
