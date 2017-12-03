@@ -17,7 +17,7 @@ public class Game_Questions extends JPanel implements ActionListener
             String trueAnswer) 
     {
        super();
-       setBackground(Color.gray);
+       setBackground(Color.black);
        setLayout(null);
        
        chosenQuestion = new JLabel();
@@ -47,32 +47,31 @@ public class Game_Questions extends JPanel implements ActionListener
            
        chosenTheme = "theme1";
        
-       /*
-       if (chosenTheme.equals("theme1"))
-       {
-           questionNum = randomNum();
-           sportsQuestions(randomNum());
-       } 
-       */
+//       if (chosenTheme.equals("theme1"))
+//       {
+//           questionNum = randomNum();
+//           sportsQuestions(randomNum());
+//       } 
     }
     
     public int randomNum() 
     {
         int num = 0;
-
-        double r = Math.random();                                           //declaring variable for random number
+        /* create random number */
+        double r = Math.random();
         num = (int) (r * 1);
         
         return num;
     }
-    
-        public Game_Questions[] createQuestions()
+        
+    /* read questions from XML file */
+    public Game_Questions[] createQuestions()
     {
         XML_240 xml = new XML_240();
         xml.openReaderXML("questions.xml");
-        
+
         Game_Questions[] questions = new Game_Questions[15];
-        
+
         for(int i = 0; i < 15; i++)
         {          
             questions[i] = new Game_Questions((String)xml.ReadObject(), 
@@ -82,26 +81,22 @@ public class Game_Questions extends JPanel implements ActionListener
                     (String)xml.ReadObject());            
         }
         xml.closeReaderXML();
-        
-               
+
         return questions;
-   
-    /*
-    public void sportsQuestions(int questionNum)
-    {
-        if (questionNum == 0) 
-        {
-            question.setText("Who is the head coach of Penn State's Men's Basketball Team?");
-            answer1.setText("Chris Holtmann");
-            answer2.setText("Tom Izzo");
-            answer3.setText("John Beilein");
-            answer4.setText("Pat Chambers"); 
-        }
-        
-    }
-    */
-    
-    }
+
+    //  public void sportsQuestions(int questionNum)
+    //  {
+    //        if (questionNum == 0) 
+    //        {
+    //            question.setText("Who is the head coach of Penn State's Men's Basketball Team?");
+    //            answer1.setText("Chris Holtmann");
+    //            answer2.setText("Tom Izzo");
+    //            answer3.setText("John Beilein");
+    //            answer4.setText("Pat Chambers"); 
+    //        }
+    //        
+    //    }
+}
         
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -126,8 +121,5 @@ public class Game_Questions extends JPanel implements ActionListener
                 answer4.setText("Correct");
             }
         }
-    }
-    
-    
-    
+    }  
 }
