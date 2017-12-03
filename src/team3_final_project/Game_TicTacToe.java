@@ -19,6 +19,8 @@ public class Game_TicTacToe extends JPanel implements ActionListener
     
     private Boolean gameWon = false;
     
+    private Player currentPlayer;
+    
     public Game_TicTacToe()
     {
         super();
@@ -185,6 +187,7 @@ public class Game_TicTacToe extends JPanel implements ActionListener
             buttonList[i].setText("WINNER!");
             buttonList[i].setEnabled(false);
         }
+        currentPlayer.setScore(1);
         gameWon = true;
     }
     
@@ -200,6 +203,11 @@ public class Game_TicTacToe extends JPanel implements ActionListener
     public Boolean getGameResult()
     {
         return gameWon;
+    }
+    
+    public void setPlayer(Player inPlayer)
+    {
+        currentPlayer = inPlayer;
     }
     
     @Override

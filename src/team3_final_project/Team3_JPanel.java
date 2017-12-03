@@ -27,6 +27,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private JButton bPlayGame;
     private JButton bPause;
     private JButton bMainMenu;
+    private JButton bScore;
     
     /* character information */
     private Player currentPlayer;
@@ -271,6 +272,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 choice.setVisible(false);
                 game.setVisible(false);
                 main.setVisible(true);
+                bScore.setText("Score: " + currentPlayer.getScore());
                 
                 /* reassign buttons */
                 bBack = null;
@@ -279,11 +281,12 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         {
             if(campusList[i].isVisible())
             {
+                bScore = game.getScoreButton();
+                bScore.setText("Score: " + currentPlayer.getScore());
                 campusList[i].setVisible(false);
                 game.setVisible(true);
                 game.setFocus();
                 bBack = game.getBackButton();
-                
             }
         }
     }

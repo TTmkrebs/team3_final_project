@@ -28,6 +28,7 @@ public class GameMainPanel extends JPanel
     private JLabel charIcon;
     private JPanel logoCampus;
     private JLabel themeIcon;
+    private Game_TicTacToe ticTacToe;
     
     /* store trivia questions */
     private TriviaQuestion[] questionList;
@@ -238,6 +239,8 @@ public class GameMainPanel extends JPanel
         
         bScore.setText("Score: " + currentPlayer.getScore());
         bTimer.setText("Time: " + currentPlayer.getTime());
+        
+        ticTacToe.setPlayer(currentPlayer);
     }
 
     public void setQuestions(TriviaQuestion[] inQuestions)
@@ -249,7 +252,7 @@ public class GameMainPanel extends JPanel
     {
         if(number == 1)
         {
-            Game_TicTacToe ticTacToe = new Game_TicTacToe();
+            ticTacToe = new Game_TicTacToe();
             miniGame.add(ticTacToe);
             ticTacToe.setBounds(new Rectangle(0,0,545,550));
             
