@@ -140,12 +140,18 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         TriviaQuestion[] questionList = new TriviaQuestion[questionCount];
         
         for(int i = 0; i < questionCount; i++)
-        {          
-            questionList[i] = new TriviaQuestion((String)xml.ReadObject(),
-                    (String)xml.ReadObject(),(String)xml.ReadObject(),
-                    (String)xml.ReadObject(),(String)xml.ReadObject(),
-                    (String)xml.ReadObject(),(String)xml.ReadObject(),
-                    (String)xml.ReadObject());            
+        {
+            String theme = (String) xml.ReadObject();
+            String completed = (String) xml.ReadObject();
+            String question = (String) xml.ReadObject();
+            String a = (String) xml.ReadObject();
+            String b = (String) xml.ReadObject();
+            String c = (String) xml.ReadObject();
+            String d = (String) xml.ReadObject();
+            String answer = (String) xml.ReadObject();     
+            
+            questionList[i] = new TriviaQuestion(theme, completed, question,
+            a, b, c, d, answer);
         }
         xml.closeReaderXML();
         

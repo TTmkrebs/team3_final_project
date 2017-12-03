@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java class="java.beans.XMLDecoder" version="1.8.0_71">
+<java version="1.8.0_71" class="java.beans.XMLDecoder">
     <string>Theme:Sports</string>
 	<string>false</string>
-    <string>Question: Who is the head coach of PennState’s Men’s Basketball Team?</string>
+    <string>Question: Who is the head coach of the PennState Mens Basketball Team?</string>
     <string>A: Chris Holtmann</string>
     <string>B: Tom Izzo</string>
     <string>C: John Beilein</string>
@@ -10,7 +10,7 @@
     <string>Answer: D</string>
     <string>Theme:Sports</string>
 	<string>false</string>
-    <string>Question: Who is the head coach of PennState’s football team?</string>
+    <string>Question: Who is the head coach of PennStates football team?</string>
     <string>A: James Franklin</string>
     <string>B: Mark Dantonio</string>
     <string>C: Urban Meyer</string>
@@ -30,7 +30,7 @@
     <string>Answer: A</string>
     <string>Theme:Sports</string>
 	<string>false</string>
-    <string>Question: What is Penn State’s Graduation Success Rate (GSR) of Penn State student-athletes? </string>
+    <string>Question: What is Penn States Graduation Success Rate (GSR) of Penn State student-athletes? </string>
     <string>A: 70</string>
     <string>B: 100</string>
     <string>C: 62</string>
@@ -86,7 +86,7 @@
     <string>Answer: C</string> 
     <string>Theme:History</string>
 	<string>false</string>
-    <string>Question: What were PennState’s school colors before Blue and White?</string>
+    <string>Question: What were PennStates school colors before Blue and White?</string>
     <string>A: Green and White</string>
     <string>B: Pink and Black</string>
     <string>C: Red and Orange</string>
