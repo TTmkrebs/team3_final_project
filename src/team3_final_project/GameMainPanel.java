@@ -28,7 +28,9 @@ public class GameMainPanel extends JPanel
     private JLabel charIcon;
     private JPanel logoCampus;
     private JLabel themeIcon;
-    private Game_TicTacToe ticTacToe;
+    private Game_TicTacToe ticTacToe = new Game_TicTacToe();
+    private Game_WhackaMole whackAMole = new Game_WhackaMole();
+//    private Game_Questions questionsGame = new Game_Questions();
     
     /* store trivia questions */
     private TriviaQuestion[] questionList;
@@ -252,7 +254,6 @@ public class GameMainPanel extends JPanel
     {
         if(number == 1)
         {
-            ticTacToe = new Game_TicTacToe();
             miniGame.add(ticTacToe);
             ticTacToe.setBounds(new Rectangle(0,0,545,550));
             
