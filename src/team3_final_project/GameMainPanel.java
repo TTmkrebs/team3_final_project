@@ -1,4 +1,4 @@
-package team3_final_project;
+    package team3_final_project;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -83,12 +83,15 @@ public class GameMainPanel extends JPanel
         gameInstructions.setBounds(new Rectangle(20,20,545,75));
         gameInstructions.setBorder(instructionsBorder);
         gameInstructions.setBackground(new Color(0,0,0,65));
+       /*
         instructionsLabel = new JLabel("Connect three X's in a row to win!");
         instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
         instructionsLabel.setForeground(Color.white);
+        
         gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
         add(gameInstructions);
-        
+        */
+       
         /* add miniGame JPanel for mini game */
         miniGame = new JPanel();
         miniGame.setLayout(null);
@@ -146,7 +149,16 @@ public class GameMainPanel extends JPanel
         logoCampus.add(campusLogoLabel);
         add(logoCampus);
         
-        game_selection(1);
+        game_selection(randomNum());
+    }
+    public int randomNum() 
+    {
+        int num = 0;
+
+        double r = Math.random();                                           //declaring variable for random number
+        num = (int) (r * 3);
+        
+        return num;
     }
     
     public void setX(int inX)
@@ -234,6 +246,38 @@ public class GameMainPanel extends JPanel
             ticTacToe = new Game_TicTacToe();
             miniGame.add(ticTacToe);
             ticTacToe.setBounds(new Rectangle(0,0,545,550));
+            
+        instructionsLabel = new JLabel("Connect three X's in a row to win!");
+        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
+        instructionsLabel.setForeground(Color.white);
+        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+        add(gameInstructions);
         }
+        if(number == 2)
+        {
+            Game_WhackaMole whackAMole = new Game_WhackaMole();
+            miniGame.add(whackAMole);
+            whackAMole.setBounds(new Rectangle(0,0,545,550));
+            
+        instructionsLabel = new JLabel("Whack the Buckeye as many times as you can in 10 seconds!");
+        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+        instructionsLabel.setForeground(Color.white);
+        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+        add(gameInstructions);
+        }
+        /* if (number == 3)
+        {
+            Game_Questions trivia = new Game_Questions();
+            miniGame.add(trivia);
+            trivia.setBounds(new Rectangle(0,0,545,550));
+            
+        instructionsLabel = new JLabel("Answer the question below!");
+        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+        instructionsLabel.setForeground(Color.white);
+        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+        add(gameInstructions);
+        }
+        */
+
     }
 }
