@@ -135,14 +135,14 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         int questionCount = 15;
         
         XML_240 xml = new XML_240();
-        xml.openReaderXML("quesions.xml");
+        xml.openReaderXML("questions.xml");
         
         TriviaQuestion[] questionList = new TriviaQuestion[questionCount];
         
         for(int i = 0; i < questionCount; i++)
         {          
             questionList[i] = new TriviaQuestion((String)xml.ReadObject(),
-                    (Boolean)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject(),(String)xml.ReadObject(),
                     (String)xml.ReadObject(),(String)xml.ReadObject(),
                     (String)xml.ReadObject(),(String)xml.ReadObject(),
                     (String)xml.ReadObject());            
