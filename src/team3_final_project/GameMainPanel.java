@@ -160,7 +160,7 @@ public class GameMainPanel extends JPanel
         int num = 0;
 
         double r = Math.random();
-        num = (int) (r * 3);
+        num = (int) (r * 2);
         
         return num;
     }

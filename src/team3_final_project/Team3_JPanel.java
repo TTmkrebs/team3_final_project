@@ -31,6 +31,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     
     /* character information */
     private Player currentPlayer;
+    private Player inPlayer;
     
     /* create questions */
     private TriviaQuestion[] questionList;
@@ -207,9 +208,10 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         return currentPlayer;
     }
     
-    public void playGame()
+    public void playGame(Player inPlayer)
     {
         /* pass player into game & campus panel */
+        inPlayer = currentPlayer;
         currentPlayer = createPlayer(); /* test */
         game.assignPlayer(currentPlayer);
 
@@ -404,7 +406,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bPlayGame)
         {
             currentPlayer = createPlayer();
-            playGame();
+            playGame(currentPlayer);
             game.setFocus();
         }
         if(obj == time)
