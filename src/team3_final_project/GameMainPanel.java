@@ -94,7 +94,7 @@ public class GameMainPanel extends JPanel
 //        instructionsLabel.setForeground(Color.white);
 //        
 //        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-//        add(gameInstructions);
+//       add(gameInstructions);
 
        
         /* add miniGame JPanel for mini game */
@@ -162,7 +162,9 @@ public class GameMainPanel extends JPanel
         int num = 0;
 
         double r = Math.random();
-        num = (int) (r * 2);
+        num = (int) (r * 3);
+        
+        if(num == 0){ ++num; }
         
         return num;
     }
