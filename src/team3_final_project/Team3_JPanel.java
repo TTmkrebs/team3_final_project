@@ -278,6 +278,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 choice.setVisible(false);
                 game.setVisible(false);
                 main.setVisible(true);
+                bScore = game.getScoreButton();
                 bScore.setText("Score: " + currentPlayer.getScore());
                 
                 /* reassign buttons */

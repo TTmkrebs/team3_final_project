@@ -35,7 +35,7 @@ public class ChoicesPanel extends JPanel implements ActionListener
     {
         /* setup ChoicesPanel */
         super();
-        setBackground(Color.cyan);
+        setBackground(Color.black);
         setLayout(null);
         
         /* create and add bPlayGame button */
