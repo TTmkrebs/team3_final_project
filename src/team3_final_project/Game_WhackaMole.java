@@ -3,6 +3,7 @@ package team3_final_project;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.TimerTask;
 
 public class Game_WhackaMole extends JPanel implements ActionListener {
 
@@ -35,11 +36,6 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
         moleButton = new ImageIcon("images/icons/buckeye.png");
         b2.setIcon(moleButton);
         
-        /* Can't figure out how to get the timer to stop the game after 10 seconds
-        long start = System.currentTimeMillis();
-        long end = start + 10*1000;
-        while (System.currentTimeMillis() < end);
-        */
     }
 
     @Override

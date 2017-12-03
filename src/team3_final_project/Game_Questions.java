@@ -7,21 +7,23 @@ import javax.swing.*;
 public class Game_Questions extends JPanel implements ActionListener 
 {
     JButton answer1, answer2, answer3, answer4;
-    JLabel question;
+    JLabel chosenQuestion;
     int questionNum;
     String chosenTheme;
     private Boolean gameWon = false; 
     
-    public Game_Questions() 
+    public Game_Questions(String theme, Boolean rightWrong, String question,
+            String answerA, String answerB, String answerC, String answerD,
+            String trueAnswer) 
     {
        super();
        setBackground(Color.gray);
        setLayout(null);
        
-       question = new JLabel();
-       question.setBounds(75, 100, 400, 75);
-       question.setForeground(Color.white);
-       add(question);
+       chosenQuestion = new JLabel();
+       chosenQuestion.setBounds(75, 100, 400, 75);
+       chosenQuestion.setForeground(Color.white);
+       add(chosenQuestion);
        
        answer1 = new JButton();
        answer1.setBounds(100, 200, 150, 75);
@@ -45,12 +47,13 @@ public class Game_Questions extends JPanel implements ActionListener
            
        chosenTheme = "theme1";
        
-       
+       /*
        if (chosenTheme.equals("theme1"))
        {
            questionNum = randomNum();
            sportsQuestions(randomNum());
-       }    
+       } 
+       */
     }
     
     public int randomNum() 
@@ -63,6 +66,27 @@ public class Game_Questions extends JPanel implements ActionListener
         return num;
     }
     
+        public Game_Questions[] createQuestions()
+    {
+        XML_240 xml = new XML_240();
+        xml.openReaderXML("questions.xml");
+        
+        Game_Questions[] questions = new Game_Questions[15];
+        
+        for(int i = 0; i < 15; i++)
+        {          
+            questions[i] = new Game_Questions((String)xml.ReadObject(), 
+                    (Boolean)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject(), (String)xml.ReadObject(),
+                    (String)xml.ReadObject());            
+        }
+        xml.closeReaderXML();
+        
+               
+        return questions;
+   
+    /*
     public void sportsQuestions(int questionNum)
     {
         if (questionNum == 0) 
@@ -75,21 +99,10 @@ public class Game_Questions extends JPanel implements ActionListener
         }
         
     }
+    */
     
-    public Boolean winCheck()
-    {
-        Boolean win = false;
-        
-        if (chosenTheme.equals("theme1") && questionNum == 0) 
-        {
-            if (answer4.getText().equals("Correct")){
-                win = true;
-            }
-        }
-        
-        
-        return win;
     }
+        
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();

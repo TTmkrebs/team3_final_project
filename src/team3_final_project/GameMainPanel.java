@@ -1,4 +1,4 @@
-package team3_final_project;
+    package team3_final_project;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -148,7 +148,7 @@ public class GameMainPanel extends JPanel
         logoCampus.add(campusLogoLabel);
         add(logoCampus);
         
-        game_selection(3);
+        game_selection(randomNum());
     }
     public int randomNum() 
     {
@@ -263,7 +263,7 @@ public class GameMainPanel extends JPanel
         gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
         add(gameInstructions);
         }
-        if (number == 3)
+        /* if (number == 3)
         {
             Game_Questions trivia = new Game_Questions();
             miniGame.add(trivia);
@@ -275,6 +275,7 @@ public class GameMainPanel extends JPanel
         gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
         add(gameInstructions);
         }
+        */
 
     }
 }
