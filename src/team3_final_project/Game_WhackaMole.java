@@ -7,53 +7,63 @@ import java.util.TimerTask;
 
 public class Game_WhackaMole extends JPanel implements ActionListener {
 
-    JButton b1, b2, b3;                                                         //Declaring variables
-    int counter;
-    int i = 0;
-    String score;
+    JButton bStart, bBuckeye;                                                         //Declaring variables
+    int score = 0;
     Timer tim;
     ImageIcon moleButton;
+    int gameTime = 0;
 
-    public Game_WhackaMole() {
+    public Game_WhackaMole()
+    {
         super();
         setBackground(Color.gray);
             
-        b1 = new JButton("Start");                                              //Start button
-        b1.addActionListener(this);
-        add(b1);
+        bStart = new JButton("Start");                                              //Start button
+        bStart.addActionListener(this);
+        add(bStart);
 
         tim = new Timer(1000, this);
 
-        b2 = new JButton("Click me");                                           //Point button
-        b2.addActionListener(this);
-        add(b2);
+        bBuckeye = new JButton("Click me");                                           //Point button
+        bBuckeye.addActionListener(this);
+        add(bBuckeye);
 
         setLayout(null);                                                        //Setting layout and locations
-        b1.setBounds(new Rectangle(15, 15, 75, 50));
-        b2.setBounds(new Rectangle(200, 50, 85, 75));
+        bStart.setBounds(new Rectangle(15, 15, 75, 50));
+        bBuckeye.setBounds(new Rectangle(200, 50, 85, 75));
 
         
         moleButton = new ImageIcon("images/icons/buckeye.png");
-        b2.setIcon(moleButton);
+        bBuckeye.setIcon(moleButton);
+        bBuckeye.setVisible(false);
         
+    }
+    
+    public void endGame()
+    {
+        tim.stop();
+        bBuckeye.setVisible(false);
+        bStart.setText("Game Over");
+        bStart.setEnabled(false);
+        bStart.setBounds(new Rectangle(15, 15, 125, 50));
+        bStart.setVisible(true);   
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
 
-        if (obj == b2) {                                                        //Updates score keeper when point button is clicked
-            ++i;                                                                //Score
-
+        if (obj == bBuckeye){                                                        //Updates score keeper when point button is clicked
+            ++score;                                                                //Score
         }
 
-        if (obj == b1) {                                                        //If start button is clicked, timer starts
-
+        if (obj == bStart){                                                        //If start button is clicked, timer starts
             tim.start();
-            
+            bStart.setVisible(false);
+            bBuckeye.setVisible(true);
         }
 
-        if (obj == tim) {                                                       //Timer calculates two random numbers and
+        if (obj == tim){                                                       //Timer calculates two random numbers and
             int xNum = 0;                                                       //changes the boundries of point button
             int yNum = 0;
 
@@ -62,9 +72,13 @@ public class Game_WhackaMole extends JPanel implements ActionListener {
             double s = Math.random();
             yNum = (int) (s * 450.0);
 
-            b2.setBounds(new Rectangle(xNum, yNum, 100, 75));
-          
-
+            bBuckeye.setBounds(new Rectangle(xNum, yNum, 100, 75));
+            
+            ++gameTime;
+            if(gameTime == 11)
+            {
+                endGame();
+            }
         }
         
     }
