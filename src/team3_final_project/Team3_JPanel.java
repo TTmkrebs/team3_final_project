@@ -210,6 +210,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     public void playGame()
     {
         /* pass player into game & campus panel */
+        currentPlayer = createPlayer(); /* test */
         game.assignPlayer(currentPlayer);
 
         /* pass character icon into campus panel */

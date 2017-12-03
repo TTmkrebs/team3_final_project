@@ -86,14 +86,14 @@ public class GameMainPanel extends JPanel
         gameInstructions.setBounds(new Rectangle(20,20,545,75));
         gameInstructions.setBorder(instructionsBorder);
         gameInstructions.setBackground(new Color(0,0,0,65));
-       /*
-        instructionsLabel = new JLabel("Connect three X's in a row to win!");
-        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
-        instructionsLabel.setForeground(Color.white);
-        
-        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-        add(gameInstructions);
-        */
+
+//        instructionsLabel = new JLabel("Connect three X's in a row to win!");
+//        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
+//        instructionsLabel.setForeground(Color.white);
+//        
+//        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+//        add(gameInstructions);
+
        
         /* add miniGame JPanel for mini game */
         miniGame = new JPanel();
@@ -159,7 +159,7 @@ public class GameMainPanel extends JPanel
     {
         int num = 0;
 
-        double r = Math.random();                                           //declaring variable for random number
+        double r = Math.random();
         num = (int) (r * 3);
         
         return num;
