@@ -9,10 +9,11 @@ public class Game_WhackaMole extends JPanel implements ActionListener
 {
     /* declare variables */
     JButton bStart, bBuckeye;
-    int score = 0;
+    int miniScore = 0;
     Timer tim;
     ImageIcon moleButton;
     int gameTime = 0;
+    private Player currentPlayer;
 
     public Game_WhackaMole()
     {
@@ -41,24 +42,30 @@ public class Game_WhackaMole extends JPanel implements ActionListener
         
     }
     
+    public void setPlayer(Player inPlayer)
+    {
+        currentPlayer = inPlayer;
+    }
+    
     public void endGame()
     {
         tim.stop();
         bBuckeye.setVisible(false);
-        bStart.setText("Score: " + score);
+        bStart.setText("Score: " + miniScore);
         bStart.setEnabled(false);
         bStart.setBounds(new Rectangle(15, 15, 125, 50));
         bStart.setVisible(true);   
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
         Object obj = e.getSource();
-        /* update score keeper when point button is clicked */
+        /* update miniScore keeper when point button is clicked */
         if (obj == bBuckeye)
         {
-            ++score;
+            ++miniScore;
         }
         /* if start button is clicked, timer starts */
         if (obj == bStart)
@@ -84,6 +91,10 @@ public class Game_WhackaMole extends JPanel implements ActionListener
             if(gameTime == 11)
             {
                 endGame();
+                if (miniScore >= 10)
+                {
+                    currentPlayer.setScore(1);
+                }
             }
         }
     }
