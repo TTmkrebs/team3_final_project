@@ -1,6 +1,9 @@
 
 package team3_final_project;
 
-public class CreditsPanel {
+import javax.swing.*;
+
+public class CreditsPanel extends JPanel
+{
     
 }

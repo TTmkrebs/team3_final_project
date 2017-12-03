@@ -314,7 +314,12 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         }
         if(currentPlayer.getVisits() == 5)
         {
-            
+            for(int i = 0; i <campusList.length; ++i)
+            {
+                campusList[i].setVisible(false);
+                game.setVisible(false);
+            }
+            credits.setVisible(true);
         }
     }
     
