@@ -263,6 +263,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 bMainMenu = campusList[i].getMainMenuButton();
                 bMainMenu.addActionListener(this);
                 campus.setQuestions(questionList);
+                campus.setScore(currentPlayer.getScore());
             }
             else
             {
@@ -300,6 +301,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 game.setFocus();
                 bBack = game.getBackButton();
             }
+            campusList[i].getScoreButton().setText("Score: " + currentPlayer.getScore());
         }
     }
     
@@ -309,6 +311,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         instr.setVisible(false);
         devs.setVisible(false);
         choice.setVisible(false);
+        currentPlayer = null;
         for(int i=0; i<campusList.length; i++) {campusList[i].setVisible(false);}
         main.setVisible(true);
     }

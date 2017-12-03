@@ -233,6 +233,11 @@ public class GameMainPanel extends JPanel
         bTimer.setText("Time: " + time);
     }
     
+    public JButton getScoreButton()
+    {
+        return bScore;
+    }
+    
     public void setPlayer(Player inPlayer)
     {
         currentPlayer = inPlayer;
@@ -245,6 +250,11 @@ public class GameMainPanel extends JPanel
         bTimer.setText("Time: " + currentPlayer.getTime());
         
         ticTacToe.setPlayer(currentPlayer);
+    }
+    
+    public void setScore(int inScore)
+    {
+        bScore.setText("Score: " + currentPlayer.getScore());
     }
 
     public void setQuestions(TriviaQuestion[] inQuestions)
