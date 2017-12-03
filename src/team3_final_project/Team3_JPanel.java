@@ -32,12 +32,14 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     /* character information */
     private Player currentPlayer;
     
+    /* create questions */
+    private TriviaQuestion[] questionList;
+    
     /* campus information */
     private GameMainPanel[] campusList;
     
     /* game timer */
     private Timer time;
-    private int playerTime;
     private boolean gamePaused = false;
     
     public Team3_JPanel()
@@ -102,6 +104,9 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             campusList[i].setVisible(false);
         }
         
+        /* create question objects */
+        questionList = createQuestions();
+        
         /* initialize timer */
         time = new Timer(1000,this);      
     }
@@ -123,6 +128,30 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         campus = campusList[0];
         
         return campusList;
+    }
+    
+    public TriviaQuestion[] createQuestions()
+    {
+        int questionCount = 15;
+        
+        XML_240 xml = new XML_240();
+        xml.openReaderXML("quesions.xml");
+        
+        TriviaQuestion[] questionList = new TriviaQuestion[questionCount];
+        
+        for(int i = 0; i < questionCount; i++)
+        {          
+            questionList[i] = new TriviaQuestion((String)xml.ReadObject(),
+                    (Boolean)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject(),(String)xml.ReadObject(),
+                    (String)xml.ReadObject());            
+        }
+        xml.closeReaderXML();
+        
+        campus = campusList[0];
+        
+        return questionList;
     }
         
     public void showChoice()
@@ -223,7 +252,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 bBack.addActionListener(this);
                 bMainMenu = campusList[i].getMainMenuButton();
                 bMainMenu.addActionListener(this);
-                
+                campus.setQuestions(questionList);
             }
             else
             {
@@ -346,6 +375,15 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         
         return campus;
     }
+    
+    public void pushTime(int time)
+    {
+        game.setTimer(time);
+        for(int i=0; i < campusList.length; i++)
+        {
+           campusList[i].setTimer(time);
+        }
+    }
         
     @Override
     public void actionPerformed(ActionEvent e)
@@ -354,9 +392,18 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         if(obj == bNewGame) { showChoice(); }
         if(obj == bInstructions) { showInstruction(); }
         if(obj == bDevelopers) { showDeveloper(); }
-        if(obj == bBack) { backButton();}
-        if(obj == bPlayGame) { createPlayer(); playGame(); game.setFocus();}
-        if(obj == time) { playerTime += 1; game.setTimer(playerTime); campus.setTimer(playerTime); }
+        if(obj == bBack) { backButton(); }
+        if(obj == bPlayGame)
+        {
+            currentPlayer = createPlayer();
+            playGame();
+            game.setFocus();
+        }
+        if(obj == time)
+        {
+            currentPlayer.setTime(currentPlayer.getTime() + 1);
+            pushTime(currentPlayer.getTime());
+        }
         if(obj == bPause) { pausePressed(); }
         if(obj == bMainMenu) { mainMenuButton(); }
     }

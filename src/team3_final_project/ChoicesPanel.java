@@ -18,8 +18,6 @@ public class ChoicesPanel extends JPanel implements ActionListener
     private JButton char3;
     /* declare charText display */
     private JTextField charText;
-    /* declare variable to hold character selection value */
-    private String character;
     
     /* declare theme1 button */
     private JButton theme1;

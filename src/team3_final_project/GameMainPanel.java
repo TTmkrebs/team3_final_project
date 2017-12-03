@@ -30,6 +30,9 @@ public class GameMainPanel extends JPanel
     private JLabel themeIcon;
     private Game_TicTacToe ticTacToe;
     
+    /* store trivia questions */
+    private TriviaQuestion[] questionList;
+    
     /* create campus complete toggle */
     private boolean campusComplete;
     
@@ -151,6 +154,7 @@ public class GameMainPanel extends JPanel
         
         game_selection(randomNum());
     }
+    
     public int randomNum() 
     {
         int num = 0;
@@ -220,9 +224,9 @@ public class GameMainPanel extends JPanel
         return bBackMainMenu;
     }
     
-    public void setTimer(int currentTime)
+    public void setTimer(int time)
     {
-        
+        bTimer.setText("Time: " + time);
     }
     
     public void setPlayer(Player inPlayer)
@@ -239,6 +243,11 @@ public class GameMainPanel extends JPanel
         ticTacToe.setPlayer(currentPlayer);
     }
 
+    public void setQuestions(TriviaQuestion[] inQuestions)
+    {
+        questionList = inQuestions;
+    }
+    
     public void game_selection(int number)
     {
         if(number == 1)

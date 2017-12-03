@@ -13,7 +13,7 @@ public class MapPanel extends JPanel
     /* initialize pause button */
     private JButton bPause;
     /* initialize player */
-    private Player player1;
+    private Player currentPlayer;
     /* initialize character label */
     private JLabel charLabel = new JLabel();
     /* initialize score button */
@@ -49,19 +49,19 @@ public class MapPanel extends JPanel
     public void assignPlayer(Player inPlayer)
     {
         /* assign player */
-        player1 = inPlayer;
+        currentPlayer = inPlayer;
         
         /* create character label */
-        charLabel.setText("Playing as: " + player1.getCharacter());
+        charLabel.setText("Playing as: " + currentPlayer.getCharacter());
         add(charLabel);
         charLabel.setBounds(15,15,200,25);
         
         /* create character image */
         JLabel charImage = new JLabel();
-        charImage.setIcon(player1.getCharacterIcon());
+        charImage.setIcon(currentPlayer.getCharacterIcon());
         
         /* create score button */
-        bScore = new JButton("Score: " + player1.getScore());
+        bScore = new JButton("Score: " + currentPlayer.getScore());
         add(bScore);
         bScore.setBounds(new Rectangle(15,630,200,25));
         
@@ -72,7 +72,7 @@ public class MapPanel extends JPanel
         
         /* create player icon */
         playerIcon.setLayout(new BorderLayout());
-        playerIcon.setIcon(player1.getMapIcon());
+        playerIcon.setIcon(currentPlayer.getMapIcon());
         add(playerIcon);
         playerIcon.setBounds(playerIconXY);
     }
@@ -131,8 +131,7 @@ public class MapPanel extends JPanel
     
     public void setTimer(int inTime)
     {
-        time +=1;
-        bTimer.setText("Time: " + time);
+        bTimer.setText("Time: " + inTime);
     }
     
     @Override

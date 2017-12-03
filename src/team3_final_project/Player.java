@@ -8,7 +8,6 @@ public class Player
     /* player information */
     private String character;
     private ImageIcon characterIcon;
-    private Image image;
     private ImageIcon mapIcon;
     private String theme;
     
@@ -23,24 +22,16 @@ public class Player
         if(character.equals("Football Player"))
         {
             characterIcon = new ImageIcon("images/characters/footballplayer.png");
-            image = characterIcon.getImage();
-            
             mapIcon = new ImageIcon("images/icons/football.png");
-            
         }
         if(character.equals("Mascot"))
         {
             characterIcon = new ImageIcon("images/characters/mascot.jpg");
-            image = characterIcon.getImage();
-            
             mapIcon = new ImageIcon("images/icons/pawprint.png");
-            
         }
         if(character.equals("Student"))
         {
-            characterIcon = new ImageIcon("images/characters/student.png");
-            image = characterIcon.getImage();
-            
+            characterIcon = new ImageIcon("images/characters/student.png");   
             mapIcon = new ImageIcon("images/icons/book.png");
         }
     }
