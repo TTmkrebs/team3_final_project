@@ -93,6 +93,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener
                 endGame();
                 if (miniScore >= 10)
                 {
+                    setPlayer(currentPlayer);
                     currentPlayer.setScore(1);
                 }
             }
