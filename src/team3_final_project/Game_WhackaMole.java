@@ -61,7 +61,6 @@ public class Game_WhackaMole extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        setPlayer(currentPlayer);
         Object obj = e.getSource();
         /* update miniScore keeper when point button is clicked */
         if (obj == bBuckeye)

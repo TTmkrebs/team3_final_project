@@ -250,6 +250,7 @@ public class GameMainPanel extends JPanel
         bTimer.setText("Time: " + currentPlayer.getTime());
         
         ticTacToe.setPlayer(currentPlayer);
+        whackAMole.setPlayer(currentPlayer);
     }
     
     public void setScore(int inScore)
