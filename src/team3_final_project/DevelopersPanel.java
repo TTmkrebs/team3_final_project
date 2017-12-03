@@ -49,7 +49,7 @@ public class DevelopersPanel extends JPanel
     
         alyBioLabel = new JLabel("<html>Aly is majoring in Information Science "
                 + "and Technology, graduating in Fall 2018 with her second bachelors "
-                + "degree. <br><br> Fun Fact: She loves to bake cupcakes</html>");
+                + "degree. <br><br> Fun Fact: She loves to bake cupcakes.</html>");
         alyBioLabel.setFont(new Font("Arial", Font.BOLD, 16));
         alyBioLabel.setForeground(Color.white);
         alyBioLabel.setBounds(25, 30, 200, 300);
@@ -71,7 +71,10 @@ public class DevelopersPanel extends JPanel
         mattNameLabel.setBounds(75,5,100,100);
         mattPanel.add (mattNameLabel);
         
-        mattBioLabel = new JLabel("Matt Bio");
+        mattBioLabel = new JLabel("<html>Matt is also majoring in IST, with a focus on "
+                + "Organizational Leadership. As a part-time student and full-time employee, "
+                + "he has no idea when he will graduate.<br><br> Fun Fact: He is "
+                + "neither grumpy, nor a cat.</html>");
         mattBioLabel.setFont(new Font("Arial",Font.BOLD,16));
         mattBioLabel.setForeground(Color.white);
         mattBioLabel.setBounds(25,30,200,300);
@@ -93,7 +96,10 @@ public class DevelopersPanel extends JPanel
         valeriNameLabel.setBounds(50,5,200,100);
         valeriPanel.add (valeriNameLabel);
         
-        valeriBioLabel = new JLabel("Valeri Bio");
+        valeriBioLabel = new JLabel("<html>Valeri is majoring in Security and "
+                + "Risk Analysis, graduating someday in the hazy future. "
+                + "<br><br> Fun Fact: She has the world's best dog, a puggle "
+                + "named Pumpernickel.</html>");
         valeriBioLabel.setFont(new Font("Arial",Font.BOLD,16));
         valeriBioLabel.setForeground(Color.white);
         valeriBioLabel.setBounds(25,30,200,300);
