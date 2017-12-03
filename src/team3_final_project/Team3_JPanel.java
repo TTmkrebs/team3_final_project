@@ -294,6 +294,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             {
                 bScore = game.getScoreButton();
                 bScore.setText("Score: " + currentPlayer.getScore());
+                campusList[i].setCompleted(true);
                 campusList[i].setVisible(false);
                 game.setVisible(true);
                 game.setFocus();
