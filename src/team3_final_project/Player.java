@@ -15,6 +15,7 @@ public class Player
     private ImageIcon themeIcon;
     private int playerScore = 0; 
     private int playerTime = 0;
+    private int campusVisits = 0;
     
     public Player(String inChar)
     {
@@ -89,5 +90,15 @@ public class Player
     public void setTime(int inTime)
     {
         playerTime = inTime;
+    }
+    
+    public void setVisits()
+    {
+        ++campusVisits;
+    }
+    
+    public int getVisits()
+    {
+        return campusVisits;
     }
 }

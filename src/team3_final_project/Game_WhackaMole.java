@@ -54,8 +54,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener
         bStart.setText("Score: " + miniScore);
         bStart.setEnabled(false);
         bStart.setBounds(new Rectangle(15, 15, 125, 50));
-        bStart.setVisible(true);   
-        
+        bStart.setVisible(true);
     }
 
     @Override
