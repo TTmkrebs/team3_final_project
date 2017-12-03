@@ -18,6 +18,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private ChoicesPanel choice;
     private MapPanel game;
     private GameMainPanel campus;
+    private CreditsPanel credits;
     
     /* button initializations */
     private JButton bNewGame;
@@ -94,6 +95,13 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         game.setBounds(win);
         game.addKeyListener(this);
         game.setVisible(false);
+        
+        /* initialize credits panel */
+        credits = new CreditsPanel();
+        credits.setSize(dim);
+        add(credits);
+        credits.setBounds(win);
+        credits.setVisible(false);
         
         /* create campus objects */
         campusList = createCampuses();
