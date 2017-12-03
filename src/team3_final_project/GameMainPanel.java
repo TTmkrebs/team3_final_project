@@ -257,23 +257,22 @@ public class GameMainPanel extends JPanel
             miniGame.add(ticTacToe);
             ticTacToe.setBounds(new Rectangle(0,0,545,550));
             
-        instructionsLabel = new JLabel("Connect three X's in a row to win!");
-        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
-        instructionsLabel.setForeground(Color.white);
-        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-        add(gameInstructions);
+            instructionsLabel = new JLabel("Connect three X's in a row to win!");
+            instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
+            instructionsLabel.setForeground(Color.white);
+            gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+            add(gameInstructions);
         }
         if(number == 2)
-        {
-            Game_WhackaMole whackAMole = new Game_WhackaMole();
+        {    
             miniGame.add(whackAMole);
             whackAMole.setBounds(new Rectangle(0,0,545,550));
             
-        instructionsLabel = new JLabel("Whack the Buckeye as many times as you can in 10 seconds!");
-        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
-        instructionsLabel.setForeground(Color.white);
-        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-        add(gameInstructions);
+            instructionsLabel = new JLabel("Whack the Buckeye as many times as you can in 10 seconds!");
+            instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+            instructionsLabel.setForeground(Color.white);
+            gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+            add(gameInstructions);
         }
         /* if (number == 3)
         {
