@@ -35,7 +35,6 @@ public class Game_WhackaMole extends JPanel implements ActionListener
         bStart.setBounds(new Rectangle(15, 15, 75, 50));
         bBuckeye.setBounds(new Rectangle(200, 50, 85, 75));
 
-        
         moleButton = new ImageIcon("images/icons/buckeye.png");
         bBuckeye.setIcon(moleButton);
         bBuckeye.setVisible(false);
@@ -46,7 +45,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener
     {
         tim.stop();
         bBuckeye.setVisible(false);
-        bStart.setText("Game Over");
+        bStart.setText("Score: " + score);
         bStart.setEnabled(false);
         bStart.setBounds(new Rectangle(15, 15, 125, 50));
         bStart.setVisible(true);   
