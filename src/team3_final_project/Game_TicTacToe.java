@@ -18,6 +18,8 @@ public class Game_TicTacToe extends JPanel implements ActionListener
     private JButton[] buttonList;
     
     private Boolean gameWon = false;
+    private Boolean gameLost = false;
+    private Boolean gameTied = false;
     
     private Player currentPlayer;
     
@@ -180,6 +182,16 @@ public class Game_TicTacToe extends JPanel implements ActionListener
         return loss;
     }
     
+    public Boolean drawCheck()
+    {
+        Boolean loss = false;
+        if(winCheck() && lossCheck() == false)
+        {
+            loss = true;
+        }
+        return loss;
+    }
+    
     public void winner()
     {
         for(int i=0; i<buttonList.length; i++)
@@ -229,7 +241,10 @@ public class Game_TicTacToe extends JPanel implements ActionListener
         if(gameWon) {winner();}
         else {cpuTurn();}
         
-        Boolean gameLost = lossCheck();
+        gameLost = lossCheck();
         if(gameLost) {loser();}
+        
+        gameTied = drawCheck();
+        if(gameTied) {loser();}
     }
 }
