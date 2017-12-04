@@ -357,7 +357,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private void movePlayer(KeyEvent e)
     {
         int code = e.getKeyCode();
-        int speed = 3;
+        int speed = 5;
         if(gamePaused == false)
         {
             if(code == e.VK_LEFT)

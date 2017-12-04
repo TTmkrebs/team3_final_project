@@ -43,7 +43,6 @@ public class CreditsPanel extends JPanel
         /* create setup and add containerPanel panel to contain individual developer panels */
         containerPanel = new JPanel();
         containerPanel.setLayout(new GridLayout());
-        containerPanel.setBackground(Color.yellow);
         containerPanel.setVisible(true);
         add(containerPanel,BorderLayout.CENTER);
         
@@ -51,9 +50,10 @@ public class CreditsPanel extends JPanel
         containerPanel.add(highScoresPanel);
         containerPanel.add(creditsPanel);
         
-        winLoseLabel = new JLabel("You Won!");
-        winLoseLabel.setFont(new Font("Arial", Font.BOLD, 48));
-        winLoseLabel.setForeground(Color.white);
+        winLoseLabel = new JLabel("");
+        winLoseLabel.setHorizontalAlignment(JLabel.CENTER);
+        winLoseLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        winLoseLabel.setForeground(Color.yellow);
         add(winLoseLabel,BorderLayout.NORTH);
         
         
