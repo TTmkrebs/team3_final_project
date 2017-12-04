@@ -20,12 +20,12 @@ public class CreditsPanel extends JPanel
     
     public CreditsPanel()
     {
-        /* setup DevelopersPanel */
+        /* setup CreditsPanel */
         super();
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
-        /* create and setup panel for developer Aly */
+        /* create and setup panel for high scores */
         highScoresPanel = new JPanel();
         highScoresPanel.setBackground (Color.black);
         highScoresLabel = new JLabel ("High Scores: ");
@@ -34,6 +34,7 @@ public class CreditsPanel extends JPanel
         highScoresLabel.setForeground(Color.white);
         highScoresPanel.add (highScoresLabel);
         
+        /* create and setup panel for credits */
         creditsPanel = new JPanel();
         creditsPanel.setBackground(Color.cyan);
         creditsLabel = new JLabel ("Credits: ");
@@ -42,13 +43,13 @@ public class CreditsPanel extends JPanel
         creditsLabel.setForeground(Color.white);
         creditsPanel.add (creditsLabel);
         
-        /* create setup and add containerPanel panel to contain individual developer panels */
+        /* create setup and add containerPanel panel to contain individual panels */
         containerPanel = new JPanel();
         containerPanel.setLayout(new GridLayout());
         containerPanel.setVisible(true);
         add(containerPanel,BorderLayout.CENTER);
         
-        /* add all developer panels */
+        /* add all panels */
         containerPanel.add(highScoresPanel);
         containerPanel.add(creditsPanel);
         

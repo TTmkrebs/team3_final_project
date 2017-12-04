@@ -208,6 +208,20 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             bBack.addActionListener(this);
     }
     
+    public void showCredits()
+    {
+        /* toggle panel visibility */
+            credits.setVisible(true);
+            main.setVisible(false);
+            instr.setVisible(false);
+            choice.setVisible(false);
+            devs.setVisible(false);
+            
+            /* reassign buttons */
+            bBack = credits.getBackButton();
+            bBack.addActionListener(this);
+    }
+    
     public Player createPlayer()
     {
         currentPlayer = new Player(choice.getCharacter());
@@ -331,6 +345,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         instr.setVisible(false);
         devs.setVisible(false);
         choice.setVisible(false);
+        credits.setVisible(false);
         currentPlayer = null;
         for(int i=0; i<campusList.length; i++) {campusList[i].setVisible(false);}
         main.setVisible(true);
