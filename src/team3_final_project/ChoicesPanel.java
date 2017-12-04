@@ -51,72 +51,84 @@ public class ChoicesPanel extends JPanel implements ActionListener
         
         /* add label for characters */
         JLabel charLabel = new JLabel("Select Character:");
+        charLabel.setBounds(new Rectangle(0,50,800,25));
+        charLabel.setFont(new Font("Arial", Font.BOLD, 25));
+        charLabel.setForeground(Color.white);
+        charLabel.setHorizontalAlignment(JLabel.CENTER);
         add(charLabel);
-        charLabel.setBounds(new Rectangle(350,50,200,25));
         
         /* create characters */
         ImageIcon footballPlayer = new ImageIcon("images/characters/footballplayer.png");
         char1 = new JButton(footballPlayer);
         char1.addActionListener(this);
-        add(char1);
         char1.setBounds(new Rectangle(125,100,150,150));
+        add(char1);
         
         ImageIcon student = new ImageIcon("images/characters/student.png");
         char2 = new JButton(student);
         char2.addActionListener(this);
-        add(char2);
         char2.setBounds(new Rectangle(325,100,150,150));
+        add(char2);
         
         ImageIcon psuMascot = new ImageIcon("images/characters/mascot.jpg");
         char3 = new JButton(psuMascot);
         char3.addActionListener(this);
-        add(char3);
         char3.setBounds(new Rectangle(525,100,150,150));
+        add(char3);
         
         /* create character selection display */
         JLabel charTextLabel = new JLabel("Chosen Character:");
+        charTextLabel.setBounds(new Rectangle(0,275,800,25));
+        charTextLabel.setFont(new Font("Arial", Font.BOLD, 15));
+        charTextLabel.setForeground(Color.white);
+        charTextLabel.setHorizontalAlignment(JLabel.CENTER);
         add(charTextLabel);
-        charTextLabel.setBounds(new Rectangle(350,275,150,25));
         charText = new JTextField(20);
         charText.setEditable(false);
-        add(charText);
         charText.setBounds(new Rectangle(325,300,150,25));
+        add(charText);
         
         /* add label for themes */
         JLabel themeLabel = new JLabel("Select Theme:");
+        themeLabel.setBounds(new Rectangle(0,350,800,25));
+        themeLabel.setFont(new Font("Arial", Font.BOLD, 25));
+        themeLabel.setForeground(Color.white);
+        themeLabel.setHorizontalAlignment(JLabel.CENTER);
         add(themeLabel);
-        themeLabel.setBounds(new Rectangle(360,350,200,25));
         
         /* create themes */
         psuSports = new ImageIcon("images/themes/psusports.png");
         theme1 = new JButton(psuSports);
         theme1.addActionListener(this);
-        add(theme1);
         theme1.setBounds(new Rectangle(125, 400, 150, 150));
         theme1.setEnabled(false);
+        add(theme1);
         
         psuAcademics = new ImageIcon("images/themes/psuacademics.png");
         theme2 = new JButton(psuAcademics);
         theme2.addActionListener(this);
-        add(theme2);
         theme2.setBounds(new Rectangle(325, 400, 150, 150));
         theme2.setEnabled(false);
+        add(theme2);
         
         psuHistory = new ImageIcon("images/themes/psuhistory.png");
         theme3 = new JButton(psuHistory);
         theme3.addActionListener(this);
-        add(theme3);
         theme3.setBounds(new Rectangle(525, 400, 150, 150));
         theme3.setEnabled(false);
+        add(theme3);
         
         /* create character selection display */
         JLabel themeTextLabel = new JLabel("Chosen Theme:");
+        themeTextLabel.setBounds(new Rectangle(0, 555, 800, 25));
+        themeTextLabel.setFont(new Font("Arial", Font.BOLD, 15));
+        themeTextLabel.setForeground(Color.white);
+        themeTextLabel.setHorizontalAlignment(JLabel.CENTER);
         add(themeTextLabel);
-        themeTextLabel.setBounds(new Rectangle(355, 555, 150, 25));
         themeText = new JTextField(20);
         themeText.setEditable(false);
-        add(themeText);
         themeText.setBounds(new Rectangle(325, 580, 150, 25));
+        add(themeText);
     }
 
     public JButton getBackButton()

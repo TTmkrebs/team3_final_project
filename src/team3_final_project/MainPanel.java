@@ -17,7 +17,7 @@ public class MainPanel extends JPanel
     {
         /* setup MainPanel */
         super();
-        setBackground(Color.gray);
+        setBackground(Color.black);
         setLayout(null);
         
         /* create and add gameLogo image */

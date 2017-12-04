@@ -12,7 +12,7 @@ public class InstructionsPanel extends JPanel
     {
         /* setup InstructionsPanel */
         super();
-        setBackground(Color.GRAY);
+        setBackground(Color.black);
         setLayout(new BorderLayout());
         
         /* create and add instructions image */
