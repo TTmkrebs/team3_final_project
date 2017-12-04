@@ -219,10 +219,10 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     public void playGame(Player inPlayer)
     {
         /* pass player into game & campus panel */
-        currentPlayer = createPlayer(); /* test */
+        currentPlayer = createPlayer(); 
         inPlayer = currentPlayer;
-//        currentPlayer = createPlayer(); /* test */
         game.assignPlayer(currentPlayer);
+//        credits.assignPlayer(currentPlayer);
 
         /* pass character icon into campus panel */
         for(int i=0;i<campusList.length;i++)
@@ -320,6 +320,8 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 game.setVisible(false);
             }
             credits.setVisible(true);
+            if (currentPlayer.getScore() >= 5){credits.winLoseLabel.setText("You Won!");}
+            else {credits.winLoseLabel.setText("You Lost!");}
         }
     }
     
@@ -355,7 +357,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private void movePlayer(KeyEvent e)
     {
         int code = e.getKeyCode();
-        int speed = 2;
+        int speed = 5;
         if(gamePaused == false)
         {
             if(code == e.VK_LEFT)

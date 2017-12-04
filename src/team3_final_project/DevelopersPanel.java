@@ -44,12 +44,13 @@ public class DevelopersPanel extends JPanel
         alyNameLabel = new JLabel ("Aly");
         alyNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         alyNameLabel.setForeground(Color.white);
-        alyNameLabel.setBounds(80,5,100,100);
+        alyNameLabel.setBounds(0,0,250,100);
+        alyNameLabel.setHorizontalAlignment(JLabel.CENTER);
         alyPanel.add (alyNameLabel);
     
         alyBioLabel = new JLabel("<html>Aly is majoring in Information Science "
                 + "and Technology, graduating in Fall 2018 with her second bachelors "
-                + "degree. <br><br> Fun Fact: She loves to bake cupcakes</html>");
+                + "degree. <br><br> Fun Fact: She loves to bake cupcakes.</html>");
         alyBioLabel.setFont(new Font("Arial", Font.BOLD, 16));
         alyBioLabel.setForeground(Color.white);
         alyBioLabel.setBounds(25, 30, 200, 300);
@@ -68,10 +69,14 @@ public class DevelopersPanel extends JPanel
         mattNameLabel = new JLabel ("Matt");
         mattNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         mattNameLabel.setForeground(Color.white);
-        mattNameLabel.setBounds(75,5,100,100);
+        mattNameLabel.setBounds(0,0,250,100);
+        mattNameLabel.setHorizontalAlignment(JLabel.CENTER);
         mattPanel.add (mattNameLabel);
         
-        mattBioLabel = new JLabel("Matt Bio");
+        mattBioLabel = new JLabel("<html>Matt is also majoring in IST, with a focus on "
+                + "Organizational Leadership. As a part-time student and full-time employee, "
+                + "he has no idea when he will graduate.<br><br> Fun Fact: He is "
+                + "neither grumpy, nor a cat.</html>");
         mattBioLabel.setFont(new Font("Arial",Font.BOLD,16));
         mattBioLabel.setForeground(Color.white);
         mattBioLabel.setBounds(25,30,200,300);
@@ -90,10 +95,14 @@ public class DevelopersPanel extends JPanel
         valeriNameLabel = new JLabel ("Valeri");
         valeriNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         valeriNameLabel.setForeground(Color.white);
-        valeriNameLabel.setBounds(50,5,200,100);
+        valeriNameLabel.setBounds(0,0,250,100);
+        valeriNameLabel.setHorizontalAlignment(JLabel.CENTER);
         valeriPanel.add (valeriNameLabel);
         
-        valeriBioLabel = new JLabel("Valeri Bio");
+        valeriBioLabel = new JLabel("<html>Valeri is majoring in Security and "
+                + "Risk Analysis, graduating someday in the hazy future. "
+                + "<br><br> Fun Fact: She has the world's best dog, a puggle "
+                + "named Pumpernickel.</html>");
         valeriBioLabel.setFont(new Font("Arial",Font.BOLD,16));
         valeriBioLabel.setForeground(Color.white);
         valeriBioLabel.setBounds(25,30,200,300);
