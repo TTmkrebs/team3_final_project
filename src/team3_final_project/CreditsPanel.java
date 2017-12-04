@@ -29,14 +29,16 @@ public class CreditsPanel extends JPanel
         highScoresPanel = new JPanel();
         highScoresPanel.setBackground (Color.black);
         highScoresLabel = new JLabel ("High Scores: ");
-        highScoresLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        highScoresLabel.setHorizontalAlignment(JLabel.CENTER);
+        highScoresLabel.setFont(new Font("Arial", Font.BOLD, 40));
         highScoresLabel.setForeground(Color.white);
         highScoresPanel.add (highScoresLabel);
         
         creditsPanel = new JPanel();
         creditsPanel.setBackground(Color.cyan);
         creditsLabel = new JLabel ("Credits: ");
-        creditsLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        creditsLabel.setHorizontalAlignment(JLabel.CENTER);
+        creditsLabel.setFont(new Font("Arial", Font.BOLD, 40));
         creditsLabel.setForeground(Color.white);
         creditsPanel.add (creditsLabel);
         
@@ -56,16 +58,11 @@ public class CreditsPanel extends JPanel
         winLoseLabel.setForeground(Color.yellow);
         add(winLoseLabel,BorderLayout.NORTH);
         
-        
         /* create and add bBackMainMenu button */
         bBackMainMenu = new JButton("Main Menu");
         add(bBackMainMenu,BorderLayout.SOUTH);
-        
-        
     }
-    
-    
-    
+
     public JButton getBackButton()
     {
         return bBackMainMenu;

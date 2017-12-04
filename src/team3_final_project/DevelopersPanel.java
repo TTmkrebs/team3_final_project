@@ -44,7 +44,8 @@ public class DevelopersPanel extends JPanel
         alyNameLabel = new JLabel ("Aly");
         alyNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         alyNameLabel.setForeground(Color.white);
-        alyNameLabel.setBounds(80,5,100,100);
+        alyNameLabel.setBounds(0,0,250,100);
+        alyNameLabel.setHorizontalAlignment(JLabel.CENTER);
         alyPanel.add (alyNameLabel);
     
         alyBioLabel = new JLabel("<html>Aly is majoring in Information Science "
@@ -68,7 +69,8 @@ public class DevelopersPanel extends JPanel
         mattNameLabel = new JLabel ("Matt");
         mattNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         mattNameLabel.setForeground(Color.white);
-        mattNameLabel.setBounds(75,5,100,100);
+        mattNameLabel.setBounds(0,0,250,100);
+        mattNameLabel.setHorizontalAlignment(JLabel.CENTER);
         mattPanel.add (mattNameLabel);
         
         mattBioLabel = new JLabel("<html>Matt is also majoring in IST, with a focus on "
@@ -93,7 +95,8 @@ public class DevelopersPanel extends JPanel
         valeriNameLabel = new JLabel ("Valeri");
         valeriNameLabel.setFont(new Font("Arial", Font.BOLD, 48));
         valeriNameLabel.setForeground(Color.white);
-        valeriNameLabel.setBounds(50,5,200,100);
+        valeriNameLabel.setBounds(0,0,250,100);
+        valeriNameLabel.setHorizontalAlignment(JLabel.CENTER);
         valeriPanel.add (valeriNameLabel);
         
         valeriBioLabel = new JLabel("<html>Valeri is majoring in Security and "
