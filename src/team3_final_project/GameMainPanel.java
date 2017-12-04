@@ -88,14 +88,6 @@ public class GameMainPanel extends JPanel
         gameInstructions.setBounds(new Rectangle(20,20,545,75));
         gameInstructions.setBorder(instructionsBorder);
         gameInstructions.setBackground(new Color(0,0,0,65));
-
-//        instructionsLabel = new JLabel("Connect three X's in a row to win!");
-//        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
-//        instructionsLabel.setForeground(Color.white);
-//        
-//        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-//       add(gameInstructions);
-
        
         /* add miniGame JPanel for mini game */
         miniGame = new JPanel();
@@ -130,7 +122,7 @@ public class GameMainPanel extends JPanel
         logoTheme.setBorder(themeLogoBorder);
         logoTheme.setBackground(new Color(0,0,0,65));
         themeIcon = new JLabel();
-        logoTheme.add(themeIcon, BorderLayout.CENTER);
+        logoTheme.add(themeIcon);
         add(logoTheme);
         
         
@@ -141,7 +133,7 @@ public class GameMainPanel extends JPanel
         imageCharacter.setBorder(characterImageBorder);
         imageCharacter.setBackground(new Color(0,0,0,65));
         charIcon = new JLabel();
-        imageCharacter.add(charIcon, BorderLayout.CENTER);
+        imageCharacter.add(charIcon);
         add(imageCharacter);
         
         

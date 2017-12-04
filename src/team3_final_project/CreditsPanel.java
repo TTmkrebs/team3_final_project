@@ -36,7 +36,7 @@ public class CreditsPanel extends JPanel
         
         /* create and setup panel for credits */
         creditsPanel = new JPanel();
-        creditsPanel.setBackground(Color.cyan);
+        creditsPanel.setBackground(Color.black);
         creditsLabel = new JLabel ("Credits: ");
         creditsLabel.setHorizontalAlignment(JLabel.CENTER);
         creditsLabel.setFont(new Font("Arial", Font.BOLD, 40));

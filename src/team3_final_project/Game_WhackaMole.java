@@ -18,7 +18,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener
     public Game_WhackaMole()
     {
         super();
-        setBackground(Color.gray);
+        setBackground(Color.black);
             
         /* create start button */
         bStart = new JButton("Start");
@@ -27,7 +27,7 @@ public class Game_WhackaMole extends JPanel implements ActionListener
 
         tim = new Timer(1000, this);
         /* create point button */
-        bBuckeye = new JButton("Click me");
+        bBuckeye = new JButton("");
         bBuckeye.addActionListener(this);
         add(bBuckeye);
 
