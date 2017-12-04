@@ -24,7 +24,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     private JButton bNewGame;
     private JButton bDevelopers;
     private JButton bInstructions;
-    private JButton bBack;
+    private JButton bBack = null;
     private JButton bPlayGame;
     private JButton bPause;
     private JButton bMainMenu;
