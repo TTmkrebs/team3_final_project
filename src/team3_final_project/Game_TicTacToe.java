@@ -184,10 +184,13 @@ public class Game_TicTacToe extends JPanel implements ActionListener
     
     public Boolean drawCheck()
     {
-        Boolean loss = false;
-        if(winCheck() && lossCheck() == false)
+        Boolean loss = true;
+        for(int i=0; i < buttonList.length; i++)
         {
-            loss = true;
+            if(buttonList[i].isEnabled())
+            {
+                loss = false;
+            }
         }
         return loss;
     }
@@ -239,12 +242,15 @@ public class Game_TicTacToe extends JPanel implements ActionListener
         
         gameWon = winCheck();
         if(gameWon) {winner();}
-        else {cpuTurn();}
         
-        gameLost = lossCheck();
-        if(gameLost) {loser();}
+        if(!gameWon)
+        {
+            gameTied = drawCheck();
+            if(gameTied) {loser();}
+            else {cpuTurn();}
         
-        gameTied = drawCheck();
-        if(gameTied) {loser();}
+            gameLost = lossCheck();
+            if(gameLost) {loser();}
+        }
     }
 }
