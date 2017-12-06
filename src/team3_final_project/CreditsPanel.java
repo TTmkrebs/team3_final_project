@@ -58,14 +58,6 @@ public class CreditsPanel extends JPanel
         winLoseLabel.setFont(new Font("Arial", Font.BOLD, 40));
         winLoseLabel.setForeground(Color.yellow);
         add(winLoseLabel,BorderLayout.NORTH);
-        
-        /* create and add bBackMainMenu button */
-        bBackMainMenu = new JButton("Main Menu");
-        add(bBackMainMenu,BorderLayout.SOUTH);
-    }
 
-    public JButton getBackButton()
-    {
-        return bBackMainMenu;
     }
 }

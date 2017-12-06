@@ -214,10 +214,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             instr.setVisible(false);
             choice.setVisible(false);
             devs.setVisible(false);
-            
-            /* reassign buttons */
-            bBack = credits.getBackButton();
-            bBack.addActionListener(this);
     }
     
     public Player createPlayer()
