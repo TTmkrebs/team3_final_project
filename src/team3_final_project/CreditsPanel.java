@@ -5,9 +5,6 @@ import javax.swing.*;
 
 public class CreditsPanel extends JPanel
 {
-    /* declare bBackMainMenu button to display MainPanel */
-    private JButton bBackMainMenu;
-   
     /*declare panels */
     private JPanel containerPanel;
     private JPanel highScoresPanel;
