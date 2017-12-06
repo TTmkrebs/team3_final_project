@@ -117,22 +117,24 @@ public class GameMainPanel extends JPanel
         
         /* add logoTheme JPanel for theme logo */
         logoTheme = new JPanel();
-        logoTheme.setLayout(new BorderLayout());
+        logoTheme.setLayout(null);
         logoTheme.setBounds(new Rectangle(585,125,190,172));
         logoTheme.setBorder(themeLogoBorder);
         logoTheme.setBackground(new Color(0,0,0,65));
         themeIcon = new JLabel();
+        themeIcon.setBounds(47,18,150,150);
         logoTheme.add(themeIcon);
         add(logoTheme);
         
         
         /* add imageCharacter JPanel for character image */
         imageCharacter = new JPanel();
-        imageCharacter.setLayout(new BorderLayout());
+        imageCharacter.setLayout(null);
         imageCharacter.setBounds(new Rectangle(585,303,190,172));
         imageCharacter.setBorder(characterImageBorder);
         imageCharacter.setBackground(new Color(0,0,0,65));
         charIcon = new JLabel();
+        charIcon.setBounds(47,18, 150, 150);
         imageCharacter.add(charIcon);
         add(imageCharacter);
         
