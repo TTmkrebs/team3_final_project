@@ -30,7 +30,7 @@ public class GameMainPanel extends JPanel
     private JLabel themeIcon;
     private Game_TicTacToe ticTacToe = new Game_TicTacToe();
     private Game_WhackaMole whackAMole = new Game_WhackaMole();
-//    private Game_Questions questionsGame = new Game_Questions();
+    private Game_Questions questionsGame = new Game_Questions();
     
     /* store trivia questions */
     private TriviaQuestion[] questionList;
@@ -154,7 +154,7 @@ public class GameMainPanel extends JPanel
         int num = 0;
 
         double r = Math.random();
-        num = (int) (r * 3);
+        num = (int) (r * 4);
         
         if(num == 0){ ++num; }
         
@@ -243,6 +243,7 @@ public class GameMainPanel extends JPanel
         
         ticTacToe.setPlayer(currentPlayer);
         whackAMole.setPlayer(currentPlayer);
+        questionsGame.setPlayer(currentPlayer);
     }
     
     public void setScore(int inScore)
@@ -253,6 +254,17 @@ public class GameMainPanel extends JPanel
     public void setQuestions(TriviaQuestion[] inQuestions)
     {
         questionList = inQuestions;
+        questionsGame.setQuestions(questionList);
+    }
+    
+    public void filterQuestions()
+    {
+        questionsGame.filterQuestions(questionList);
+    }
+    
+    public void selectQuestion()
+    {
+        questionsGame.selectQuestion();
     }
     
     public void game_selection(int number)
@@ -279,19 +291,16 @@ public class GameMainPanel extends JPanel
             gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
             add(gameInstructions);
         }
-        /* if (number == 3)
+        if (number == 3)
         {
-            Game_Questions trivia = new Game_Questions();
-            miniGame.add(trivia);
-            trivia.setBounds(new Rectangle(0,0,545,550));
+            miniGame.add(questionsGame);
+            questionsGame.setBounds(new Rectangle(0,0,545,550));
             
-        instructionsLabel = new JLabel("Answer the question below!");
-        instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
-        instructionsLabel.setForeground(Color.white);
-        gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
-        add(gameInstructions);
+            instructionsLabel = new JLabel("Answer the question below!");
+            instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+            instructionsLabel.setForeground(Color.white);
+            gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
+            add(gameInstructions);
         }
-        */
-
     }
 }

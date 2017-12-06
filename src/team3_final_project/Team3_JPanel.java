@@ -32,7 +32,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     
     /* character information */
     private Player currentPlayer;
-    private Player inPlayer;
     
     /* create questions */
     private TriviaQuestion[] questionList;
@@ -103,6 +102,9 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         credits.setBounds(win);
         credits.setVisible(false);
         
+        /* create question objects */
+        questionList = createQuestions();
+        
         /* create campus objects */
         campusList = createCampuses();
         for(int i=0; i<campusList.length;i++)
@@ -112,9 +114,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             campusList[i].setBounds(win);
             campusList[i].setVisible(false);
         }
-        
-        /* create question objects */
-        questionList = createQuestions();
         
         /* initialize timer */
         time = new Timer(1000,this);      
@@ -130,7 +129,8 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         for(int i = 0; i < 6; i++)
         {          
             campusList[i] = new GameMainPanel((String)xml.ReadObject(), 
-                    (ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());            
+                    (ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());
+            campusList[i].setQuestions(questionList);
         }
         xml.closeReaderXML();
         
@@ -163,8 +163,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             a, b, c, d, answer);
         }
         xml.closeReaderXML();
-        
-        campus = campusList[0];
         
         return questionList;
     }
@@ -227,6 +225,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         currentPlayer = new Player(choice.getCharacter());
         currentPlayer.setTheme(choice.getTheme());
         currentPlayer.setThemeIcon(choice.getThemeIcon(currentPlayer.getTheme()));
+        
         return currentPlayer;
     }
     
@@ -238,13 +237,15 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         game.assignPlayer(currentPlayer);
 //        credits.assignPlayer(currentPlayer);
 
-        /* pass character icon into campus panel */
+        /* pass character icon & qustions into campus panel */
         for(int i=0;i<campusList.length;i++)
         {
             campusList[i].setPlayer(currentPlayer);
+            campusList[i].filterQuestions();
             campusList[i].repaint();
         }
-
+        
+        
         /* toggle panel visibility */
         instr.setVisible(false);
         devs.setVisible(false);
@@ -284,8 +285,9 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 bBack.addActionListener(this);
                 bMainMenu = campusList[i].getMainMenuButton();
                 bMainMenu.addActionListener(this);
-                campus.setQuestions(questionList);
                 campus.setScore(currentPlayer.getScore());
+                campus.selectQuestion();
+                
             }
             else
             {
