@@ -123,6 +123,7 @@ public class Game_Questions extends JPanel implements ActionListener
             answer4.setEnabled(false);
             
             gameWon = true;
+            currentPlayer.setScore(1);
         }
         else
         {

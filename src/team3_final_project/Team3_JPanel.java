@@ -324,13 +324,16 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             }
             campusList[i].getScoreButton().setText("Score: " + currentPlayer.getScore());
         }
-        if(currentPlayer.getVisits() == 5)
+        if(currentPlayer.getVisits() == 1)
         {
+            time.stop();
             for(int i = 0; i <campusList.length; ++i)
             {
                 campusList[i].setVisible(false);
                 game.setVisible(false);
             }
+            credits.setPlayer(currentPlayer);
+            credits.getHighScores();
             credits.setVisible(true);
             if (currentPlayer.getScore() >= 5){credits.winLoseLabel.setText("You Won!");}
             else {credits.winLoseLabel.setText("You Lost!");}

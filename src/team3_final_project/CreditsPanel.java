@@ -1,6 +1,7 @@
 package team3_final_project;
 
 import java.awt.*;
+import java.util.*;
 import javax.swing.*;
 
 public class CreditsPanel extends JPanel
@@ -14,6 +15,12 @@ public class CreditsPanel extends JPanel
     private JLabel highScoresLabel;
     private JLabel creditsLabel;
     public JLabel winLoseLabel;
+    
+    /*declare current player */
+    private Player currentPlayer;
+    
+    /*declare high score list */
+    private ArrayList<String> highScores;
     
     public CreditsPanel()
     {
@@ -55,6 +62,60 @@ public class CreditsPanel extends JPanel
         winLoseLabel.setFont(new Font("Arial", Font.BOLD, 40));
         winLoseLabel.setForeground(Color.yellow);
         add(winLoseLabel,BorderLayout.NORTH);
-
+    }
+    
+    public void setPlayer(Player inPlayer)
+    {
+        currentPlayer = inPlayer;
+    }
+    
+    public void recordScore(ArrayList inHighScores)
+    {
+        int highScoreCount = inHighScores.size();
+        int score = currentPlayer.getScore();
+        int time = currentPlayer.getTime();
+        String character = currentPlayer.getCharacter();
+        String theme = currentPlayer.getTheme();
+        
+        for(int i=highScoreCount; i<0; i--)
+        {
+            String hScore = inHighScores.get(i-1).toString();
+            hScore = hScore.replace("SCORE:", "");
+            int hScoreInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
+            hScore = hScore.replace(hScoreInt + "-", "");
+            int hTimeInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
+            
+        }
+    }
+    
+    public void getHighScores()
+    {
+        XML_240 reader = new XML_240();
+        reader.openReaderXML("highScore.xml");
+        
+        ArrayList<String> scores = new ArrayList<>();
+        
+        String line = reader.ReadObject().toString();
+        while(line.startsWith("SCORE:"))
+        {
+            scores.add(line);
+            if(reader.ReadObject().toString() != null)
+            {
+                line = reader.ReadObject().toString();
+            }
+            else {line = "";}
+        }
+        reader.closeReaderXML();
+        
+        Collections.sort(scores);
+        
+        highScores = scores;
+        
+        recordScore(highScores);
+    }
+    
+    public void showScores()
+    {
+        
     }
 }
