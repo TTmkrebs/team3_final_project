@@ -96,23 +96,32 @@ public class CreditsPanel extends JPanel
         currentPlayer = inPlayer;
     }
     
-    public void recordScore(ArrayList inRecentScores)
+    public void recordScore(ArrayList<String> inRecentScores)
     {
         int recentScoreCount = inRecentScores.size();
         int score = currentPlayer.getScore();
         int time = currentPlayer.getTime();
         String character = currentPlayer.getCharacter();
         String theme = currentPlayer.getTheme();
+        ArrayList<String> scoreList = new ArrayList<>();
+        String currentScore = "SCORE:" + score + "-" + time + "-" + character + "-" + theme;
         
-        for(int i=recentScoreCount; i<0; i--)
+        scoreList.add(currentScore);
+        
+        for(int i=0; i<recentScoreCount; i++)
         {
-            String rScore = inRecentScores.get(i-1).toString();
-            rScore = rScore.replace("SCORE:", "");
-            int rScoreInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
-            rScore = rScore.replace(rScoreInt + "-", "");
-            int rTimeInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
-//            missing something here?
+            scoreList.add(inRecentScores.get(i));
         }
+        
+        XML_240 writer = new XML_240();
+        writer.openWriterXML("recentScore.xml");
+        
+        for(int i=0; i<scoreList.size(); i++)
+        {
+            writer.writeObject(scoreList.get(i));
+        }
+        
+        writer.closeWriterXML();
     }
     
     public void getRecentScores()
@@ -141,8 +150,56 @@ public class CreditsPanel extends JPanel
         recordScore(recentScores);
     }
     
-    public void showScores()
+    public void showScores(ArrayList<String> inScores)
     {
+        int score1 = 0;
+        int time1 = 0;
+        String char1 = "";
+        String theme1 = "";
         
+        int score2 = 0;
+        int time2 = 0;
+        String char2 = "";
+        String theme2 = "";
+        
+        int score3 = 0;
+        int time3 = 0;
+        String char3 = "";
+        String theme3 = "";
+        
+        for(int i=0; i<inScores.size(); i++)
+        {
+            String scoreLine = inScores.get(i).replace("SCORE:", "");
+            int score = Integer.valueOf(scoreLine.substring(0,scoreLine.indexOf("-")));
+            scoreLine.replace(score + "-", "");
+            int time = Integer.valueOf(scoreLine.substring(0,scoreLine.indexOf("-")));
+            scoreLine.replace(time + "-", "");
+            String character = scoreLine.substring(0,scoreLine.indexOf("-"));
+            String theme = scoreLine.replace(character + "-","");
+            
+            if(i==0)
+            {
+                score1 = score;
+                time1 = time;
+                char1 = character;
+                theme1 = theme;
+            }
+            
+            if(i==1)
+            {
+                score2 = score;
+                time2 = time;
+                char2 = character;
+                theme2 = theme;
+            }
+            
+            if(i==2)
+            {
+                score3 = score;
+                time3 = time;
+                char3 = character;
+                theme3 = theme;
+            }
+        }
     }
 }
