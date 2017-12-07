@@ -74,7 +74,7 @@ public class CreditsPanel extends JPanel
         
         creditsPanel.add (creditsArea1);
         
-        /* create setup and add containerPanel panel to contain individual panels */
+        /* create, setup, and add containerPanel panel to contain individual panels */
         containerPanel = new JPanel();
         containerPanel.setLayout(new GridLayout());
         containerPanel.setVisible(true);
@@ -111,7 +111,7 @@ public class CreditsPanel extends JPanel
             int rScoreInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
             rScore = rScore.replace(rScoreInt + "-", "");
             int rTimeInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
-            
+//            missing something here?
         }
     }
     
