@@ -9,7 +9,8 @@ import javax.swing.*;
 public class Game_Questions extends JPanel implements ActionListener 
 {
     private JButton answer1, answer2, answer3, answer4;
-    private JLabel chosenQuestion;
+    private JTextArea chosenQuestion;
+    private JPanel questionsPanel;
     private Boolean gameWon = false;
     private Player currentPlayer;
     private TriviaQuestion[] questionList;
@@ -19,13 +20,19 @@ public class Game_Questions extends JPanel implements ActionListener
     public Game_Questions() 
     {
        super();
-       setBackground(Color.black);
+       setBackground(new Color(0,0,0,65));
        setLayout(null);
-
-       
-       chosenQuestion = new JLabel();
-       chosenQuestion.setBounds(75, 100, 400, 75);
+              
+       chosenQuestion = new JTextArea();
+       chosenQuestion.setBounds(75, 100, 395, 100);
+       chosenQuestion.setFont(new Font("SansSerif", Font.BOLD, 16));
        chosenQuestion.setForeground(Color.white);
+       chosenQuestion.setBackground(new Color(0,0,0,65));
+       chosenQuestion.setWrapStyleWord(true);
+       chosenQuestion.setLineWrap(true);
+       chosenQuestion.setOpaque(false);
+       chosenQuestion.setEditable(false);
+       chosenQuestion.setFocusable(false);
        add(chosenQuestion);
        
        answer1 = new JButton();
