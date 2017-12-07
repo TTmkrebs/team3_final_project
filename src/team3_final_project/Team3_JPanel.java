@@ -324,7 +324,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             }
             campusList[i].getScoreButton().setText("Score: " + currentPlayer.getScore());
         }
-        if(currentPlayer.getVisits() == 1)
+        if(currentPlayer.getVisits() == 5)
         {
             time.stop();
             for(int i = 0; i <campusList.length; ++i)
