@@ -10,7 +10,6 @@ public class Game_Questions extends JPanel implements ActionListener
 {
     private JButton answer1, answer2, answer3, answer4;
     private JTextArea chosenQuestion;
-    private JPanel questionsPanel;
     private Boolean gameWon = false;
     private Player currentPlayer;
     private TriviaQuestion[] questionList;
@@ -26,7 +25,7 @@ public class Game_Questions extends JPanel implements ActionListener
        chosenQuestion = new JTextArea();
        chosenQuestion.setBounds(75, 100, 395, 100);
        chosenQuestion.setFont(new Font("SansSerif", Font.BOLD, 16));
-       chosenQuestion.setForeground(Color.white);
+       chosenQuestion.setForeground(Color.yellow);
        chosenQuestion.setBackground(new Color(0,0,0,65));
        chosenQuestion.setWrapStyleWord(true);
        chosenQuestion.setLineWrap(true);
