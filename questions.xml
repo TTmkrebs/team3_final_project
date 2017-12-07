@@ -59,8 +59,8 @@
     <string>Theme:Academics</string>
 	<string>false</string>
     <string>Question: What object contains methods that define the actions to be taken when a user clicks a button? </string>
-    <string>A: Actionlistener</string>
-    <string>B: Event Listener</string>
+    <string>A: ActionListener</string>
+    <string>B: EventListener</string>
     <string>C: Action Methods</string>
     <string>D: Event Methods</string>
     <string>Answer: B</string> 

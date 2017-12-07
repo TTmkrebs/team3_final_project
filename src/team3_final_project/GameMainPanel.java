@@ -298,7 +298,7 @@ public class GameMainPanel extends JPanel
             questionsGame.setBounds(new Rectangle(0,0,545,550));
             
             instructionsLabel = new JLabel("Answer the question below!");
-            instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+            instructionsLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
             instructionsLabel.setForeground(Color.white);
             gameInstructions.add(instructionsLabel, BorderLayout.CENTER);
             add(gameInstructions);
