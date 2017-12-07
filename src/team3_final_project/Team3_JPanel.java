@@ -303,9 +303,11 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 choice.setVisible(false);
                 game.setVisible(false);
                 main.setVisible(true);
-                bScore = game.getScoreButton();
-                bScore.setText("Score: " + currentPlayer.getScore());
-                
+                if(bScore != null)
+                {
+                    bScore = game.getScoreButton();
+                    bScore.setText("Score: " + currentPlayer.getScore());
+                }
                 /* reassign buttons */
                 bBack = null;
             }
@@ -322,21 +324,27 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 bBack = game.getBackButton();
                 currentPlayer.setVisits();
             }
-            campusList[i].getScoreButton().setText("Score: " + currentPlayer.getScore());
-        }
-        if(currentPlayer.getVisits() == 5)
-        {
-            time.stop();
-            for(int i = 0; i <campusList.length; ++i)
+            if(currentPlayer != null)
             {
-                campusList[i].setVisible(false);
-                game.setVisible(false);
+                campusList[i].getScoreButton().setText("Score: " + currentPlayer.getScore());
             }
-            credits.setPlayer(currentPlayer);
-            credits.getHighScores();
-            credits.setVisible(true);
-            if (currentPlayer.getScore() >= 5){credits.winLoseLabel.setText("You Won!");}
-            else {credits.winLoseLabel.setText("You Lost!");}
+        }
+        if(currentPlayer != null)
+        {
+            if(currentPlayer.getVisits() == 5)
+            {
+                time.stop();
+                for(int i = 0; i <campusList.length; ++i)
+                {
+                    campusList[i].setVisible(false);
+                    game.setVisible(false);
+                }
+                credits.setPlayer(currentPlayer);
+                credits.getHighScores();
+                credits.setVisible(true);
+                if (currentPlayer.getScore() >= 5){credits.winLoseLabel.setText("You Won!");}
+                else {credits.winLoseLabel.setText("You Lost!");}
+            }
         }
     }
     
