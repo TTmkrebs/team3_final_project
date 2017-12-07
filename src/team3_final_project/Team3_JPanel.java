@@ -333,7 +333,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
                 game.setVisible(false);
             }
             credits.setPlayer(currentPlayer);
-            credits.getHighScores();
+            credits.getRecentScores();
             credits.setVisible(true);
             if (currentPlayer.getScore() >= 5){credits.winLoseLabel.setText("You Won!");}
             else {credits.winLoseLabel.setText("You Lost!");}

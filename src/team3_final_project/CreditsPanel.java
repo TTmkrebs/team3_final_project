@@ -10,11 +10,11 @@ public class CreditsPanel extends JPanel
 {
     /*declare panels */
     private JPanel containerPanel;
-    private JPanel highScoresPanel;
+    private JPanel recentScoresPanel;
     private JPanel creditsPanel;
     
     /*declare labels and text areas */
-    private JTextArea highScoresArea1;
+    private JTextArea recentScoresArea1;
     private JTextArea creditsArea1;
     public JLabel winLoseLabel;
     
@@ -22,7 +22,7 @@ public class CreditsPanel extends JPanel
     private Player currentPlayer;
     
     /*declare high score list */
-    private ArrayList<String> highScores;
+    private ArrayList<String> recentScores;
     
     public CreditsPanel()
     {
@@ -39,22 +39,22 @@ public class CreditsPanel extends JPanel
         Border creditsBorder = new TitledBorder(whiteLineTitle, "Credits",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
         
         /* create and setup panel for high scores */
-        highScoresPanel = new JPanel();
-        highScoresPanel.setLayout(null);
-        highScoresPanel.setBackground (Color.green);
-        highScoresPanel.setBorder(highScoresBorder);
+        recentScoresPanel = new JPanel();
+        recentScoresPanel.setLayout(null);
+        recentScoresPanel.setBackground (Color.green);
+        recentScoresPanel.setBorder(highScoresBorder);
         
-        highScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
-        highScoresArea1.setBounds(25,50,250,600);
-        highScoresArea1.setFont(new Font("Arial", Font.BOLD, 30));
-        highScoresArea1.setForeground(Color.white);
-        highScoresArea1.setWrapStyleWord(true);
-        highScoresArea1.setLineWrap(true);
-        highScoresArea1.setOpaque(false);
-        highScoresArea1.setEditable(false);
-        highScoresArea1.setFocusable(false);
+        recentScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
+        recentScoresArea1.setBounds(25,50,250,600);
+        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        recentScoresArea1.setForeground(Color.white);
+        recentScoresArea1.setWrapStyleWord(true);
+        recentScoresArea1.setLineWrap(true);
+        recentScoresArea1.setOpaque(false);
+        recentScoresArea1.setEditable(false);
+        recentScoresArea1.setFocusable(false);
         
-        highScoresPanel.add (highScoresArea1);
+        recentScoresPanel.add (recentScoresArea1);
         
         /* create and setup panel for credits */
         creditsPanel = new JPanel();
@@ -81,7 +81,7 @@ public class CreditsPanel extends JPanel
         add(containerPanel,BorderLayout.CENTER);
         
         /* add all panels */
-        containerPanel.add(highScoresPanel);
+        containerPanel.add(recentScoresPanel);
         containerPanel.add(creditsPanel);
         
         winLoseLabel = new JLabel("");
@@ -96,29 +96,29 @@ public class CreditsPanel extends JPanel
         currentPlayer = inPlayer;
     }
     
-    public void recordScore(ArrayList inHighScores)
+    public void recordScore(ArrayList inRecentScores)
     {
-        int highScoreCount = inHighScores.size();
+        int recentScoreCount = inRecentScores.size();
         int score = currentPlayer.getScore();
         int time = currentPlayer.getTime();
         String character = currentPlayer.getCharacter();
         String theme = currentPlayer.getTheme();
         
-        for(int i=highScoreCount; i<0; i--)
+        for(int i=recentScoreCount; i<0; i--)
         {
-            String hScore = inHighScores.get(i-1).toString();
-            hScore = hScore.replace("SCORE:", "");
-            int hScoreInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
-            hScore = hScore.replace(hScoreInt + "-", "");
-            int hTimeInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
+            String rScore = inRecentScores.get(i-1).toString();
+            rScore = rScore.replace("SCORE:", "");
+            int rScoreInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
+            rScore = rScore.replace(rScoreInt + "-", "");
+            int rTimeInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
             
         }
     }
     
-    public void getHighScores()
+    public void getRecentScores()
     {
         XML_240 reader = new XML_240();
-        reader.openReaderXML("highScore.xml");
+        reader.openReaderXML("recentScore.xml");
         
         ArrayList<String> scores = new ArrayList<>();
         
@@ -136,9 +136,9 @@ public class CreditsPanel extends JPanel
         
         Collections.sort(scores);
         
-        highScores = scores;
+        recentScores = scores;
         
-        recordScore(highScores);
+        recordScore(recentScores);
     }
     
     public void showScores()
