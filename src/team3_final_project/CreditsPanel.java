@@ -3,6 +3,8 @@ package team3_final_project;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
 public class CreditsPanel extends JPanel
 {
@@ -11,9 +13,9 @@ public class CreditsPanel extends JPanel
     private JPanel highScoresPanel;
     private JPanel creditsPanel;
     
-    /*declare labels */
-    private JLabel highScoresLabel;
-    private JLabel creditsLabel;
+    /*declare labels and text areas */
+    private JTextArea highScoresArea1;
+    private JTextArea creditsArea1;
     public JLabel winLoseLabel;
     
     /*declare current player */
@@ -29,23 +31,48 @@ public class CreditsPanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
+        Font borderFont = new Font("SansSerif", Font.BOLD, 30);
+        Border whiteLine = BorderFactory.createLineBorder(Color.white);
+        Border whiteLineTitle = BorderFactory.createTitledBorder(whiteLine, "");
+        
+        Border highScoresBorder = new TitledBorder(whiteLineTitle, "High Scores",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border creditsBorder = new TitledBorder(whiteLineTitle, "Credits",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        
         /* create and setup panel for high scores */
         highScoresPanel = new JPanel();
-        highScoresPanel.setBackground (Color.black);
-        highScoresLabel = new JLabel ("High Scores: ");
-        highScoresLabel.setHorizontalAlignment(JLabel.CENTER);
-        highScoresLabel.setFont(new Font("Arial", Font.BOLD, 40));
-        highScoresLabel.setForeground(Color.white);
-        highScoresPanel.add (highScoresLabel);
+        highScoresPanel.setLayout(null);
+        highScoresPanel.setBackground (Color.green);
+        highScoresPanel.setBorder(highScoresBorder);
+        
+        highScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
+        highScoresArea1.setBounds(25,50,250,600);
+        highScoresArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        highScoresArea1.setForeground(Color.white);
+        highScoresArea1.setWrapStyleWord(true);
+        highScoresArea1.setLineWrap(true);
+        highScoresArea1.setOpaque(false);
+        highScoresArea1.setEditable(false);
+        highScoresArea1.setFocusable(false);
+        
+        highScoresPanel.add (highScoresArea1);
         
         /* create and setup panel for credits */
         creditsPanel = new JPanel();
-        creditsPanel.setBackground(Color.black);
-        creditsLabel = new JLabel ("Credits: ");
-        creditsLabel.setHorizontalAlignment(JLabel.CENTER);
-        creditsLabel.setFont(new Font("Arial", Font.BOLD, 40));
-        creditsLabel.setForeground(Color.white);
-        creditsPanel.add (creditsLabel);
+        creditsPanel.setLayout(null);
+        creditsPanel.setBackground(Color.cyan);
+        creditsPanel.setBorder(creditsBorder);
+        
+        creditsArea1 = new JTextArea ("testing testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing");
+        creditsArea1.setBounds(25,50,250,600);
+        creditsArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        creditsArea1.setForeground(Color.white);
+        creditsArea1.setWrapStyleWord(true);
+        creditsArea1.setLineWrap(true);
+        creditsArea1.setOpaque(false);
+        creditsArea1.setEditable(false);
+        creditsArea1.setFocusable(false);
+        
+        creditsPanel.add (creditsArea1);
         
         /* create setup and add containerPanel panel to contain individual panels */
         containerPanel = new JPanel();
