@@ -35,14 +35,14 @@ public class CreditsPanel extends JPanel
         Border whiteLine = BorderFactory.createLineBorder(Color.white);
         Border whiteLineTitle = BorderFactory.createTitledBorder(whiteLine, "");
         
-        Border highScoresBorder = new TitledBorder(whiteLineTitle, "High Scores",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border recentScoresBorder = new TitledBorder(whiteLineTitle, "Recent Scores",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
         Border creditsBorder = new TitledBorder(whiteLineTitle, "Credits",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
         
         /* create and setup panel for high scores */
         recentScoresPanel = new JPanel();
         recentScoresPanel.setLayout(null);
         recentScoresPanel.setBackground (Color.green);
-        recentScoresPanel.setBorder(highScoresBorder);
+        recentScoresPanel.setBorder(recentScoresBorder);
         
         recentScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
         recentScoresArea1.setBounds(25,50,250,600);
