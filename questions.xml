@@ -21,16 +21,16 @@
     <string>True or False: Beaver Stadium is the second largest team sports venue in the nation.</string>
     <string>A: True</string>
     <string>B: False</string>
-    <string>C: </string>
-    <string>D: </string>
+    <string>C: N/A</string>
+    <string>D: N/A</string>
     <string>Answer: A</string>
     <string>Theme:Sports</string>
 	<string>false</string>
     <string>True or False: When the Penn State football team plays at home, Beaver Stadium becomes the fourth largest city in Pennsylvania. </string>
     <string>A: True</string>
     <string>B: False</string>
-    <string>C: </string>
-    <string>D: </string>
+    <string>C: N/A</string>
+    <string>D: N/A</string>
     <string>Answer: A</string>
     <string>Theme:Sports</string>
 	<string>false</string>
@@ -59,8 +59,8 @@
     <string>Theme:Academics</string>
 	<string>false</string>
     <string>Question: What object contains methods that define the actions to be taken when a user clicks a button? </string>
-    <string>A: Actionlistener</string>
-    <string>B: Event Listener</string>
+    <string>A: ActionListener</string>
+    <string>B: EventListener</string>
     <string>C: Action Methods</string>
     <string>D: Event Methods</string>
     <string>Answer: B</string> 
@@ -98,11 +98,11 @@
     <string>Answer: B</string> 
     <string>Theme:History</string>
 	<string>false</string>
-    <string>True or False: The sun dial on the Old Main Lawn is the geographic center of Pennsylvania.</string>
+    <string>True or False: The sun dial on the Old Main Lawn is the geographical center of Pennsylvania.</string>
     <string>A: True</string>
     <string>B: False</string>
-    <string>C: </string>
-    <string>D: </string>
+    <string>C: N/A</string>
+    <string>D: N/A</string>
     <string>Answer: B</string> 
     <string>Theme:History</string>
 	<string>false</string>

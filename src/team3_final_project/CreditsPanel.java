@@ -3,24 +3,26 @@ package team3_final_project;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
 public class CreditsPanel extends JPanel
 {
     /*declare panels */
     private JPanel containerPanel;
-    private JPanel highScoresPanel;
+    private JPanel recentScoresPanel;
     private JPanel creditsPanel;
     
-    /*declare labels */
-    private JLabel highScoresLabel;
-    private JLabel creditsLabel;
+    /*declare labels and text areas */
+    private JTextArea recentScoresArea1;
+    private JTextArea creditsArea1;
     public JLabel winLoseLabel;
     
     /*declare current player */
     private Player currentPlayer;
     
     /*declare high score list */
-    private ArrayList<String> highScores;
+    private ArrayList<String> recentScores;
     
     public CreditsPanel()
     {
@@ -29,32 +31,57 @@ public class CreditsPanel extends JPanel
         setBackground(Color.black);
         setLayout(new BorderLayout());
         
+        Font borderFont = new Font("SansSerif", Font.BOLD, 30);
+        Border whiteLine = BorderFactory.createLineBorder(Color.white);
+        Border whiteLineTitle = BorderFactory.createTitledBorder(whiteLine, "");
+        
+        Border recentScoresBorder = new TitledBorder(whiteLineTitle, "Recent Scores",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        Border creditsBorder = new TitledBorder(whiteLineTitle, "Credits",TitledBorder.LEFT, TitledBorder.TOP, borderFont, Color.white);
+        
         /* create and setup panel for high scores */
-        highScoresPanel = new JPanel();
-        highScoresPanel.setBackground (Color.black);
-        highScoresLabel = new JLabel ("High Scores: ");
-        highScoresLabel.setHorizontalAlignment(JLabel.CENTER);
-        highScoresLabel.setFont(new Font("Arial", Font.BOLD, 40));
-        highScoresLabel.setForeground(Color.white);
-        highScoresPanel.add (highScoresLabel);
+        recentScoresPanel = new JPanel();
+        recentScoresPanel.setLayout(null);
+        recentScoresPanel.setBackground (Color.green);
+        recentScoresPanel.setBorder(recentScoresBorder);
+        
+        recentScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
+        recentScoresArea1.setBounds(25,50,250,600);
+        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        recentScoresArea1.setForeground(Color.white);
+        recentScoresArea1.setWrapStyleWord(true);
+        recentScoresArea1.setLineWrap(true);
+        recentScoresArea1.setOpaque(false);
+        recentScoresArea1.setEditable(false);
+        recentScoresArea1.setFocusable(false);
+        
+        recentScoresPanel.add (recentScoresArea1);
         
         /* create and setup panel for credits */
         creditsPanel = new JPanel();
-        creditsPanel.setBackground(Color.black);
-        creditsLabel = new JLabel ("Credits: ");
-        creditsLabel.setHorizontalAlignment(JLabel.CENTER);
-        creditsLabel.setFont(new Font("Arial", Font.BOLD, 40));
-        creditsLabel.setForeground(Color.white);
-        creditsPanel.add (creditsLabel);
+        creditsPanel.setLayout(null);
+        creditsPanel.setBackground(Color.cyan);
+        creditsPanel.setBorder(creditsBorder);
         
-        /* create setup and add containerPanel panel to contain individual panels */
+        creditsArea1 = new JTextArea ("testing testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing");
+        creditsArea1.setBounds(25,50,250,600);
+        creditsArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        creditsArea1.setForeground(Color.white);
+        creditsArea1.setWrapStyleWord(true);
+        creditsArea1.setLineWrap(true);
+        creditsArea1.setOpaque(false);
+        creditsArea1.setEditable(false);
+        creditsArea1.setFocusable(false);
+        
+        creditsPanel.add (creditsArea1);
+        
+        /* create, setup, and add containerPanel panel to contain individual panels */
         containerPanel = new JPanel();
         containerPanel.setLayout(new GridLayout());
         containerPanel.setVisible(true);
         add(containerPanel,BorderLayout.CENTER);
         
         /* add all panels */
-        containerPanel.add(highScoresPanel);
+        containerPanel.add(recentScoresPanel);
         containerPanel.add(creditsPanel);
         
         winLoseLabel = new JLabel("");
@@ -69,29 +96,29 @@ public class CreditsPanel extends JPanel
         currentPlayer = inPlayer;
     }
     
-    public void recordScore(ArrayList inHighScores)
+    public void recordScore(ArrayList inRecentScores)
     {
-        int highScoreCount = inHighScores.size();
+        int recentScoreCount = inRecentScores.size();
         int score = currentPlayer.getScore();
         int time = currentPlayer.getTime();
         String character = currentPlayer.getCharacter();
         String theme = currentPlayer.getTheme();
         
-        for(int i=highScoreCount; i<0; i--)
+        for(int i=recentScoreCount; i<0; i--)
         {
-            String hScore = inHighScores.get(i-1).toString();
-            hScore = hScore.replace("SCORE:", "");
-            int hScoreInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
-            hScore = hScore.replace(hScoreInt + "-", "");
-            int hTimeInt = Integer.valueOf(hScore.substring(0,hScore.indexOf("-")));
-            
+            String rScore = inRecentScores.get(i-1).toString();
+            rScore = rScore.replace("SCORE:", "");
+            int rScoreInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
+            rScore = rScore.replace(rScoreInt + "-", "");
+            int rTimeInt = Integer.valueOf(rScore.substring(0,rScore.indexOf("-")));
+//            missing something here?
         }
     }
     
-    public void getHighScores()
+    public void getRecentScores()
     {
         XML_240 reader = new XML_240();
-        reader.openReaderXML("highScore.xml");
+        reader.openReaderXML("recentScore.xml");
         
         ArrayList<String> scores = new ArrayList<>();
         
@@ -109,9 +136,9 @@ public class CreditsPanel extends JPanel
         
         Collections.sort(scores);
         
-        highScores = scores;
+        recentScores = scores;
         
-        recordScore(highScores);
+        recordScore(recentScores);
     }
     
     public void showScores()
