@@ -15,7 +15,7 @@ public class CreditsPanel extends JPanel
     
     /*declare labels and text areas */
     private JTextArea recentScoresArea1;
-    private JTextArea creditsArea1;
+    private JLabel creditsLabel1;
     public JLabel winLoseLabel;
     
     /*declare current player */
@@ -41,12 +41,12 @@ public class CreditsPanel extends JPanel
         /* create and setup panel for high scores */
         recentScoresPanel = new JPanel();
         recentScoresPanel.setLayout(null);
-        recentScoresPanel.setBackground (Color.green);
+        recentScoresPanel.setBackground (Color.black);
         recentScoresPanel.setBorder(recentScoresBorder);
         
-        recentScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
-        recentScoresArea1.setBounds(25,50,250,600);
-        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 20));
+        recentScoresArea1 = new JTextArea ("");
+        recentScoresArea1.setBounds(25,50,350,600);
+        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 13));
         recentScoresArea1.setForeground(Color.white);
         recentScoresArea1.setWrapStyleWord(true);
         recentScoresArea1.setLineWrap(true);
@@ -59,20 +59,19 @@ public class CreditsPanel extends JPanel
         /* create and setup panel for credits */
         creditsPanel = new JPanel();
         creditsPanel.setLayout(null);
-        creditsPanel.setBackground(Color.cyan);
+        creditsPanel.setBackground(Color.black);
         creditsPanel.setBorder(creditsBorder);
         
-        creditsArea1 = new JTextArea ("testing testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing");
-        creditsArea1.setBounds(25,50,250,600);
-        creditsArea1.setFont(new Font("Arial", Font.BOLD, 20));
-        creditsArea1.setForeground(Color.white);
-        creditsArea1.setWrapStyleWord(true);
-        creditsArea1.setLineWrap(true);
-        creditsArea1.setOpaque(false);
-        creditsArea1.setEditable(false);
-        creditsArea1.setFocusable(false);
+        creditsLabel1 = new JLabel ("<html>The Pennsylvania State University<br>" 
+                + "World Campus<br>" + "IST 240 - Fall 2017<br>" + "Professor: Dr. Mark Choman<br><br>"
+                + "Group 3 - Penn State Explorer<br>" + "Aly Bump<br>" + "Matt Krebs<br>" 
+                + "Valeri Simmons</html>");
+        creditsLabel1.setBounds(25,50,350,600);
+        creditsLabel1.setFont(new Font("Arial", Font.BOLD, 20));
+        creditsLabel1.setVerticalAlignment(JLabel.TOP);
+        creditsLabel1.setForeground(Color.white);
         
-        creditsPanel.add (creditsArea1);
+        creditsPanel.add (creditsLabel1);
         
         /* create, setup, and add containerPanel panel to contain individual panels */
         containerPanel = new JPanel();
@@ -240,15 +239,15 @@ public class CreditsPanel extends JPanel
         }
         
         String line1 = score1 + " points : " + time1 + " seconds : " + char1 + 
-                " " + theme1 + "\n";
+                ": " + theme1 + "\n";
         String line2 = score2 + " points : " + time2 + " seconds : " + char2 + 
-                " " + theme2 + "\n";
+                ": " + theme2 + "\n";
         String line3 = score3 + " points : " + time3 + " seconds : " + char3 + 
-                " " + theme3 + "\n";
+                ": " + theme3 + "\n";
         String line4 = score4 + " points : " + time4 + " seconds : " + char4 + 
-                " " + theme4 + "\n";
+                ": " + theme4 + "\n";
         String line5 = score5 + " points : " + time5 + " seconds : " + char5 + 
-                " " + theme5 + "\n";
+                ": " + theme5 + "\n";
         
         recentScoresArea1.setText(line1 + line2 + line3 + line4 + line5);
     }

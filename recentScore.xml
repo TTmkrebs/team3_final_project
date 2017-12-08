@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_71" class="java.beans.XMLDecoder">
- <string>SCORE:4-46-Football Player-PSU Sports</string>
+<java version="1.8.0_141" class="java.beans.XMLDecoder">
+ <string>SCORE:3-38-Football Player-PSU Academics</string>
+ <string>SCORE:0-25-Student-PSU Academics</string>
+ <string>SCORE:0-35-Mascot-PSU History</string>
+ <string>SCORE:1-34-Student-PSU Academics</string>
+ <string>SCORE:3-38-Mascot-PSU History</string>
+ <string>SCORE:4-36-Student-PSU Academics</string>
  <string>SCORE:4-40-Football Player-PSU Sports</string>
+ <string>SCORE:4-46-Football Player-PSU Sports</string>
+ <string>SCORE:4-48-Student-PSU Sports</string>
+ <string>SCORE:4-60-Student-PSU Academics</string>
+ <string>SCORE:5-38-Mascot-PSU Sports</string>
  <string>SCORE:5-47-Football Player-PSU Academics</string>
+ <string>SCORE:5-49-Student-PSU Sports</string>
  <string>SCORE:5-57-Football Player-PSU Academics</string>
 </java>
