@@ -132,16 +132,18 @@ public class CreditsPanel extends JPanel
         
         ArrayList<String> scores = new ArrayList<>();
         
-        String line = reader.ReadObject().toString();
-        while(line.startsWith("SCORE:"))
+        for(int i=0; i<5; i++)
         {
-            scores.add(line);
-            String tempLine = reader.ReadObject().toString();
-            if(tempLine != null)
+            String line = reader.ReadObject().toString();
+            if(line.startsWith("SCORE:"))
             {
-                line = tempLine;
+                scores.add(line);
             }
-            else {line = "";}
+            else
+            {
+                line = reader.ReadObject().toString();
+                scores.add(line);
+            }
         }
         reader.closeReaderXML();
         
