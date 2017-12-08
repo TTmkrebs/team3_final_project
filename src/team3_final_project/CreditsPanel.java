@@ -46,7 +46,7 @@ public class CreditsPanel extends JPanel
         
         recentScoresArea1 = new JTextArea ("testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing testing");
         recentScoresArea1.setBounds(25,50,250,600);
-        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        recentScoresArea1.setFont(new Font("Arial", Font.BOLD, 20));
         recentScoresArea1.setForeground(Color.white);
         recentScoresArea1.setWrapStyleWord(true);
         recentScoresArea1.setLineWrap(true);
@@ -64,7 +64,7 @@ public class CreditsPanel extends JPanel
         
         creditsArea1 = new JTextArea ("testing testingtestingtesting testing testingtestingtesting testing testing testing testing testing testing testing");
         creditsArea1.setBounds(25,50,250,600);
-        creditsArea1.setFont(new Font("Arial", Font.BOLD, 30));
+        creditsArea1.setFont(new Font("Arial", Font.BOLD, 20));
         creditsArea1.setForeground(Color.white);
         creditsArea1.setWrapStyleWord(true);
         creditsArea1.setLineWrap(true);
@@ -122,6 +122,8 @@ public class CreditsPanel extends JPanel
         }
         
         writer.closeWriterXML();
+        
+        showScores(scoreList);
     }
     
     public void getRecentScores()
@@ -135,9 +137,10 @@ public class CreditsPanel extends JPanel
         while(line.startsWith("SCORE:"))
         {
             scores.add(line);
-            if(reader.ReadObject().toString() != null)
+            String tempLine = reader.ReadObject().toString();
+            if(tempLine != null)
             {
-                line = reader.ReadObject().toString();
+                line = tempLine;
             }
             else {line = "";}
         }
@@ -167,13 +170,23 @@ public class CreditsPanel extends JPanel
         String char3 = "";
         String theme3 = "";
         
+        int score4 = 0;
+        int time4 = 0;
+        String char4 = "";
+        String theme4 = "";
+        
+        int score5 = 0;
+        int time5 = 0;
+        String char5 = "";
+        String theme5 = "";
+        
         for(int i=0; i<inScores.size(); i++)
         {
             String scoreLine = inScores.get(i).replace("SCORE:", "");
             int score = Integer.valueOf(scoreLine.substring(0,scoreLine.indexOf("-")));
-            scoreLine.replace(score + "-", "");
+            scoreLine = scoreLine.replace(score + "-", "");
             int time = Integer.valueOf(scoreLine.substring(0,scoreLine.indexOf("-")));
-            scoreLine.replace(time + "-", "");
+            scoreLine = scoreLine.replace(time + "-", "");
             String character = scoreLine.substring(0,scoreLine.indexOf("-"));
             String theme = scoreLine.replace(character + "-","");
             
@@ -200,6 +213,43 @@ public class CreditsPanel extends JPanel
                 char3 = character;
                 theme3 = theme;
             }
+            
+            if(i==3)
+            {
+                score3 = score;
+                time3 = time;
+                char3 = character;
+                theme3 = theme;
+            }
+            
+            if(i==4)
+            {
+                score4 = score;
+                time4 = time;
+                char4 = character;
+                theme4 = theme;
+            }
+            
+            if(i==5)
+            {
+                score5 = score;
+                time5 = time;
+                char5 = character;
+                theme5 = theme;
+            }
         }
+        
+        String line1 = score1 + " points : " + time1 + " seconds : " + char1 + 
+                " " + theme1 + "\n";
+        String line2 = score2 + " points : " + time2 + " seconds : " + char2 + 
+                " " + theme2 + "\n";
+        String line3 = score3 + " points : " + time3 + " seconds : " + char3 + 
+                " " + theme3 + "\n";
+        String line4 = score4 + " points : " + time4 + " seconds : " + char4 + 
+                " " + theme4 + "\n";
+        String line5 = score5 + " points : " + time5 + " seconds : " + char5 + 
+                " " + theme5 + "\n";
+        
+        recentScoresArea1.setText(line1 + line2 + line3 + line4 + line5);
     }
 }
