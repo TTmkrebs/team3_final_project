@@ -20,7 +20,7 @@ public class MapPanel extends JPanel
     private JButton bScore;
     /* initialize timer button */
     private int time;
-    private JButton bTimer;
+    private JButton bTimer = new JButton();
     /* initialize player icon */
     private Rectangle playerIconXY = new Rectangle(200,200,50,50);
     private JLabel playerIcon = new JLabel();
@@ -44,6 +44,7 @@ public class MapPanel extends JPanel
         bPause = new JButton("Pause Game");
         add(bPause);
         bPause.setBounds(new Rectangle(635,55,150,25));
+        
     }
     
     public void assignPlayer(Player inPlayer)
@@ -66,7 +67,7 @@ public class MapPanel extends JPanel
         bScore.setBounds(new Rectangle(15,630,200,25));
         
         /* create timer button */
-        bTimer = new JButton("Time: " + time);
+        bTimer.setText("Time: " + time);
         add(bTimer);
         bTimer.setBounds(new Rectangle(585,630,200,25));
         

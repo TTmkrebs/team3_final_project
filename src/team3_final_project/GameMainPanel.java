@@ -41,8 +41,8 @@ public class GameMainPanel extends JPanel
     
     /* variables for player stats */
     private Player currentPlayer;
-    private JButton bTimer;
-    private JButton bScore;
+    private JButton bTimer = new JButton();
+    private JButton bScore = new JButton();
 
     /* background image coordinates */
     private int x = 0;
@@ -107,12 +107,12 @@ public class GameMainPanel extends JPanel
         playerStats.setBackground(new Color(0,0,0,65));
         
         /* add timer button */
-        bTimer = new JButton("Time: ");
+        bTimer.setText("Time: ");
         playerStats.add(bTimer);
         bTimer.setBounds(new Rectangle(5,20,180,25));
         
         /* add score button */
-        bScore = new JButton("Score: ");
+        bScore.setText("Score: ");
         playerStats.add(bScore);
         bScore.setBounds(new Rectangle(5,60,180,25));
         
