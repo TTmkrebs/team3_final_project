@@ -231,7 +231,6 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         currentPlayer = createPlayer(); 
         inPlayer = currentPlayer;
         game.assignPlayer(currentPlayer);
-//        credits.assignPlayer(currentPlayer);
 
         /* pass character icon & qustions into campus panel */
         for(int i=0;i<campusList.length;i++)
