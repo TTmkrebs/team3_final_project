@@ -3,7 +3,6 @@ package team3_final_project;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.TimerTask;
 
 public class Game_WhackaMole extends JPanel implements ActionListener 
 {

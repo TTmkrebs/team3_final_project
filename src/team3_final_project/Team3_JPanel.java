@@ -131,6 +131,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
             campusList[i] = new GameMainPanel((String)xml.ReadObject(), 
                     (ImageIcon)xml.ReadObject(),(ImageIcon)xml.ReadObject());
             campusList[i].setQuestions(questionList);
+            campusList[i].setVisible(false);
         }
         xml.closeReaderXML();
         
@@ -349,6 +350,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
     
     public void mainMenuButton()
     {
+        time.stop();
         game.setVisible(false);
         instr.setVisible(false);
         devs.setVisible(false);
@@ -356,6 +358,7 @@ public class Team3_JPanel extends JPanel implements ActionListener, KeyListener
         credits.setVisible(false);
         currentPlayer = null;
         for(int i=0; i<campusList.length; i++) {campusList[i].setVisible(false);}
+        main.repaint();
         main.setVisible(true);
     }
    
